@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/title_pref_bluetooth">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dialogTitle="@string/pref_bluetooth_title"
+            android:key="enable_bluetooth_preference"
+            android:summaryOff="@string/pref_bluetooth_summaryOff"
+            android:summaryOn="@string/pref_bluetooth_summaryOn"
+            android:title="@string/pref_bluetooth_title" />
+        <ListPreference
+            android:dialogTitle="@string/pref_bluetooth_list_devices_title"
+            android:key="bluetooth_list_preference"
+            android:summary="@string/pref_bluetooth_list_devices_summary"
+            android:title="@string/pref_bluetooth_list_devices_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/title_pref_obd">
+        <ListPreference
+            android:defaultValue="AUTO"
+            android:dialogTitle="@string/pref_obd_protocols_title"
+            android:key="obd_protocols_preference"
+            android:summary="@string/pref_obd_protocols_summary"
+            android:title="@string/pref_obd_protocols_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dialogTitle="@string/pref_imperial_units_title"
+            android:key="imperial_units_preference"
+            android:summaryOff="@string/pref_imperial_units_summaryOff"
+            android:summaryOn="@string/pref_imperial_units_summaryOn"
+            android:title="@string/pref_imperial_units_title" />
+        <EditTextPreference
+            android:defaultValue="4"
+            android:dialogTitle="@string/pref_obd_update_period_title"
+            android:key="obd_update_period_preference"
+            android:summary="@string/pref_obd_update_period_summary"
+            android:title="@string/pref_obd_update_period_title" />
+        <EditTextPreference
+            android:defaultValue="atsp0\natz"
+            android:dialogTitle="@string/pref_reader_config_title"
+            android:key="reader_config_preference"
+            android:summary="@string/pref_reader_config_summary"
+            android:title="@string/pref_reader_config_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/title_pref_commands">
+        <PreferenceScreen
+            android:key="obd_commands_screen"
+            android:summary="@string/title_pref_commands_summary"
+            android:title="@string/title_pref_commands_title"/>
+    </PreferenceCategory>
+</PreferenceScreen>
