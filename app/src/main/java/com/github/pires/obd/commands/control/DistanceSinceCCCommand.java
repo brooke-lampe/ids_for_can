@@ -101,5 +101,4 @@ public class DistanceSinceCCCommand extends ObdCommand
         return AvailableCommandNames.DISTANCE_TRAVELED_AFTER_CODES_CLEARED
                 .getValue();
     }
-
 }

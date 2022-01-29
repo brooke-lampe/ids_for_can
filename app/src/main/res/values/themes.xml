@@ -2,17 +2,30 @@
     <!-- Base application theme. -->
     <style name="Theme.IDS_for_CAN" parent="android:Theme.Material.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="android:colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryDark">@color/purple_900</item>
+        <item name="android:colorPrimaryDark">@color/purple_900</item>
+        <item name="colorPrimaryVariant">@color/purple_A200</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/light_green_A200</item>
-        <item name="colorSecondaryVariant">@color/light_green_A400</item>
+        <item name="colorSecondary">@color/light_green_A700</item>
+        <item name="colorSecondaryVariant">@color/light_green_A200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/purple_500</item>
+        <item name="android:statusBarColor">@color/purple_500</item>
         <!-- Customize your theme here. -->
-        <item name="colorSurface">@color/light_green_A700</item>
-        <item name="colorOnSurface">@color/light_green_A700</item>
+        <item name="colorSurface">@color/light_green_A400</item>
+        <item name="colorOnSurface">@color/light_green_A400</item>
+        <item name="android:colorAccent">@color/light_green_A400</item>
+    </style>
+    <style name="Theme.ConfigActivity" parent="android:Theme.Material.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="android:colorPrimary">@color/purple_700</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/purple_500</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:colorAccent">@color/purple_A200</item>
     </style>
 </resources>

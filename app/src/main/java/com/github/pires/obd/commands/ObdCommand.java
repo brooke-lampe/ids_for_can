@@ -149,7 +149,6 @@ public abstract class ObdCommand {
      */
     protected abstract void performCalculations();
 
-
     private static Pattern WHITESPACE_PATTERN = Pattern.compile("\\s");
     private static Pattern BUSINIT_PATTERN = Pattern.compile("(BUS INIT)|(BUSINIT)|(\\.)");
     private static Pattern SEARCHING_PATTERN = Pattern.compile("SEARCHING");
@@ -405,5 +404,4 @@ public abstract class ObdCommand {
     public int hashCode() {
         return cmd != null ? cmd.hashCode() : 0;
     }
-
 }

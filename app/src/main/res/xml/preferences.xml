@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/title_pref_bluetooth">
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/title_pref_bluetooth">
         <CheckBoxPreference
             android:defaultValue="false"
             android:dialogTitle="@string/pref_bluetooth_title"
@@ -14,7 +16,8 @@
             android:summary="@string/pref_bluetooth_list_devices_summary"
             android:title="@string/pref_bluetooth_list_devices_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/title_pref_obd">
+    <PreferenceCategory
+        android:title="@string/title_pref_obd">
         <ListPreference
             android:defaultValue="AUTO"
             android:dialogTitle="@string/pref_obd_protocols_title"
@@ -41,10 +44,11 @@
             android:summary="@string/pref_reader_config_summary"
             android:title="@string/pref_reader_config_title" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/title_pref_commands">
+    <PreferenceCategory
+        android:title="@string/title_pref_commands">
         <PreferenceScreen
             android:key="obd_commands_screen"
             android:summary="@string/title_pref_commands_summary"
-            android:title="@string/title_pref_commands_title"/>
+            android:title="@string/title_pref_commands_title" />
     </PreferenceCategory>
 </PreferenceScreen>

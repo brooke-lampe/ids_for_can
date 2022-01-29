@@ -92,5 +92,4 @@ public class DistanceMILOnCommand extends ObdCommand
         return AvailableCommandNames.DISTANCE_TRAVELED_MIL_ON
                 .getValue();
     }
-
 }

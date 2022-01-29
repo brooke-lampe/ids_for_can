@@ -1,5 +1,7 @@
 package com.example.ids_for_can;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -13,6 +15,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.github.pires.obd.commands.ObdCommand;
@@ -137,8 +140,7 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
      */
         final BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBtAdapter == null) {
-            listBtDevices
-                    .setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
+            listBtDevices.setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
             listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
 
             // we shouldn't get here, still warn user
@@ -158,6 +160,9 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         listBtDevices.setEntryValues(new CharSequence[1]);
         listBtDevices.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
+                Log.d(TAG, "!! " + listBtDevices.getValue());
+                Log.d(TAG, "!! " + String.valueOf(listBtDevices.getEntry()));
+                Log.d(TAG, "!! " + String.valueOf(listBtDevices.getEntryValues()));
                 // see what I mean in the previous comment?
                 if (mBtAdapter == null || !mBtAdapter.isEnabled()) {
                     Toast.makeText(thisActivity,
@@ -181,6 +186,9 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         }
         listBtDevices.setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
         listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
+        Log.d(TAG, "?? " + listBtDevices.getValue());
+        Log.d(TAG, "?? " + String.valueOf(listBtDevices.getEntry()));
+        Log.d(TAG, "?? " + String.valueOf(listBtDevices.getEntryValues()));
     }
 
     /**

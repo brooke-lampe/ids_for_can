@@ -1,5 +1,6 @@
 package com.example.ids_for_can.connectivity;
 
+import com.github.pires.obd.commands.MonitorAllCommand;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.commands.SpeedCommand;
 import com.github.pires.obd.commands.control.DistanceMILOnCommand;
@@ -33,7 +34,7 @@ import com.github.pires.obd.enums.FuelTrim;
 import java.util.ArrayList;
 
 /**
- * TODO put description
+ * Available OBD commands to check values
  */
 public final class ObdConfig {
 
@@ -59,11 +60,11 @@ public final class ObdConfig {
         // Fuel
         cmds.add(new FindFuelTypeCommand());
         cmds.add(new ConsumptionRateCommand());
-        // cmds.add(new AverageFuelEconomyObdCommand());
+        //cmds.add(new AverageFuelEconomyObdCommand());
         //cmds.add(new FuelEconomyCommand());
         cmds.add(new FuelLevelCommand());
-        // cmds.add(new FuelEconomyMAPObdCommand());
-        // cmds.add(new FuelEconomyCommandedMAPObdCommand());
+        //cmds.add(new FuelEconomyMAPObdCommand());
+        //cmds.add(new FuelEconomyCommandedMAPObdCommand());
         cmds.add(new FuelTrimCommand(FuelTrim.LONG_TERM_BANK_1));
         cmds.add(new FuelTrimCommand(FuelTrim.LONG_TERM_BANK_2));
         cmds.add(new FuelTrimCommand(FuelTrim.SHORT_TERM_BANK_1));
@@ -83,11 +84,12 @@ public final class ObdConfig {
         cmds.add(new AmbientAirTemperatureCommand());
         cmds.add(new EngineCoolantTemperatureCommand());
 
-        // Misc
+        // Speed
         cmds.add(new SpeedCommand());
 
+        // Monitor All
+        cmds.add(new MonitorAllCommand());
 
         return cmds;
     }
-
 }

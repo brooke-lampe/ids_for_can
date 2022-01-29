@@ -1,9 +1,15 @@
 package com.example.ids_for_can;
 
+import static com.github.pires.obd.enums.AvailableCommandNames.MONITOR_ALL;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,6 +17,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -18,6 +25,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
@@ -28,8 +36,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import com.github.pires.obd.commands.MonitorAllCommand;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.commands.SpeedCommand;
 import com.github.pires.obd.commands.engine.RPMCommand;
@@ -63,7 +73,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int BLUETOOTH_DISABLED = 1;
     private static final int START_LIVE_DATA = 2;
     private static final int STOP_LIVE_DATA = 3;
-    private static final int SETTINGS = 4;
+    private static final int START_MONITORING = 4;
+    private static final int SETTINGS = 5;
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
@@ -91,6 +102,17 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
             // run again in period defined in preferences
             new Handler().postDelayed(mQueueCommands, ConfigActivity.getObdUpdatePeriod(prefs));
+        }
+    };
+
+    private final Runnable mMonitorAllCommands = new Runnable() {
+        public void run() {
+            if (service != null && service.isRunning() && service.queueEmpty()) {
+                monitorAllCommands();
+                commandResult.clear();
+            }
+            // run again in period defined in preferences
+            new Handler().postDelayed(mMonitorAllCommands, ConfigActivity.getObdUpdatePeriod(prefs));
         }
     };
 
@@ -147,12 +169,15 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public void stateUpdate(final ObdCommandJob job) {
         final String cmdName = job.getCommand().getName();
         String cmdResult = "";
+        String rawCmdResult = "";
         final String cmdID = LookUpCommand(cmdName);
 
         if (job.getState().equals(ObdCommandJob.ObdCommandJobState.EXECUTION_ERROR)) {
             cmdResult = job.getCommand().getResult();
-            if (cmdResult != null && isServiceBound) {
+            if (cmdResult != null && isServiceBound && !cmdName.equals("Monitor all")) {
                 obdStatusTextView.setText(cmdResult.toLowerCase());
+            } else {
+                obdStatusTextView.setText("Monitoring...");
             }
         } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.BROKEN_PIPE)) {
             if (isServiceBound)
@@ -161,6 +186,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             cmdResult = getString(R.string.status_obd_no_support);
         } else {
             cmdResult = job.getCommand().getFormattedResult();
+            rawCmdResult = job.getCommand().getResult();
             if(isServiceBound)
                 obdStatusTextView.setText(getString(R.string.status_obd_data));
         }
@@ -170,6 +196,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             existingTV.setText(cmdResult);
         } else addTableRow(cmdID, cmdName, cmdResult);
         commandResult.put(cmdID, cmdResult);
+
+        Log.d(TAG, "cmdID: " + cmdID + ", cmdResult: " + cmdResult);
+        Log.d(TAG, "cmdID: " + cmdID + ", rawCmdResult: " + rawCmdResult);
     }
 
     @Override
@@ -264,7 +293,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "Entered onDestroy...");
 
         if (isServiceBound) {
-            doUnbindService();
+            //we don't want to unbind the service
+            //we want the IDS to continue receiving and processing data
+            //doUnbindService();
         }
 
         final BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -306,18 +337,23 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
         menu.add(0, STOP_LIVE_DATA, 0, getString(R.string.menu_stop_live_data));
+        menu.add(0, START_MONITORING, 0, "Start Monitoring");
         menu.add(0, SETTINGS, 0, getString(R.string.menu_settings));
         Log.d(TAG, "Creating menu...");
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
+        //sendNotification();
         switch (item.getItemId()) {
             case START_LIVE_DATA:
                 startLiveData();
                 return true;
             case STOP_LIVE_DATA:
                 stopLiveData();
+                return true;
+            case START_MONITORING:
+                startMonitoring();
                 return true;
             case SETTINGS:
                 updateConfig();
@@ -334,6 +370,16 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         // start command execution
         new Handler().post(mQueueCommands);
+    }
+
+    private void startMonitoring() {
+        Log.d(TAG, "Starting monitoring...");
+
+        tl.removeAllViews(); //start fresh
+        doBindService();
+
+        // start command execution
+        new Handler().post(mMonitorAllCommands);
     }
 
     private void stopLiveData() {
@@ -407,6 +453,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
     }
 
+    private void monitorAllCommands() {
+        if (isServiceBound) {
+            service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
+        }
+    }
+
     private void doBindService() {
         if (!isServiceBound) {
             Log.d(TAG, "Binding OBD service..");
@@ -446,5 +498,46 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void sendNotification() {
+        Log.d(TAG, "Sending notification...");
+
+        //Get an instance of NotificationManager
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.scribble)
+                .setContentTitle("ALERT: Potential attack detected!")
+                .setContentText("Suspicious traffic has been detected, indicative of a potential attack.")
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText("Suspicious traffic has been detected, indicative of a potential attack."))
+                        //.bigText("Detail of the suspicious traffic and possibility of an an attack."))
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        // Gets an instance of the NotificationManager service
+
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Log.d(TAG, "Creating notification channel...");
+            CharSequence name = "IDS ALERTS";
+            String description = "Alerts from the intrusion detection system (IDS)";
+            NotificationChannel channel = new NotificationChannel("001", name, NotificationManager.IMPORTANCE_HIGH);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            mNotificationManager.createNotificationChannel(channel);
+            mBuilder.setChannelId("001");
+        }
+
+        // When you issue multiple notifications about the same type of event,
+        // it’s best practice for your app to try to update an existing notification
+        // with this new information, rather than immediately creating a new notification.
+        // If you want to update this notification at a later date, you need to assign it an ID.
+        // You can then use this ID whenever you issue a subsequent notification.
+        // If the previous notification is still visible, the system will update this existing notification,
+        // rather than create a new one. In this example, the notification’s ID is 001
+
+        mNotificationManager.notify(001, mBuilder.build());
+        Log.d(TAG, "Notification sent...");
     }
 }

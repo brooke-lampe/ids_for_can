@@ -60,7 +60,6 @@ public class ObdGatewayService extends AbstractGatewayService {
             stopService();
             throw new IOException();
         } else {
-
             final BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
             dev = btAdapter.getRemoteDevice(remoteDevice);
 
@@ -146,8 +145,6 @@ public class ObdGatewayService extends AbstractGatewayService {
 
         queueCounter = 0L;
         Log.d(TAG, "Initialization jobs queued.");
-
-
     }
 
     /**
@@ -210,6 +207,7 @@ public class ObdGatewayService extends AbstractGatewayService {
                 if (job != null) {
                     job.setState(ObdCommandJobState.EXECUTION_ERROR);
                 }
+                Log.e(TAG, e.toString());
                 Log.e(TAG, "Failed to run command. -> " + e.getMessage());
             }
 
