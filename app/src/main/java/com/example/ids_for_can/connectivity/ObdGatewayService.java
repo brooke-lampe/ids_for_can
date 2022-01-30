@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.util.Log;
+import com.example.ids_for_can.Log;
 import android.widget.Toast;
 
 import com.github.pires.obd.commands.protocol.EchoOffCommand;
@@ -112,7 +112,7 @@ public class ObdGatewayService extends AbstractGatewayService {
         try {
             sock = BluetoothManager.connect(dev);
         } catch (Exception e2) {
-            Log.e(TAG, "There was an error while establishing Bluetooth connection. Stopping app...", e2);
+            Log.e(TAG, "There was an error while establishing Bluetooth connection. Stopping app...");
             stopService();
             throw new IOException();
         }

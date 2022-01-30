@@ -15,7 +15,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
-import android.util.Log;
+import com.example.ids_for_can.Log;
 import android.widget.Toast;
 
 import com.github.pires.obd.commands.ObdCommand;

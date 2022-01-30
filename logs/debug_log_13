@@ -1,0 +1,14 @@
+2022-01-30 12:28:08.828 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Starting logging...
+2022-01-30 12:28:08.830 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: WRITE_EXTERNAL_STORAGE PERMISSION GRANTED!
+2022-01-30 12:28:08.830 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: START LOGGING
+2022-01-30 12:28:08.924 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Create directory...
+2022-01-30 12:28:08.925 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: /storage/emulated/0/MyPersonalAppFolder
+2022-01-30 12:28:08.936 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Create directory again...
+2022-01-30 12:28:08.936 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: /storage/emulated/0/MyPersonalAppFolder/logs
+2022-01-30 12:28:08.937 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: TRY
+2022-01-30 12:28:08.991 11996-11996/com.example.ids_for_can E/ple.ids_for_ca: Trace already in progress, ignoring this request
+2022-01-30 12:28:08.996 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: /storage/emulated/0/Android/data/com.example.ids_for_can/files/Documents
+2022-01-30 12:28:12.496 11996-11996/com.example.ids_for_can I/Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+2022-01-30 12:28:12.841 11996-11996/com.example.ids_for_can I/Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+2022-01-30 12:28:15.834 11996-11996/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Starting IDS...
+2022-01-30 12:28:15.838 11996-11996/com.example.ids_for_can E/ple.ids_for_ca: Trace already in progress, ignoring this request

@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.util.Log;
+import com.example.ids_for_can.Log;
 
 public class BluetoothManager {
 
@@ -41,7 +41,7 @@ public class BluetoothManager {
             sock = dev.createRfcommSocketToServiceRecord(MY_UUID);
             sock.connect();
         } catch (Exception e1) {
-            Log.e(TAG, "There was an error while establishing Bluetooth connection. Falling back...", e1);
+            Log.e(TAG, "There was an error while establishing Bluetooth connection. Falling back...");
             Class<?> clazz = null;
             if (sock != null) {
                 clazz = sock.getRemoteDevice().getClass();
@@ -54,7 +54,7 @@ public class BluetoothManager {
                 sockFallback.connect();
                 sock = sockFallback;
             } catch (Exception e2) {
-                Log.e(TAG, "Couldn't fallback while establishing Bluetooth connection.", e2);
+                Log.e(TAG, "Couldn't fallback while establishing Bluetooth connection.");
                 throw new IOException(e2.getMessage());
             }
         }

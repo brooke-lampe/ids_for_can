@@ -2,7 +2,7 @@ package com.github.pires.obd.commands;
 
 import static android.content.ContentValues.TAG;
 
-import android.util.Log;
+import com.example.ids_for_can.Log;
 
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;

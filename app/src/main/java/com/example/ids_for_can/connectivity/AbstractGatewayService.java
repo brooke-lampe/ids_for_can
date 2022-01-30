@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import androidx.core.app.NotificationCompat;
-import android.util.Log;
+import com.example.ids_for_can.Log;
 
 import com.example.ids_for_can.MainActivity;
 import com.google.inject.Inject;

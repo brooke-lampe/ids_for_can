@@ -1,6 +1,6 @@
 package com.example.ids_for_can.connectivity;
 
-import android.util.Log;
+import com.example.ids_for_can.Log;
 
 import com.github.pires.obd.commands.protocol.EchoOffCommand;
 import com.github.pires.obd.commands.protocol.LineFeedOffCommand;

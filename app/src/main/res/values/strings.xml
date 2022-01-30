@@ -107,5 +107,7 @@
     <string name="title_pref_obd">OBD Preferences</string>
     <string name="ids_active">IDS active...</string>
     <string name="start_ids">Start IDS</string>
-    <string name="stop_live_data_ids">STOP LIVE DATA / STOP IDS</string>
+    <string name="stop_live_data_ids">Stop Live Data / Stop IDS</string>
+    <string name="start_logging">Start Logging</string>
+    <string name="quit_application">Quit</string>
 </resources>

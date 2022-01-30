@@ -16,7 +16,7 @@ import static android.content.ContentValues.TAG;
 
 import static com.example.ids_for_can.MainActivity.IDSOn;
 
-import android.util.Log;
+import com.example.ids_for_can.Log;
 
 import com.github.pires.obd.exceptions.*;
 

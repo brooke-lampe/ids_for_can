@@ -1,7 +1,5 @@
 package com.example.ids_for_can;
 
-import static com.github.pires.obd.enums.ObdProtocols.ISO_15765_4_CAN;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,7 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
+import com.example.ids_for_can.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,11 +49,15 @@ import com.example.ids_for_can.connectivity.MockObdGatewayService;
 import com.example.ids_for_can.connectivity.ObdCommandJob;
 import com.example.ids_for_can.connectivity.ObdGatewayService;
 import com.example.ids_for_can.connectivity.ObdProgressListener;
+import com.github.pires.obd.enums.ObdProtocols;
 import com.google.inject.Inject;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import roboguice.RoboGuice;
 import roboguice.activity.RoboActivity;
@@ -71,14 +73,18 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int START_LIVE_DATA = 2;
     private static final int START_IDS = 3;
     private static final int STOP_LIVE_DATA_OR_IDS = 4;
-    private static final int SETTINGS = 5;
+    private static final int START_LOGGING = 5;
+    private static final int SETTINGS = 6;
+    private static final int QUIT_APPLICATION = 7;
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
     private static boolean initIDSDone = false;
     public static boolean IDSOn = false;
+    public static boolean loggingOn = false;
 
-    public static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
+    private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
+    private static final int PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE = 2;
 
     static {
         RoboGuice.setUseAnnotationDatabases(false);
@@ -276,6 +282,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                     Log.d(TAG, "BLUETOOTH DENIED");
                 }
                 break;
+            case PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE:
+                if (grantResults.length > 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                        && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                    Log.d(TAG, "READ_AND_WRITE_EXTERNAL_STORAGE GRANTED");
+                }
+                break;
             default:
                 Log.d(TAG, "UNEXPECTED SWITCH CASE");
         }
@@ -294,11 +306,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "Entered onDestroy...");
         IDSOn = false;
+        loggingOn = false;
 
         if (isServiceBound) {
             //we don't want to unbind the service
             //we want the IDS to continue receiving and processing data
-            //doUnbindService();
+            doUnbindService();
         }
 
         final BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -341,7 +354,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
         menu.add(0, START_IDS, 0, getString(R.string.start_ids));
         menu.add(0, STOP_LIVE_DATA_OR_IDS, 0, getString(R.string.stop_live_data_ids));
+        menu.add(0, START_LOGGING, 0, getString(R.string.start_logging));
         menu.add(0, SETTINGS, 0, getString(R.string.menu_settings));
+        menu.add(0, QUIT_APPLICATION, 0, getString(R.string.quit_application));
         Log.d(TAG, "Creating menu...");
         return true;
     }
@@ -358,8 +373,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             case STOP_LIVE_DATA_OR_IDS:
                 stopLiveData();
                 return true;
+            case START_LOGGING:
+                startLogging();
+                return true;
             case SETTINGS:
                 updateConfig();
+                return true;
+            case QUIT_APPLICATION:
+                finishAndRemoveTask();
                 return true;
         }
         return false;
@@ -393,6 +414,37 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         doUnbindService();
     }
 
+    private void startLogging() {
+        Log.d(TAG, "Starting logging...");
+
+        if (ContextCompat.checkSelfPermission(
+                this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(
+                this, Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED) {
+            Log.d(TAG, "READ_AND_WRITE_EXTERNAL_STORAGE PERMISSION GRANTED!");
+        } else {
+            // You can directly ask for the permission.
+            // The registered ActivityResultCallback gets the result of this request.
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE},
+                    PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE);
+            Log.d(TAG, "READ_AND_WRITE_EXTERNAL_STORAGE PERMISSION REQUESTED!");
+        }
+
+        if (ContextCompat.checkSelfPermission(
+                this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(
+                this, Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED) {
+            Log.d(TAG, "LOGGING ON!");
+            loggingOn = true;
+        }
+    }
+
     protected Dialog onCreateDialog(int id) {
         AlertDialog.Builder build = new AlertDialog.Builder(this);
         switch (id) {
@@ -411,6 +463,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         MenuItem startItem = menu.findItem(START_LIVE_DATA);
         MenuItem idsItem = menu.findItem(START_IDS);
         MenuItem stopItem = menu.findItem(STOP_LIVE_DATA_OR_IDS);
+        MenuItem loggingItem = menu.findItem(START_LOGGING);
         MenuItem settingsItem = menu.findItem(SETTINGS);
 
         if (service != null && service.isRunning()) {
@@ -425,11 +478,16 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             settingsItem.setEnabled(true);
         }
 
+        if (loggingOn) {
+            loggingItem.setEnabled(false);
+        } else {
+            loggingItem.setEnabled(true);
+        }
+
         return true;
     }
 
     private void addTableRow(String id, String key, String val) {
-
         TableRow tr = new TableRow(this);
         MarginLayoutParams params = new ViewGroup.MarginLayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -470,7 +528,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 service.queueJob(new ObdCommandJob(new EchoOffCommand()));
                 service.queueJob(new ObdCommandJob(new SpacesOnCommand()));
                 service.queueJob(new ObdCommandJob(new HeadersOnCommand()));
-                service.queueJob(new ObdCommandJob(new SelectProtocolCommand(ISO_15765_4_CAN)));
+                service.queueJob(new ObdCommandJob(new SelectProtocolCommand(ObdProtocols.ISO_15765_4_CAN)));
                 initIDSDone = true;
             }
             service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
