@@ -25,6 +25,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
@@ -53,7 +55,7 @@ public abstract class ObdCommand {
     private long start;
     private long end;
     private String ATMAString;
-    public static HashMap<String, ArrayList<String>> ATMAMap = new HashMap<>();
+    public static HashMap<String, Set<String>> ATMAMap = new HashMap<>();
 
     /**
      * Default ctor to use
@@ -189,11 +191,11 @@ public abstract class ObdCommand {
                 atma = atma.trim();
                 String temp[] = atma.split(" ", 2);
                 String arbitrationId = temp[0];
-                ArrayList<String> data;
+                Set<String> data;
                 if (ATMAMap.containsKey(arbitrationId)) {
                     data = ATMAMap.get(arbitrationId);
                 } else {
-                    data = new ArrayList<>();
+                    data = new HashSet<>();
                 }
                 data.add(temp[1]);
                 ATMAMap.put(arbitrationId, data);
