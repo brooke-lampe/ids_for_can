@@ -1,0 +1,845 @@
+2022-01-29 18:12:10.716 11320-11320/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+2022-01-29 18:12:10.737 11320-11320/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 18:12:10.759 11320-11320/? W/re-initialized>: type=1400 audit(0.0:53239): avc: granted { execute } for path="/data/data/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-24" ino=250599 scontext=u:r:untrusted_app:s0:c120,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c120,c257,c512,c768 tclass=file app=com.example.ids_for_can
+2022-01-29 18:12:10.763 11320-11320/? V/studio.deploy: Startup agent attached to VM
+2022-01-29 18:12:10.764 11320-11320/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-01-29 18:12:10.764 11320-11320/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-01-29 18:12:10.765 11320-11320/? V/studio.deploy: Applying transforms with cached classes
+2022-01-29 18:12:10.772 11320-11320/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+2022-01-29 18:12:10.772 11320-11320/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+2022-01-29 18:12:10.776 11320-11320/? D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10376; state: ENABLED
+2022-01-29 18:12:10.885 11320-11320/com.example.ids_for_can V/GraphicsEnvironment: ANGLE Developer option for 'com.example.ids_for_can' set to: 'default'
+2022-01-29 18:12:10.885 11320-11320/com.example.ids_for_can V/GraphicsEnvironment: ANGLE GameManagerService for com.example.ids_for_can: false
+2022-01-29 18:12:10.885 11320-11320/com.example.ids_for_can V/GraphicsEnvironment: Updatable production driver is not supported on the device.
+2022-01-29 18:12:10.889 11320-11320/com.example.ids_for_can D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+2022-01-29 18:12:10.890 11320-11320/com.example.ids_for_can D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+2022-01-29 18:12:10.916 11320-11320/com.example.ids_for_can D/roboguice.RoboGuice: Using full reflection. Try using RoboGuice annotation processor for better performance.
+2022-01-29 18:12:11.016 11320-11320/com.example.ids_for_can D//LnImpl.java:29: main Configuring Logging, minimum log level is VERBOSE
+2022-01-29 18:12:11.057 11320-11320/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10376; state: ENABLED
+2022-01-29 18:12:11.069 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: BLUETOOTH PERMISSION GRANTED!
+2022-01-29 18:12:11.073 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Entered onStart...
+2022-01-29 18:12:11.077 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Resuming...
+2022-01-29 18:12:11.107 11320-11344/com.example.ids_for_can I/AdrenoGLES-0: QUALCOMM build                   : 4783c89, I46ff5fc46f
+    Build Date                       : 11/30/20
+    OpenGL ES Shader Compiler Version: EV031.31.04.01
+    Local Branch                     : QPR2
+    Remote Branch                    : 
+    Remote Branch                    : 
+    Reconstruct Branch               : 
+2022-01-29 18:12:11.107 11320-11344/com.example.ids_for_can I/AdrenoGLES-0: Build Config                     : S P 10.0.4 AArch64
+2022-01-29 18:12:11.107 11320-11344/com.example.ids_for_can I/AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+2022-01-29 18:12:11.108 11320-11344/com.example.ids_for_can D/hw-ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 18:12:11.111 11320-11344/com.example.ids_for_can I/AdrenoGLES-0: PFP: 0x016dd093, ME: 0x00000000
+2022-01-29 18:12:11.117 11320-11344/com.example.ids_for_can W/AdrenoUtils: <ReadGpuID_from_sysfs:197>: Failed to open /sys/class/kgsl/kgsl-3d0/gpu_model
+2022-01-29 18:12:11.117 11320-11344/com.example.ids_for_can W/AdrenoUtils: <ReadGpuID:221>: Failed to read chip ID from gpu_model. Fallback to use the GSL path
+2022-01-29 18:12:11.122 11320-11344/com.example.ids_for_can D/hw-ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 18:12:11.136 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Creating menu...
+2022-01-29 18:12:12.807 11320-11336/com.example.ids_for_can W/System: A resource failed to call close. 
+2022-01-29 18:12:26.912 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Starting live data...
+2022-01-29 18:12:26.913 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Binding OBD service..
+2022-01-29 18:12:26.962 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Creating service...
+2022-01-29 18:12:26.962 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Service created.
+2022-01-29 18:12:26.963 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Executing queue...
+2022-01-29 18:12:26.975 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: ComponentInfo{com.example.ids_for_can/com.example.ids_for_can.connectivity.ObdGatewayService} service is bound
+2022-01-29 18:12:26.975 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: START LIVE DATA
+2022-01-29 18:12:26.975 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting service...
+2022-01-29 18:12:26.975 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Stopping Bluetooth discovery.
+2022-01-29 18:12:26.978 11320-11320/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10376; state: ENABLED
+2022-01-29 18:12:26.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting OBD connection...
+2022-01-29 18:12:26.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.BluetoothManager: Starting Bluetooth connection...
+2022-01-29 18:12:29.995 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Queueing jobs for connection configuration...
+2022-01-29 18:12:29.997 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[1] to queue...
+2022-01-29 18:12:29.997 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:29.998 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[1] from queue...
+2022-01-29 18:12:29.998 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:30.262 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:30.262 11320-11391/com.example.ids_for_can D/ContentValues: STOPPED
+2022-01-29 18:12:30.263 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:30.263 11320-11391/com.example.ids_for_can D/ContentValues: STOPPED
+2022-01-29 18:12:30.263 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:30.263 11320-11391/com.example.ids_for_can D/ContentValues: STOPPED
+2022-01-29 18:12:30.266 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.StoppedException: Error running AT Z, response: STOPPED
+2022-01-29 18:12:30.266 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT Z, response: STOPPED
+2022-01-29 18:12:30.499 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[2] to queue...
+2022-01-29 18:12:30.499 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:30.499 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[3] to queue...
+2022-01-29 18:12:30.499 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[2] from queue...
+2022-01-29 18:12:30.499 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:30.499 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:30.500 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[4] to queue...
+2022-01-29 18:12:30.500 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:30.500 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:30.500 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[5] to queue...
+2022-01-29 18:12:30.500 11320-11391/com.example.ids_for_can D/ContentValues: ?
+2022-01-29 18:12:30.500 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:30.500 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:30.500 11320-11391/com.example.ids_for_can D/ContentValues: ?
+2022-01-29 18:12:30.501 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:30.501 11320-11391/com.example.ids_for_can D/ContentValues: ?
+2022-01-29 18:12:30.502 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[6] to queue...
+2022-01-29 18:12:30.503 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:30.503 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.MisunderstoodCommandException: Error running AT E0, response: ?
+2022-01-29 18:12:30.503 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT E0, response: ?
+2022-01-29 18:12:30.503 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[3] from queue...
+2022-01-29 18:12:30.503 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:30.504 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[7] to queue...
+2022-01-29 18:12:30.504 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:30.504 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Initialization jobs queued.
+2022-01-29 18:12:30.515 11320-11320/com.example.ids_for_can I/Choreographer: Skipped 318 frames!  The application may be doing too much work on its main thread.
+2022-01-29 18:12:30.524 11320-11344/com.example.ids_for_can D/OpenGLRenderer: endAllActiveAnimators on 0xb400007c4c336a70 (MenuPopupWindow$MenuDropDownListView) with handle 0xb400007b5c335b20
+2022-01-29 18:12:30.546 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Reset OBD, cmdResult: STOPPED
+2022-01-29 18:12:30.546 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Reset OBD, rawCmdResult: 
+2022-01-29 18:12:30.550 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: ?
+2022-01-29 18:12:30.550 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: 
+2022-01-29 18:12:30.557 11320-11390/com.example.ids_for_can I/OpenGLRenderer: Davey! duration=3567ms; Flags=0, FrameTimelineVsyncId=6435414, IntendedVsync=319703328588924, Vsync=319706861922222, InputEventId=0, HandleInputStart=319706869073012, AnimationStart=319706869093272, PerformTraversalsStart=319706888849056, DrawStart=319706890203691, FrameDeadline=319703349088924, FrameInterval=319706868689001, FrameStartTime=11111111, SyncQueued=319706892221191, SyncStart=319706892759941, IssueDrawCommandsStart=319706892861556, SwapBuffers=319706893718587, FrameCompleted=319706896290410, DequeueBufferDuration=19167, QueueBufferDuration=710469, GpuCompleted=319706896290410, SwapBuffersCompleted=319706895156817, DisplayPresentTime=0, 
+2022-01-29 18:12:30.578 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:30.578 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.578 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:30.578 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.578 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:30.578 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.581 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[4] from queue...
+2022-01-29 18:12:30.581 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:30.582 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: OK
+2022-01-29 18:12:30.583 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: OK
+2022-01-29 18:12:30.748 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:30.748 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.748 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:30.748 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.749 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:30.749 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.752 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[5] from queue...
+2022-01-29 18:12:30.752 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:30.758 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed Off, cmdResult: OK
+2022-01-29 18:12:30.758 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed Off, rawCmdResult: OK
+2022-01-29 18:12:30.840 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:30.840 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.840 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:30.840 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.840 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:30.840 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:30.843 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[6] from queue...
+2022-01-29 18:12:30.843 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:30.850 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Timeout, cmdResult: OK
+2022-01-29 18:12:30.850 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Timeout, rawCmdResult: OK
+2022-01-29 18:12:31.644 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:31.644 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.644 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:31.644 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.645 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:31.645 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.650 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[7] from queue...
+2022-01-29 18:12:31.650 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:31.658 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol AUTO, cmdResult: OK
+2022-01-29 18:12:31.658 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol AUTO, rawCmdResult: OK
+2022-01-29 18:12:31.704 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:31.704 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.704 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:31.704 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.705 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:31.705 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.709 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:31.709 11320-11391/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 18:12:31.710 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NonNumericResponseException: Error reading response: OK
+2022-01-29 18:12:31.710 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error reading response: OK
+2022-01-29 18:12:31.716 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, cmdResult: OK
+2022-01-29 18:12:31.716 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, rawCmdResult: 
+2022-01-29 18:12:34.981 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[1] to queue...
+2022-01-29 18:12:34.981 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[2] to queue...
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[3] to queue...
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[4] to queue...
+2022-01-29 18:12:34.982 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[1] from queue...
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.982 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[5] to queue...
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[6] to queue...
+2022-01-29 18:12:34.982 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[7] to queue...
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[8] to queue...
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[9] to queue...
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[10] to queue...
+2022-01-29 18:12:34.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.983 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[11] to queue...
+2022-01-29 18:12:34.984 11320-11391/com.example.ids_for_can D/ContentValues: SEARCHING...7E8 03 41 46 35 
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[12] to queue...
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.984 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[13] to queue...
+2022-01-29 18:12:34.984 11320-11391/com.example.ids_for_can D/ContentValues: ...7E8 03 41 46 35 
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[14] to queue...
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[15] to queue...
+2022-01-29 18:12:34.984 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:34.984 11320-11391/com.example.ids_for_can D/ContentValues: ...7E803414635
+2022-01-29 18:12:34.984 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[16] to queue...
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[17] to queue...
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[18] to queue...
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[19] to queue...
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[20] to queue...
+2022-01-29 18:12:34.985 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[21] to queue...
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[22] to queue...
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[23] to queue...
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[24] to queue...
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.986 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[25] to queue...
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[26] to queue...
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[27] to queue...
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[28] to queue...
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[29] to queue...
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.987 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:34.987 11320-11391/com.example.ids_for_can D/ContentValues: ...7E803414635
+2022-01-29 18:12:34.987 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[30] to queue...
+2022-01-29 18:12:34.988 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.988 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[31] to queue...
+2022-01-29 18:12:34.988 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:34.988 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:34.988 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 20, 99]
+2022-01-29 18:12:34.988 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[2] from queue...
+2022-01-29 18:12:34.988 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:34.996 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: CONTROL_MODULE_VOLTAGE, cmdResult: 13.0V
+2022-01-29 18:12:34.996 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: CONTROL_MODULE_VOLTAGE, rawCmdResult: 7E803414635
+2022-01-29 18:12:35.971 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:35.971 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 04 41 42 00 00 7EA 04 41 42 00 00 7E8 04 41 42 30 39 
+2022-01-29 18:12:35.971 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:35.971 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 04 41 42 00 00 7EA 04 41 42 00 00 7E8 04 41 42 30 39 
+2022-01-29 18:12:35.972 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:35.972 11320-11391/com.example.ids_for_can D/ContentValues: 7EB04414200007EA04414200007E80441423039
+2022-01-29 18:12:35.975 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:35.975 11320-11391/com.example.ids_for_can D/ContentValues: 7EB04414200007EA04414200007E80441423039
+2022-01-29 18:12:35.976 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:35.976 11320-11391/com.example.ids_for_can D/ContentValues: [126, 176, 68, 20, 32, 0, 7, 234, 4, 65, 66, 0, 0, 126, 128, 68, 20, 35, 3]
+2022-01-29 18:12:35.976 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[3] from queue...
+2022-01-29 18:12:35.976 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:35.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: EQUIV_RATIO, cmdResult: 0.0%
+2022-01-29 18:12:35.983 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: EQUIV_RATIO, rawCmdResult: 7EB04414200007EA04414200007E80441423039
+2022-01-29 18:12:39.644 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:39.644 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 04 41 21 00 00 7EA 04 41 21 00 00 7E8 04 41 21 00 08 
+2022-01-29 18:12:39.644 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:39.644 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 04 41 21 00 00 7EA 04 41 21 00 00 7E8 04 41 21 00 08 
+2022-01-29 18:12:39.645 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:39.645 11320-11391/com.example.ids_for_can D/ContentValues: 7EB04412100007EA04412100007E80441210008
+2022-01-29 18:12:39.650 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:39.650 11320-11391/com.example.ids_for_can D/ContentValues: 7EB04412100007EA04412100007E80441210008
+2022-01-29 18:12:39.650 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:39.651 11320-11391/com.example.ids_for_can D/ContentValues: [126, 176, 68, 18, 16, 0, 7, 234, 4, 65, 33, 0, 0, 126, 128, 68, 18, 16, 0]
+2022-01-29 18:12:39.651 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[4] from queue...
+2022-01-29 18:12:39.651 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:39.658 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DISTANCE_TRAVELED_MIL_ON, cmdResult: 17426km
+2022-01-29 18:12:39.658 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DISTANCE_TRAVELED_MIL_ON, rawCmdResult: 7EB04412100007EA04412100007E80441210008
+2022-01-29 18:12:42.244 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:42.244 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 06 41 01 00 04 00 00 7EA 06 41 01 00 04 00 00 7E8 06 41 01 01 07 E5 00 
+2022-01-29 18:12:42.245 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:42.245 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 06 41 01 00 04 00 00 7EA 06 41 01 00 04 00 00 7E8 06 41 01 01 07 E5 00 
+2022-01-29 18:12:42.246 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:42.246 11320-11391/com.example.ids_for_can D/ContentValues: 7EB064101000400007EA064101000400007E80641010107E500
+2022-01-29 18:12:42.250 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:42.250 11320-11391/com.example.ids_for_can D/ContentValues: 7EB064101000400007EA064101000400007E80641010107E500
+2022-01-29 18:12:42.251 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:42.251 11320-11391/com.example.ids_for_can D/ContentValues: [126, 176, 100, 16, 16, 0, 64, 0, 7, 234, 6, 65, 1, 0, 4, 0, 0, 126, 128, 100, 16, 16, 16, 126, 80]
+2022-01-29 18:12:42.252 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[5] from queue...
+2022-01-29 18:12:42.252 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:42.258 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DTC_NUMBER, cmdResult: MIL is OFF100 codes
+2022-01-29 18:12:42.259 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DTC_NUMBER, rawCmdResult: 7EB064101000400007EA064101000400007E80641010107E500
+2022-01-29 18:12:43.827 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:43.827 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0E 80 
+2022-01-29 18:12:43.828 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:43.828 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0E 80 
+2022-01-29 18:12:43.828 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:43.828 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410E80
+2022-01-29 18:12:43.831 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:43.831 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410E80
+2022-01-29 18:12:43.832 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:43.832 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 232]
+2022-01-29 18:12:43.832 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[6] from queue...
+2022-01-29 18:12:43.832 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:43.839 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TIMING_ADVANCE, cmdResult: 20.4%
+2022-01-29 18:12:43.840 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TIMING_ADVANCE, rawCmdResult: 7E803410E80
+2022-01-29 18:12:44.439 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.StringIndexOutOfBoundsException: length=31; index=32
+2022-01-29 18:12:44.439 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=31; index=32
+2022-01-29 18:12:44.440 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[7] from queue...
+2022-01-29 18:12:44.440 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:44.449 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TROUBLE_CODES, cmdResult: 7EB0243007EA0243007E80443010463
+2022-01-29 18:12:44.449 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TROUBLE_CODES, rawCmdResult: 
+2022-01-29 18:12:45.587 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:45.587 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 10 14 49 02 01 31 47 4E 7E8 21 4B 56 47 45 44 31 42 7E8 22 4A 33 31 31 38 35 38 
+2022-01-29 18:12:45.587 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:45.587 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 10 14 49 02 01 31 47 4E 7E8 21 4B 56 47 45 44 31 42 7E8 22 4A 33 31 31 38 35 38 
+2022-01-29 18:12:45.589 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:45.589 11320-11391/com.example.ids_for_can D/ContentValues: 7E8101449020131474E7E8214B5647454431427E8224A333131383538
+2022-01-29 18:12:45.594 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[8] from queue...
+2022-01-29 18:12:45.594 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:45.601 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: VIN, cmdResult: ~Ctçè!KVGED1B~$£3S
+2022-01-29 18:12:45.601 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: VIN, rawCmdResult: 7E8101449020131474E7E8214B5647454431427E8224A333131383538
+2022-01-29 18:12:45.830 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:45.830 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 04 00 
+2022-01-29 18:12:45.830 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:45.830 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 04 00 
+2022-01-29 18:12:45.831 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:45.831 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410400
+2022-01-29 18:12:45.835 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:45.835 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410400
+2022-01-29 18:12:45.836 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:45.836 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 64]
+2022-01-29 18:12:45.836 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[9] from queue...
+2022-01-29 18:12:45.836 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:45.844 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_LOAD, cmdResult: 20.4%
+2022-01-29 18:12:45.844 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_LOAD, rawCmdResult: 7E803410400
+2022-01-29 18:12:46.402 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:46.403 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 0C 00 00 
+2022-01-29 18:12:46.403 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:46.403 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 0C 00 00 
+2022-01-29 18:12:46.403 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:46.403 11320-11391/com.example.ids_for_can D/ContentValues: 7E804410C0000
+2022-01-29 18:12:46.407 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:46.407 11320-11391/com.example.ids_for_can D/ContentValues: 7E804410C0000
+2022-01-29 18:12:46.407 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:46.407 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 16, 192, 0]
+2022-01-29 18:12:46.408 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[10] from queue...
+2022-01-29 18:12:46.408 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:46.411 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RPM, cmdResult: 4356RPM
+2022-01-29 18:12:46.411 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RPM, rawCmdResult: 7E804410C0000
+2022-01-29 18:12:46.701 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:46.701 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 1F 00 00 
+2022-01-29 18:12:46.701 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:46.701 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 1F 00 00 
+2022-01-29 18:12:46.702 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:46.702 11320-11391/com.example.ids_for_can D/ContentValues: 7E804411F0000
+2022-01-29 18:12:46.704 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:46.704 11320-11391/com.example.ids_for_can D/ContentValues: 7E804411F0000
+2022-01-29 18:12:46.704 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:46.704 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 17, 240, 0]
+2022-01-29 18:12:46.705 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[11] from queue...
+2022-01-29 18:12:46.705 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:46.710 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RUNTIME, cmdResult: 04:50:25
+2022-01-29 18:12:46.710 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RUNTIME, rawCmdResult: 7E804411F0000
+2022-01-29 18:12:46.982 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:46.982 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 10 00 00 
+2022-01-29 18:12:46.982 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:46.982 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 10 00 00 
+2022-01-29 18:12:46.983 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:46.983 11320-11391/com.example.ids_for_can D/ContentValues: 7E80441100000
+2022-01-29 18:12:46.986 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:46.986 11320-11391/com.example.ids_for_can D/ContentValues: 7E80441100000
+2022-01-29 18:12:46.987 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:46.987 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 17, 0, 0]
+2022-01-29 18:12:46.987 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[12] from queue...
+2022-01-29 18:12:46.987 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:46.994 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MAF, cmdResult: 174.25g/s
+2022-01-29 18:12:46.994 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MAF, rawCmdResult: 7E80441100000
+2022-01-29 18:12:47.256 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:47.256 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 11 53 
+2022-01-29 18:12:47.256 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:47.256 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 11 53 
+2022-01-29 18:12:47.257 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:47.257 11320-11391/com.example.ids_for_can D/ContentValues: 7E803411153
+2022-01-29 18:12:47.260 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:47.260 11320-11391/com.example.ids_for_can D/ContentValues: 7E803411153
+2022-01-29 18:12:47.261 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:47.261 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 17, 21]
+2022-01-29 18:12:47.261 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[13] from queue...
+2022-01-29 18:12:47.261 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:47.268 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: THROTTLE_POS, cmdResult: 20.4%
+2022-01-29 18:12:47.268 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: THROTTLE_POS, rawCmdResult: 7E803411153
+2022-01-29 18:12:47.783 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:47.783 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:47.784 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:47.784 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:47.784 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:47.784 11320-11391/com.example.ids_for_can D/ContentValues: NODATA
+2022-01-29 18:12:47.786 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NoDataException: Error running 01 51, response: NODATA
+2022-01-29 18:12:47.786 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running 01 51, response: NODATA
+2022-01-29 18:12:47.787 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[14] from queue...
+2022-01-29 18:12:47.787 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:47.793 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_TYPE, cmdResult: NODATA
+2022-01-29 18:12:47.793 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_TYPE, rawCmdResult: 
+2022-01-29 18:12:48.425 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:48.426 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:48.426 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:48.426 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:48.426 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:48.426 11320-11391/com.example.ids_for_can D/ContentValues: NODATA
+2022-01-29 18:12:48.428 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NoDataException: Error running 01 5E, response: NODATA
+2022-01-29 18:12:48.428 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running 01 5E, response: NODATA
+2022-01-29 18:12:48.428 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[15] from queue...
+2022-01-29 18:12:48.428 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:48.435 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_CONSUMPTION_RATE, cmdResult: NODATA
+2022-01-29 18:12:48.435 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_CONSUMPTION_RATE, rawCmdResult: 
+2022-01-29 18:12:48.858 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:48.858 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 2F B8 
+2022-01-29 18:12:48.859 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:48.859 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 2F B8 
+2022-01-29 18:12:48.859 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:48.859 11320-11391/com.example.ids_for_can D/ContentValues: 7E803412FB8
+2022-01-29 18:12:48.862 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:48.862 11320-11391/com.example.ids_for_can D/ContentValues: 7E803412FB8
+2022-01-29 18:12:48.863 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:48.863 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 18, 251]
+2022-01-29 18:12:48.863 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[16] from queue...
+2022-01-29 18:12:48.863 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:48.870 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_LEVEL, cmdResult: 20.4%
+2022-01-29 18:12:48.870 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_LEVEL, rawCmdResult: 7E803412FB8
+2022-01-29 18:12:49.158 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:49.158 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 07 7F 
+2022-01-29 18:12:49.158 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:49.158 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 07 7F 
+2022-01-29 18:12:49.159 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:49.159 11320-11391/com.example.ids_for_can D/ContentValues: 7E80341077F
+2022-01-29 18:12:49.163 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:49.163 11320-11391/com.example.ids_for_can D/ContentValues: 7E80341077F
+2022-01-29 18:12:49.163 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:49.164 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 119]
+2022-01-29 18:12:49.164 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[17] from queue...
+2022-01-29 18:12:49.164 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:49.171 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Long Term Fuel Trim Bank 1, cmdResult: -59.4%
+2022-01-29 18:12:49.171 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Long Term Fuel Trim Bank 1, rawCmdResult: 7E80341077F
+2022-01-29 18:12:49.425 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:49.425 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 09 7F 
+2022-01-29 18:12:49.425 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:49.425 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 09 7F 
+2022-01-29 18:12:49.426 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:49.426 11320-11391/com.example.ids_for_can D/ContentValues: 7E80341097F
+2022-01-29 18:12:49.429 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:49.429 11320-11391/com.example.ids_for_can D/ContentValues: 7E80341097F
+2022-01-29 18:12:49.429 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:49.429 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 151]
+2022-01-29 18:12:49.429 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[18] from queue...
+2022-01-29 18:12:49.429 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:49.436 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Long Term Fuel Trim Bank 2, cmdResult: -59.4%
+2022-01-29 18:12:49.436 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Long Term Fuel Trim Bank 2, rawCmdResult: 7E80341097F
+2022-01-29 18:12:49.664 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:49.664 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 06 80 
+2022-01-29 18:12:49.665 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:49.665 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 06 80 
+2022-01-29 18:12:49.665 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:49.665 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410680
+2022-01-29 18:12:49.668 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:49.668 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410680
+2022-01-29 18:12:49.668 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:49.669 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 104]
+2022-01-29 18:12:49.669 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[19] from queue...
+2022-01-29 18:12:49.669 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:49.676 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Short Term Fuel Trim Bank 1, cmdResult: -59.4%
+2022-01-29 18:12:49.676 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Short Term Fuel Trim Bank 1, rawCmdResult: 7E803410680
+2022-01-29 18:12:50.188 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:50.188 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 08 80 
+2022-01-29 18:12:50.188 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:50.188 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 08 80 
+2022-01-29 18:12:50.189 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:50.189 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410880
+2022-01-29 18:12:50.192 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:50.192 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410880
+2022-01-29 18:12:50.193 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:50.193 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 136]
+2022-01-29 18:12:50.193 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[20] from queue...
+2022-01-29 18:12:50.193 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:50.200 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Short Term Fuel Trim Bank 2, cmdResult: -59.4%
+2022-01-29 18:12:50.201 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Short Term Fuel Trim Bank 2, rawCmdResult: 7E803410880
+2022-01-29 18:12:50.537 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:50.537 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 44 FF FF 
+2022-01-29 18:12:50.538 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:50.538 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 44 FF FF 
+2022-01-29 18:12:50.538 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:50.538 11320-11391/com.example.ids_for_can D/ContentValues: 7E8044144FFFF
+2022-01-29 18:12:50.547 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:50.547 11320-11391/com.example.ids_for_can D/ContentValues: 7E8044144FFFF
+2022-01-29 18:12:50.549 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:50.549 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 20, 79, 255]
+2022-01-29 18:12:50.550 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[21] from queue...
+2022-01-29 18:12:50.550 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:50.557 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AIR_FUEL_RATIO, cmdResult: 7.82:1 AFR
+2022-01-29 18:12:50.557 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AIR_FUEL_RATIO, rawCmdResult: 7E8044144FFFF
+2022-01-29 18:12:50.997 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:50.997 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:50.997 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:50.997 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:50.997 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:50.997 11320-11391/com.example.ids_for_can D/ContentValues: NODATA
+2022-01-29 18:12:50.999 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NoDataException: Error running 01 34, response: NODATA
+2022-01-29 18:12:50.999 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running 01 34, response: NODATA
+2022-01-29 18:12:51.000 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[22] from queue...
+2022-01-29 18:12:51.000 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:51.006 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: WIDEBAND_AIR_FUEL_RATIO, cmdResult: NODATA
+2022-01-29 18:12:51.006 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: WIDEBAND_AIR_FUEL_RATIO, rawCmdResult: 
+2022-01-29 18:12:51.410 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:51.410 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:51.410 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:51.410 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:51.411 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:51.411 11320-11391/com.example.ids_for_can D/ContentValues: NODATA
+2022-01-29 18:12:51.412 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NoDataException: Error running 01 5C, response: NODATA
+2022-01-29 18:12:51.412 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running 01 5C, response: NODATA
+2022-01-29 18:12:51.413 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[23] from queue...
+2022-01-29 18:12:51.413 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:51.419 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_OIL_TEMP, cmdResult: NODATA
+2022-01-29 18:12:51.419 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_OIL_TEMP, rawCmdResult: 
+2022-01-29 18:12:51.603 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:51.604 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 33 60 
+2022-01-29 18:12:51.604 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:51.604 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 33 60 
+2022-01-29 18:12:51.604 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:51.605 11320-11391/com.example.ids_for_can D/ContentValues: 7E803413360
+2022-01-29 18:12:51.607 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:51.607 11320-11391/com.example.ids_for_can D/ContentValues: 7E803413360
+2022-01-29 18:12:51.608 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:51.608 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 19, 54]
+2022-01-29 18:12:51.608 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[24] from queue...
+2022-01-29 18:12:51.608 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:51.614 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: BAROMETRIC_PRESSURE, cmdResult: 52kPa
+2022-01-29 18:12:51.614 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: BAROMETRIC_PRESSURE, rawCmdResult: 7E803413360
+2022-01-29 18:12:51.839 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:51.839 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 03 41 0A 89 
+2022-01-29 18:12:51.839 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:51.839 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 03 41 0A 89 
+2022-01-29 18:12:51.839 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:51.839 11320-11391/com.example.ids_for_can D/ContentValues: 7EB03410A89
+2022-01-29 18:12:51.842 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:51.842 11320-11391/com.example.ids_for_can D/ContentValues: 7EB03410A89
+2022-01-29 18:12:51.843 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:51.843 11320-11391/com.example.ids_for_can D/ContentValues: [126, 176, 52, 16, 168]
+2022-01-29 18:12:51.843 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[25] from queue...
+2022-01-29 18:12:51.843 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:51.849 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_PRESSURE, cmdResult: 156kPa
+2022-01-29 18:12:51.849 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_PRESSURE, rawCmdResult: 7EB03410A89
+2022-01-29 18:12:52.215 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:52.215 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 23 00 2A 
+2022-01-29 18:12:52.215 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:52.215 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 23 00 2A 
+2022-01-29 18:12:52.215 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:52.216 11320-11391/com.example.ids_for_can D/ContentValues: 7E8044123002A
+2022-01-29 18:12:52.219 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:52.219 11320-11391/com.example.ids_for_can D/ContentValues: 7E8044123002A
+2022-01-29 18:12:52.220 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:52.220 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 18, 48, 2]
+2022-01-29 18:12:52.220 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[26] from queue...
+2022-01-29 18:12:52.220 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:52.227 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_RAIL_PRESSURE, cmdResult: 174260kPa
+2022-01-29 18:12:52.227 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_RAIL_PRESSURE, rawCmdResult: 7E8044123002A
+2022-01-29 18:12:52.630 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:52.630 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:52.630 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:52.630 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:52.631 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:52.631 11320-11391/com.example.ids_for_can D/ContentValues: NODATA
+2022-01-29 18:12:52.632 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NoDataException: Error running 01 0B, response: NODATA
+2022-01-29 18:12:52.632 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running 01 0B, response: NODATA
+2022-01-29 18:12:52.633 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[27] from queue...
+2022-01-29 18:12:52.633 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:52.638 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: INTAKE_MANIFOLD_PRESSURE, cmdResult: NODATA
+2022-01-29 18:12:52.639 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: INTAKE_MANIFOLD_PRESSURE, rawCmdResult: 
+2022-01-29 18:12:53.195 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:53.195 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0F 49 
+2022-01-29 18:12:53.195 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:53.195 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0F 49 
+2022-01-29 18:12:53.196 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:53.196 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410F49
+2022-01-29 18:12:53.199 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:53.199 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410F49
+2022-01-29 18:12:53.199 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:53.199 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 244]
+2022-01-29 18:12:53.200 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[28] from queue...
+2022-01-29 18:12:53.200 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:53.206 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AIR_INTAKE_TEMP, cmdResult: 12C
+2022-01-29 18:12:53.206 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AIR_INTAKE_TEMP, rawCmdResult: 7E803410F49
+2022-01-29 18:12:53.539 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:53.539 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 46 35 
+2022-01-29 18:12:53.539 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:53.539 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 46 35 
+2022-01-29 18:12:53.540 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:53.540 11320-11391/com.example.ids_for_can D/ContentValues: 7E803414635
+2022-01-29 18:12:53.543 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:53.543 11320-11391/com.example.ids_for_can D/ContentValues: 7E803414635
+2022-01-29 18:12:53.544 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:53.544 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 20, 99]
+2022-01-29 18:12:53.544 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[29] from queue...
+2022-01-29 18:12:53.544 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:53.547 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, cmdResult: 12C
+2022-01-29 18:12:53.547 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, rawCmdResult: 7E803414635
+2022-01-29 18:12:53.775 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:53.775 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 05 4D 
+2022-01-29 18:12:53.775 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:53.775 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 05 4D 
+2022-01-29 18:12:53.775 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:53.776 11320-11391/com.example.ids_for_can D/ContentValues: 7E80341054D
+2022-01-29 18:12:53.778 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:53.778 11320-11391/com.example.ids_for_can D/ContentValues: 7E80341054D
+2022-01-29 18:12:53.779 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:53.779 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 84]
+2022-01-29 18:12:53.779 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[30] from queue...
+2022-01-29 18:12:53.779 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:53.791 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_COOLANT_TEMP, cmdResult: 12C
+2022-01-29 18:12:53.791 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_COOLANT_TEMP, rawCmdResult: 7E80341054D
+2022-01-29 18:12:53.989 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:53.989 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0D 00 
+2022-01-29 18:12:53.990 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:53.990 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0D 00 
+2022-01-29 18:12:53.990 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:53.990 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410D00
+2022-01-29 18:12:53.993 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:53.993 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410D00
+2022-01-29 18:12:53.994 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:53.994 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 208]
+2022-01-29 18:12:53.994 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[31] from queue...
+2022-01-29 18:12:53.994 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:53.997 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: SPEED, cmdResult: 52km/h
+2022-01-29 18:12:53.997 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: SPEED, rawCmdResult: 7E803410D00
+2022-01-29 18:12:54.939 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:54.939 11320-11391/com.example.ids_for_can D/ContentValues: 0C7 03 FE 00 00 0F9 00 00 40 00 00 00 00 FF 189 CF FF 0F FF 2F FE 00 FF <DATA ERROR199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR0C9 00 00 00 0A 00 00 00 00 191 06 36 09 17 09 17 00 1ED 00 00 00 00 00 00 08 00 2C3 86 36 06 B6 06 B6 C1 00 <DATA ERROR1EF 00 00 00 00 BUFFER FULL
+2022-01-29 18:12:54.939 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:54.939 11320-11391/com.example.ids_for_can D/ContentValues: 0C7 03 FE 00 00 0F9 00 00 40 00 00 00 00 FF 189 CF FF 0F FF 2F FE 00 FF <DATA ERROR199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR0C9 00 00 00 0A 00 00 00 00 191 06 36 09 17 09 17 00 1ED 00 00 00 00 00 00 08 00 2C3 86 36 06 B6 06 B6 C1 00 <DATA ERROR1EF 00 00 00 00 BUFFER FULL
+2022-01-29 18:12:54.942 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:54.942 11320-11391/com.example.ids_for_can D/ContentValues: 0C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191063609170917001ED00000000000008002C3863606B606B6C100<DATAERROR1EF00000000BUFFERFULL
+2022-01-29 18:12:54.944 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 0C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191063609170917001ED00000000000008002C3863606B606B6C100<DATAERROR1EF00000000BUFFERFULL
+2022-01-29 18:12:54.945 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 0C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191063609170917001ED00000000000008002C3863606B606B6C100<DATAERROR1EF00000000BUFFERFULL
+2022-01-29 18:12:54.950 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191063609170917001ED00000000000008002C3863606B606B6C100<DATAERROR1EF00000000BUFFERFULL
+2022-01-29 18:12:54.951 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 18:12:55.020 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[32] to queue...
+2022-01-29 18:12:55.020 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.020 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[33] to queue...
+2022-01-29 18:12:55.020 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.020 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[34] to queue...
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[35] to queue...
+2022-01-29 18:12:55.021 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[32] from queue...
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[36] to queue...
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[37] to queue...
+2022-01-29 18:12:55.021 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[38] to queue...
+2022-01-29 18:12:55.022 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[39] to queue...
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[40] to queue...
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.022 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[41] to queue...
+2022-01-29 18:12:55.023 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.023 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[42] to queue...
+2022-01-29 18:12:55.023 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.023 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[43] to queue...
+2022-01-29 18:12:55.023 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.023 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[44] to queue...
+2022-01-29 18:12:55.024 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.024 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[45] to queue...
+2022-01-29 18:12:55.024 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.024 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[46] to queue...
+2022-01-29 18:12:55.024 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.024 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[47] to queue...
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[48] to queue...
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[49] to queue...
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[50] to queue...
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[51] to queue...
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[52] to queue...
+2022-01-29 18:12:55.025 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[53] to queue...
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[54] to queue...
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[55] to queue...
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[56] to queue...
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.026 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[57] to queue...
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[58] to queue...
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[59] to queue...
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[60] to queue...
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[61] to queue...
+2022-01-29 18:12:55.027 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.028 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[62] to queue...
+2022-01-29 18:12:55.028 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 18:12:55.415 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:55.415 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 04 41 42 00 00 7EA 04 41 42 00 00 7E8 04 41 42 30 39 
+2022-01-29 18:12:55.416 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:55.416 11320-11391/com.example.ids_for_can D/ContentValues: 7EB 04 41 42 00 00 7EA 04 41 42 00 00 7E8 04 41 42 30 39 
+2022-01-29 18:12:55.416 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:55.416 11320-11391/com.example.ids_for_can D/ContentValues: 7EB04414200007EA04414200007E80441423039
+2022-01-29 18:12:55.419 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:55.419 11320-11391/com.example.ids_for_can D/ContentValues: 7EB04414200007EA04414200007E80441423039
+2022-01-29 18:12:55.420 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:55.420 11320-11391/com.example.ids_for_can D/ContentValues: [126, 176, 68, 20, 32, 0, 7, 234, 4, 65, 66, 0, 0, 126, 128, 68, 20, 35, 3]
+2022-01-29 18:12:55.420 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[33] from queue...
+2022-01-29 18:12:55.420 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:55.424 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: CONTROL_MODULE_VOLTAGE, cmdResult: 17.0V
+2022-01-29 18:12:55.424 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: CONTROL_MODULE_VOLTAGE, rawCmdResult: 7EB04414200007EA04414200007E80441423039
+2022-01-29 18:12:55.844 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:55.844 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 44 FF FF 
+2022-01-29 18:12:55.844 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:55.844 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 44 FF FF 
+2022-01-29 18:12:55.845 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:55.845 11320-11391/com.example.ids_for_can D/ContentValues: 7E8044144FFFF
+2022-01-29 18:12:55.848 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:55.848 11320-11391/com.example.ids_for_can D/ContentValues: 7E8044144FFFF
+2022-01-29 18:12:55.848 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:55.848 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 20, 79, 255]
+2022-01-29 18:12:55.849 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[34] from queue...
+2022-01-29 18:12:55.849 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:55.851 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: EQUIV_RATIO, cmdResult: 0.0%
+2022-01-29 18:12:55.851 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: EQUIV_RATIO, rawCmdResult: 7E8044144FFFF
+2022-01-29 18:12:56.487 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:56.487 11320-11391/com.example.ids_for_can D/ContentValues: 7EA 04 41 21 00 00 7EB 04 41 21 00 00 7E8 04 41 21 00 08 
+2022-01-29 18:12:56.487 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:56.487 11320-11391/com.example.ids_for_can D/ContentValues: 7EA 04 41 21 00 00 7EB 04 41 21 00 00 7E8 04 41 21 00 08 
+2022-01-29 18:12:56.488 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:56.488 11320-11391/com.example.ids_for_can D/ContentValues: 7EA04412100007EB04412100007E80441210008
+2022-01-29 18:12:56.490 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:56.491 11320-11391/com.example.ids_for_can D/ContentValues: 7EA04412100007EB04412100007E80441210008
+2022-01-29 18:12:56.491 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:56.491 11320-11391/com.example.ids_for_can D/ContentValues: [126, 160, 68, 18, 16, 0, 7, 235, 4, 65, 33, 0, 0, 126, 128, 68, 18, 16, 0]
+2022-01-29 18:12:56.492 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[35] from queue...
+2022-01-29 18:12:56.492 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:56.496 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DISTANCE_TRAVELED_MIL_ON, cmdResult: 17426km
+2022-01-29 18:12:56.496 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DISTANCE_TRAVELED_MIL_ON, rawCmdResult: 7EA04412100007EB04412100007E80441210008
+2022-01-29 18:12:56.790 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:56.790 11320-11391/com.example.ids_for_can D/ContentValues: 7EA 06 41 01 00 04 00 00 7EB 06 41 01 00 04 00 00 7E8 06 41 01 01 07 E5 00 
+2022-01-29 18:12:56.790 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:56.791 11320-11391/com.example.ids_for_can D/ContentValues: 7EA 06 41 01 00 04 00 00 7EB 06 41 01 00 04 00 00 7E8 06 41 01 01 07 E5 00 
+2022-01-29 18:12:56.792 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:56.792 11320-11391/com.example.ids_for_can D/ContentValues: 7EA064101000400007EB064101000400007E80641010107E500
+2022-01-29 18:12:56.794 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:56.794 11320-11391/com.example.ids_for_can D/ContentValues: 7EA064101000400007EB064101000400007E80641010107E500
+2022-01-29 18:12:56.795 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:56.795 11320-11391/com.example.ids_for_can D/ContentValues: [126, 160, 100, 16, 16, 0, 64, 0, 7, 235, 6, 65, 1, 0, 4, 0, 0, 126, 128, 100, 16, 16, 16, 126, 80]
+2022-01-29 18:12:56.795 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[36] from queue...
+2022-01-29 18:12:56.795 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:56.799 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DTC_NUMBER, cmdResult: MIL is OFF100 codes
+2022-01-29 18:12:56.799 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: DTC_NUMBER, rawCmdResult: 7EA064101000400007EB064101000400007E80641010107E500
+2022-01-29 18:12:57.168 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:57.168 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0E 80 
+2022-01-29 18:12:57.168 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:57.168 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 0E 80 
+2022-01-29 18:12:57.168 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:57.168 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410E80
+2022-01-29 18:12:57.169 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:57.169 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410E80
+2022-01-29 18:12:57.170 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:57.170 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 232]
+2022-01-29 18:12:57.170 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[37] from queue...
+2022-01-29 18:12:57.170 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:57.183 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TIMING_ADVANCE, cmdResult: 20.4%
+2022-01-29 18:12:57.183 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TIMING_ADVANCE, rawCmdResult: 7E803410E80
+2022-01-29 18:12:57.652 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.StringIndexOutOfBoundsException: length=31; index=32
+2022-01-29 18:12:57.653 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=31; index=32
+2022-01-29 18:12:57.653 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[38] from queue...
+2022-01-29 18:12:57.653 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:57.653 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[39] from queue...
+2022-01-29 18:12:57.654 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:57.657 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TROUBLE_CODES, cmdResult: 7EA0243007EB0243007E80443010463
+2022-01-29 18:12:57.657 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: TROUBLE_CODES, rawCmdResult: 
+2022-01-29 18:12:57.658 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: VIN, cmdResult: ~Ctçè!KVGED1B~$£3S
+2022-01-29 18:12:57.658 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: VIN, rawCmdResult: 7E8101449020131474E7E8214B5647454431427E8224A333131383538
+2022-01-29 18:12:58.032 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:58.032 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 04 00 
+2022-01-29 18:12:58.032 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:58.032 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 04 00 
+2022-01-29 18:12:58.032 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:58.033 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410400
+2022-01-29 18:12:58.034 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:58.034 11320-11391/com.example.ids_for_can D/ContentValues: 7E803410400
+2022-01-29 18:12:58.034 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:58.034 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 16, 64]
+2022-01-29 18:12:58.034 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[40] from queue...
+2022-01-29 18:12:58.035 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:58.037 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_LOAD, cmdResult: 20.4%
+2022-01-29 18:12:58.037 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_LOAD, rawCmdResult: 7E803410400
+2022-01-29 18:12:58.241 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:58.241 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 0C 00 00 
+2022-01-29 18:12:58.241 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:58.241 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 0C 00 00 
+2022-01-29 18:12:58.241 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:58.241 11320-11391/com.example.ids_for_can D/ContentValues: 7E804410C0000
+2022-01-29 18:12:58.243 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:58.243 11320-11391/com.example.ids_for_can D/ContentValues: 7E804410C0000
+2022-01-29 18:12:58.243 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:58.243 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 16, 192, 0]
+2022-01-29 18:12:58.243 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[41] from queue...
+2022-01-29 18:12:58.244 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:58.247 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RPM, cmdResult: 4356RPM
+2022-01-29 18:12:58.248 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RPM, rawCmdResult: 7E804410C0000
+2022-01-29 18:12:58.439 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:58.439 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 1F 00 00 
+2022-01-29 18:12:58.440 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:58.440 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 1F 00 00 
+2022-01-29 18:12:58.440 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:58.440 11320-11391/com.example.ids_for_can D/ContentValues: 7E804411F0000
+2022-01-29 18:12:58.442 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:58.442 11320-11391/com.example.ids_for_can D/ContentValues: 7E804411F0000
+2022-01-29 18:12:58.442 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:58.442 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 17, 240, 0]
+2022-01-29 18:12:58.442 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[42] from queue...
+2022-01-29 18:12:58.442 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:58.446 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RUNTIME, cmdResult: 04:50:25
+2022-01-29 18:12:58.446 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: ENGINE_RUNTIME, rawCmdResult: 7E804411F0000
+2022-01-29 18:12:58.778 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:58.778 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 10 00 00 
+2022-01-29 18:12:58.778 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:58.778 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 04 41 10 00 00 
+2022-01-29 18:12:58.778 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:58.778 11320-11391/com.example.ids_for_can D/ContentValues: 7E80441100000
+2022-01-29 18:12:58.780 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:58.780 11320-11391/com.example.ids_for_can D/ContentValues: 7E80441100000
+2022-01-29 18:12:58.780 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:58.780 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 68, 17, 0, 0]
+2022-01-29 18:12:58.780 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[43] from queue...
+2022-01-29 18:12:58.780 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:58.783 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MAF, cmdResult: 174.25g/s
+2022-01-29 18:12:58.783 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MAF, rawCmdResult: 7E80441100000
+2022-01-29 18:12:59.114 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:59.114 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 11 53 
+2022-01-29 18:12:59.114 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:59.114 11320-11391/com.example.ids_for_can D/ContentValues: 7E8 03 41 11 53 
+2022-01-29 18:12:59.114 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:59.114 11320-11391/com.example.ids_for_can D/ContentValues: 7E803411153
+2022-01-29 18:12:59.116 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 18:12:59.116 11320-11391/com.example.ids_for_can D/ContentValues: 7E803411153
+2022-01-29 18:12:59.116 11320-11391/com.example.ids_for_can D/ContentValues: fillBuffer -- buffer
+2022-01-29 18:12:59.116 11320-11391/com.example.ids_for_can D/ContentValues: [126, 128, 52, 17, 21]
+2022-01-29 18:12:59.117 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[44] from queue...
+2022-01-29 18:12:59.117 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:59.120 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: THROTTLE_POS, cmdResult: 20.4%
+2022-01-29 18:12:59.121 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: THROTTLE_POS, rawCmdResult: 7E803411153
+2022-01-29 18:12:59.664 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 18:12:59.664 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:59.664 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 18:12:59.664 11320-11391/com.example.ids_for_can D/ContentValues: NO DATA
+2022-01-29 18:12:59.665 11320-11391/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 18:12:59.665 11320-11391/com.example.ids_for_can D/ContentValues: NODATA
+2022-01-29 18:12:59.666 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NoDataException: Error running 01 51, response: NODATA
+2022-01-29 18:12:59.667 11320-11391/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running 01 51, response: NODATA
+2022-01-29 18:12:59.667 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[45] from queue...
+2022-01-29 18:12:59.667 11320-11391/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 18:12:59.669 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_TYPE, cmdResult: NODATA
+2022-01-29 18:12:59.669 11320-11320/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: FUEL_TYPE, rawCmdResult: 
+

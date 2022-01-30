@@ -1,0 +1,499 @@
+2022-01-29 19:17:57.537 29705-29705/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+    java.lang.IllegalStateException: UserHandle{10} is locked or not running.
+    java.lang.IllegalStateException: UserHandle{10} is locked or not running.
+2022-01-29 19:17:57.577 29705-29705/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 19:17:57.623 29705-29705/? V/studio.deploy: Startup agent attached to VM
+2022-01-29 19:17:57.623 29705-29705/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-01-29 19:17:57.624 29705-29705/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-01-29 19:17:57.624 29705-29705/? V/studio.deploy: Applying transforms with cached classes
+    java.lang.IllegalStateException: UserHandle{10} is locked or not running.
+        at com.android.server.appsearch.AppSearchManagerService.access$900(AppSearchManagerService.java:90)
+        at com.android.server.appsearch.AppSearchManagerService.verifyUserUnlocked(AppSearchManagerService.java:296)
+2022-01-29 19:17:57.619 29705-29705/? W/re-initialized>: type=1400 audit(0.0:55971): avc: granted { execute } for path="/data/data/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-24" ino=250599 scontext=u:r:untrusted_app:s0:c120,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c120,c257,c512,c768 tclass=file app=com.example.ids_for_can
+        at com.android.server.appsearch.AppSearchManagerService.access$900(AppSearchManagerService.java:90)
+        at com.android.server.appsearch.AppSearchManagerService$AppSearchStorageStatsAugmenter.augmentStatsForPackageForUser(AppSearchManagerService.java:1407)
+2022-01-29 19:17:57.632 29705-29705/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+        at com.android.server.usage.StorageStatsService.lambda$queryStatsForPackage$0(StorageStatsService.java:341)
+        at com.android.server.appsearch.AppSearchManagerService$AppSearchStorageStatsAugmenter.augmentStatsForPackageForUser(AppSearchManagerService.java:1407)
+2022-01-29 19:17:57.632 29705-29705/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+        at com.android.server.usage.StorageStatsService$$ExternalSyntheticLambda2.accept(Unknown Source:10)
+        at com.android.server.usage.StorageStatsService.lambda$queryStatsForPackage$0(StorageStatsService.java:341)
+2022-01-29 19:17:57.635 29705-29705/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10376; state: ENABLED
+        at com.android.server.usage.StorageStatsService.forEachStorageStatsAugmenter(StorageStatsService.java:788)
+        at com.android.server.usage.StorageStatsService$$ExternalSyntheticLambda2.accept(Unknown Source:10)
+        at com.android.server.usage.StorageStatsService$$ExternalSyntheticLambda0.accept(Unknown Source:8)
+2022-01-29 19:17:57.747 29705-29705/com.example.ids_for_can V/GraphicsEnvironment: ANGLE Developer option for 'com.example.ids_for_can' set to: 'default'
+        at com.android.server.usage.StorageStatsService.forEachStorageStatsAugmenter(StorageStatsService.java:788)
+        at com.android.server.usage.StorageStatsService.queryStatsForUid(StorageStatsService.java:405)
+        at com.android.server.usage.StorageStatsService.queryStatsForPackage(StorageStatsService.java:316)
+        at android.app.usage.IStorageStatsManager$Stub.onTransact(IStorageStatsManager.java:261)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+        at android.os.Binder.execTransact(Binder.java:1143)
+2022-01-29 19:17:57.747 29705-29705/com.example.ids_for_can V/GraphicsEnvironment: ANGLE GameManagerService for com.example.ids_for_can: false
+2022-01-29 19:16:46.620 1907-4242/? E/AppSearchManagerService: Unable to augment storage stats for uid 1010302
+        at com.android.server.appsearch.AppSearchManagerService.access$900(AppSearchManagerService.java:90)
+    java.lang.IllegalStateException: UserHandle{10} is locked or not running.
+        at com.android.server.appsearch.AppSearchManagerService$AppSearchStorageStatsAugmenter.augmentStatsForUid(AppSearchManagerService.java:1432)
+        at com.android.server.appsearch.AppSearchManagerService.verifyUserUnlocked(AppSearchManagerService.java:296)
+        at com.android.server.usage.StorageStatsService.lambda$queryStatsForUid$1(StorageStatsService.java:406)
+        at com.android.server.appsearch.AppSearchManagerService.access$900(AppSearchManagerService.java:90)
+        at com.android.server.usage.StorageStatsService$$ExternalSyntheticLambda0.accept(Unknown Source:8)
+        at com.android.server.appsearch.AppSearchManagerService$AppSearchStorageStatsAugmenter.augmentStatsForUid(AppSearchManagerService.java:1432)
+        at com.android.server.usage.StorageStatsService.forEachStorageStatsAugmenter(StorageStatsService.java:788)
+        at com.android.server.usage.StorageStatsService.lambda$queryStatsForUid$1(StorageStatsService.java:406)
+        at com.android.server.usage.StorageStatsService.queryStatsForUid(StorageStatsService.java:405)
+2022-01-29 19:17:57.747 29705-29705/com.example.ids_for_can V/GraphicsEnvironment: Updatable production driver is not supported on the device.
+        at com.android.server.usage.StorageStatsService.lambda$queryStatsForUid$1(StorageStatsService.java:406)
+        at com.android.server.usage.StorageStatsService$$ExternalSyntheticLambda0.accept(Unknown Source:8)
+        at com.android.server.usage.StorageStatsService$$ExternalSyntheticLambda0.accept(Unknown Source:8)
+        at com.android.server.usage.StorageStatsService.forEachStorageStatsAugmenter(StorageStatsService.java:788)
+        at com.android.server.usage.StorageStatsService.forEachStorageStatsAugmenter(StorageStatsService.java:788)
+        at com.android.server.usage.StorageStatsService.queryStatsForUid(StorageStatsService.java:405)
+2022-01-29 19:17:57.751 29705-29705/com.example.ids_for_can D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+        at com.android.server.usage.StorageStatsService.queryStatsForUid(StorageStatsService.java:405)
+        at com.android.server.usage.StorageStatsService.queryStatsForPackage(StorageStatsService.java:316)
+        at com.android.server.usage.StorageStatsService.queryStatsForPackage(StorageStatsService.java:316)
+        at android.app.usage.IStorageStatsManager$Stub.onTransact(IStorageStatsManager.java:261)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+        at android.app.usage.IStorageStatsManager$Stub.onTransact(IStorageStatsManager.java:261)
+        at android.os.Binder.execTransact(Binder.java:1143)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+        at android.os.Binder.execTransact(Binder.java:1143)
+        at android.os.Binder.execTransact(Binder.java:1143)
+2022-01-29 19:17:57.751 29705-29705/com.example.ids_for_can D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+2022-01-29 19:17:57.537 29705-29705/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+2022-01-29 19:17:57.537 29705-29705/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+2022-01-29 19:17:57.577 29705-29705/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 19:17:57.577 29705-29705/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 19:17:57.623 29705-29705/? V/studio.deploy: Startup agent attached to VM
+2022-01-29 19:17:57.623 29705-29705/? V/studio.deploy: Startup agent attached to VM
+2022-01-29 19:17:57.623 29705-29705/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-01-29 19:17:57.623 29705-29705/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-01-29 19:17:57.624 29705-29705/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-01-29 19:17:57.624 29705-29705/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-01-29 19:17:57.624 29705-29705/? V/studio.deploy: Applying transforms with cached classes
+2022-01-29 19:17:57.624 29705-29705/? V/studio.deploy: Applying transforms with cached classes
+2022-01-29 19:17:57.619 29705-29705/? W/re-initialized>: type=1400 audit(0.0:55971): avc: granted { execute } for path="/data/data/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-24" ino=250599 scontext=u:r:untrusted_app:s0:c120,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c120,c257,c512,c768 tclass=file app=com.example.ids_for_can
+2022-01-29 19:17:57.619 29705-29705/? W/re-initialized>: type=1400 audit(0.0:55971): avc: granted { execute } for path="/data/data/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-24" ino=250599 scontext=u:r:untrusted_app:s0:c120,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c120,c257,c512,c768 tclass=file app=com.example.ids_for_can
+2022-01-29 19:17:57.632 29705-29705/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+2022-01-29 19:17:57.632 29705-29705/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+2022-01-29 19:17:57.632 29705-29705/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+2022-01-29 19:17:57.632 29705-29705/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+2022-01-29 19:17:57.635 29705-29705/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10376; state: ENABLED
+2022-01-29 19:17:57.635 29705-29705/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10376; state: ENABLED
+2022-01-29 19:17:57.783 29705-29705/com.example.ids_for_can D/roboguice.RoboGuice: Using full reflection. Try using RoboGuice annotation processor for better performance.
+2022-01-29 19:17:57.884 29705-29705/com.example.ids_for_can D//LnImpl.java:29: main Configuring Logging, minimum log level is VERBOSE
+2022-01-29 19:17:57.924 29705-29705/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10376; state: ENABLED
+2022-01-29 19:17:57.936 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: BLUETOOTH PERMISSION GRANTED!
+2022-01-29 19:17:57.940 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Entered onStart...
+2022-01-29 19:17:57.944 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Resuming...
+2022-01-29 19:17:57.976 29705-29732/com.example.ids_for_can I/AdrenoGLES-0: QUALCOMM build                   : 4783c89, I46ff5fc46f
+    Build Date                       : 11/30/20
+    OpenGL ES Shader Compiler Version: EV031.31.04.01
+    Local Branch                     : QPR2
+    Remote Branch                    : 
+    Remote Branch                    : 
+    Reconstruct Branch               : 
+2022-01-29 19:17:57.976 29705-29732/com.example.ids_for_can I/AdrenoGLES-0: Build Config                     : S P 10.0.4 AArch64
+2022-01-29 19:17:57.976 29705-29732/com.example.ids_for_can I/AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+2022-01-29 19:17:57.976 29705-29732/com.example.ids_for_can D/hw-ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 19:17:57.979 29705-29732/com.example.ids_for_can I/AdrenoGLES-0: PFP: 0x016dd093, ME: 0x00000000
+2022-01-29 19:17:57.985 29705-29732/com.example.ids_for_can W/AdrenoUtils: <ReadGpuID_from_sysfs:197>: Failed to open /sys/class/kgsl/kgsl-3d0/gpu_model
+2022-01-29 19:17:57.985 29705-29732/com.example.ids_for_can W/AdrenoUtils: <ReadGpuID:221>: Failed to read chip ID from gpu_model. Fallback to use the GSL path
+2022-01-29 19:17:57.990 29705-29732/com.example.ids_for_can D/hw-ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-01-29 19:17:58.005 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Creating menu...
+2022-01-29 19:17:59.625 29705-29720/com.example.ids_for_can W/System: A resource failed to call close. 
+2022-01-29 19:18:02.568 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Starting monitoring...
+2022-01-29 19:18:02.568 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Binding OBD service..
+2022-01-29 19:18:02.606 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Creating service...
+2022-01-29 19:18:02.606 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Service created.
+2022-01-29 19:18:02.607 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Executing queue...
+2022-01-29 19:18:02.618 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: ComponentInfo{com.example.ids_for_can/com.example.ids_for_can.connectivity.ObdGatewayService} service is bound
+2022-01-29 19:18:02.618 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: START LIVE DATA
+2022-01-29 19:18:02.618 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting service...
+2022-01-29 19:18:02.618 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Stopping Bluetooth discovery.
+2022-01-29 19:18:02.621 29705-29705/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10376; state: ENABLED
+2022-01-29 19:18:02.627 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting OBD connection...
+2022-01-29 19:18:02.628 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.BluetoothManager: Starting Bluetooth connection...
+2022-01-29 19:18:05.906 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Queueing jobs for connection configuration...
+2022-01-29 19:18:05.908 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[1] to queue...
+2022-01-29 19:18:05.909 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:05.909 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[1] from queue...
+2022-01-29 19:18:05.909 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:05.995 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:05.995 29705-29770/com.example.ids_for_can D/ContentValues: STOPPED
+2022-01-29 19:18:05.995 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:05.995 29705-29770/com.example.ids_for_can D/ContentValues: STOPPED
+2022-01-29 19:18:05.996 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:05.996 29705-29770/com.example.ids_for_can D/ContentValues: STOPPED
+2022-01-29 19:18:05.999 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.StoppedException: Error running AT Z, response: STOPPED
+2022-01-29 19:18:05.999 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT Z, response: STOPPED
+2022-01-29 19:18:06.410 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[2] to queue...
+2022-01-29 19:18:06.410 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:06.410 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[3] to queue...
+2022-01-29 19:18:06.410 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[2] from queue...
+2022-01-29 19:18:06.411 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:06.411 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:06.411 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[4] to queue...
+2022-01-29 19:18:06.411 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:06.411 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:06.411 29705-29770/com.example.ids_for_can D/ContentValues: ?
+2022-01-29 19:18:06.411 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[5] to queue...
+2022-01-29 19:18:06.411 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:06.412 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:06.412 29705-29770/com.example.ids_for_can D/ContentValues: ?
+2022-01-29 19:18:06.412 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:06.412 29705-29770/com.example.ids_for_can D/ContentValues: ?
+2022-01-29 19:18:06.412 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[6] to queue...
+2022-01-29 19:18:06.412 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:06.413 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[7] to queue...
+2022-01-29 19:18:06.413 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:06.413 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Initialization jobs queued.
+2022-01-29 19:18:06.414 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.MisunderstoodCommandException: Error running AT E0, response: ?
+2022-01-29 19:18:06.414 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT E0, response: ?
+2022-01-29 19:18:06.418 29705-29705/com.example.ids_for_can I/Choreographer: Skipped 342 frames!  The application may be doing too much work on its main thread.
+2022-01-29 19:18:06.421 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[3] from queue...
+2022-01-29 19:18:06.421 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:06.426 29705-29732/com.example.ids_for_can D/OpenGLRenderer: endAllActiveAnimators on 0xb400007c4c339df0 (MenuPopupWindow$MenuDropDownListView) with handle 0xb400007b5c336ed0
+2022-01-29 19:18:06.446 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Reset OBD, cmdResult: STOPPED
+2022-01-29 19:18:06.447 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Reset OBD, rawCmdResult: 
+2022-01-29 19:18:06.451 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: ?
+2022-01-29 19:18:06.451 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: 
+2022-01-29 19:18:06.456 29705-29736/com.example.ids_for_can I/OpenGLRenderer: Davey! duration=3823ms; Flags=0, FrameTimelineVsyncId=6472494, IntendedVsync=323638971777714, Vsync=323642771777676, InputEventId=0, HandleInputStart=323642772494528, AnimationStart=323642772499059, PerformTraversalsStart=323642789329790, DrawStart=323642790412082, FrameDeadline=323638992277714, FrameInterval=323642772353278, FrameStartTime=11111111, SyncQueued=323642792097603, SyncStart=323642792186092, IssueDrawCommandsStart=323642792312707, SwapBuffers=323642793349009, FrameCompleted=323642795751822, DequeueBufferDuration=24271, QueueBufferDuration=1443751, GpuCompleted=323642795751822, SwapBuffersCompleted=323642795374374, DisplayPresentTime=0, 
+2022-01-29 19:18:06.533 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:06.533 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.533 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:06.533 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.534 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:06.534 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.537 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[4] from queue...
+2022-01-29 19:18:06.537 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:06.544 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: OK
+2022-01-29 19:18:06.545 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: OK
+2022-01-29 19:18:06.568 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:06.568 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.568 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:06.568 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.568 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:06.568 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.571 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[5] from queue...
+2022-01-29 19:18:06.571 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:06.577 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed Off, cmdResult: OK
+2022-01-29 19:18:06.577 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed Off, rawCmdResult: OK
+2022-01-29 19:18:06.644 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:06.644 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.644 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:06.644 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.644 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:06.644 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.648 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[6] from queue...
+2022-01-29 19:18:06.648 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:06.649 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:06.649 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.649 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:06.649 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.650 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:06.650 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.653 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[7] from queue...
+2022-01-29 19:18:06.653 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:06.654 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Timeout, cmdResult: OK
+2022-01-29 19:18:06.654 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Timeout, rawCmdResult: OK
+2022-01-29 19:18:06.671 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol AUTO, cmdResult: OK
+2022-01-29 19:18:06.671 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol AUTO, rawCmdResult: OK
+2022-01-29 19:18:06.736 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:06.737 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.737 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:06.737 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.737 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:06.737 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.740 29705-29770/com.example.ids_for_can D/ContentValues: fillBuffer -- rawData
+2022-01-29 19:18:06.740 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:06.741 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.NonNumericResponseException: Error reading response: OK
+2022-01-29 19:18:06.741 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error reading response: OK
+2022-01-29 19:18:06.746 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, cmdResult: OK
+2022-01-29 19:18:06.746 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, rawCmdResult: 
+2022-01-29 19:18:10.616 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[1] to queue...
+2022-01-29 19:18:10.616 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.617 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[2] to queue...
+2022-01-29 19:18:10.617 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.617 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[3] to queue...
+2022-01-29 19:18:10.617 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[1] from queue...
+2022-01-29 19:18:10.617 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.618 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:10.618 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[4] to queue...
+2022-01-29 19:18:10.618 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.619 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[5] to queue...
+2022-01-29 19:18:10.619 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.619 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[6] to queue...
+2022-01-29 19:18:10.619 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.620 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[7] to queue...
+2022-01-29 19:18:10.620 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:10.815 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:10.815 29705-29770/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 19:18:10.816 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:10.816 29705-29770/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 19:18:10.816 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:10.816 29705-29770/com.example.ids_for_can D/ContentValues: ELM327v1.5
+2022-01-29 19:18:10.820 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[2] from queue...
+2022-01-29 19:18:10.820 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:10.827 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: WarmStart OBD, cmdResult: ELM327v1.5
+2022-01-29 19:18:10.827 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: WarmStart OBD, rawCmdResult: ELM327v1.5
+2022-01-29 19:18:11.052 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:11.052 29705-29770/com.example.ids_for_can D/ContentValues: AT L1OK
+2022-01-29 19:18:11.052 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:11.052 29705-29770/com.example.ids_for_can D/ContentValues: AT L1OK
+2022-01-29 19:18:11.053 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:11.053 29705-29770/com.example.ids_for_can D/ContentValues: ATL1OK
+2022-01-29 19:18:11.057 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[3] from queue...
+2022-01-29 19:18:11.057 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:11.064 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed On, cmdResult: ATL1OK
+2022-01-29 19:18:11.064 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed On, rawCmdResult: ATL1OK
+2022-01-29 19:18:11.209 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:11.209 29705-29770/com.example.ids_for_can D/ContentValues: AT E0
+    OK
+2022-01-29 19:18:11.210 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:11.210 29705-29770/com.example.ids_for_can D/ContentValues: AT E0
+    OK
+2022-01-29 19:18:11.210 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:11.210 29705-29770/com.example.ids_for_can D/ContentValues: ATE0OK
+2022-01-29 19:18:11.213 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[4] from queue...
+2022-01-29 19:18:11.213 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:11.215 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: ATE0OK
+2022-01-29 19:18:11.216 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: ATE0OK
+2022-01-29 19:18:11.373 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:11.373 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.373 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:11.373 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.373 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:11.373 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.377 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[5] from queue...
+2022-01-29 19:18:11.377 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:11.383 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Spaces On, cmdResult: OK
+2022-01-29 19:18:11.383 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Spaces On, rawCmdResult: OK
+2022-01-29 19:18:11.577 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:11.578 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.578 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:11.578 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.578 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:11.578 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.582 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[6] from queue...
+2022-01-29 19:18:11.582 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:11.589 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Headers Enabled, cmdResult: OK
+2022-01-29 19:18:11.589 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Headers Enabled, rawCmdResult: OK
+2022-01-29 19:18:11.706 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:11.706 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.707 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:11.707 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.707 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:11.707 29705-29770/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 19:18:11.710 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[7] from queue...
+2022-01-29 19:18:11.710 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:11.716 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol ISO_15765_4_CAN, cmdResult: OK
+2022-01-29 19:18:11.716 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol ISO_15765_4_CAN, rawCmdResult: OK
+2022-01-29 19:18:12.222 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:12.222 29705-29770/com.example.ids_for_can D/ContentValues: 1CD 07 FF 08 01 7F 
+    1E5 46 00 80 A0 00 FF 7F 00 <DATA ERROR
+    1E9 00 00 00 0C 00 00 00 00 
+    1EB 01 83 
+    0C9 00 00 00 00 00 00 00 00 
+    191 09 1E 09 1E 09 1E 00 00 <DATA ERROR
+    0F1 34 06 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C1 07 65 04 00 00 00 00 00 
+    3D1 0
+    BUFFER FULL
+2022-01-29 19:18:12.223 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:12.223 29705-29770/com.example.ids_for_can D/ContentValues: 1CD 07 FF 08 01 7F 
+    1E5 46 00 80 A0 00 FF 7F 00 <DATA ERROR
+    1E9 00 00 00 0C 00 00 00 00 
+    1EB 01 83 
+    0C9 00 00 00 00 00 00 00 00 
+    191 09 1E 09 1E 09 1E 00 00 <DATA ERROR
+    0F1 34 06 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C1 07 65 04 00 00 00 00 00 
+    3D1 0
+    BUFFER FULL
+2022-01-29 19:18:12.226 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:12.226 29705-29770/com.example.ids_for_can D/ContentValues: 1CD07FF08017F1E5460080A000FF7F00<DATAERROR1E90000000C000000001EB01830C90000000000000000191091E091E091E0000<DATAERROR0F13406001ED00000000000008001EF000000003C107650400000000003D10BUFFERFULL
+2022-01-29 19:18:12.230 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 1CD07FF08017F1E5460080A000FF7F00<DATAERROR1E90000000C000000001EB01830C90000000000000000191091E091E091E0000<DATAERROR0F13406001ED00000000000008001EF000000003C107650400000000003D10BUFFERFULL
+2022-01-29 19:18:12.230 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 1CD07FF08017F1E5460080A000FF7F00<DATAERROR1E90000000C000000001EB01830C90000000000000000191091E091E091E0000<DATAERROR0F13406001ED00000000000008001EF000000003C107650400000000003D10BUFFERFULL
+2022-01-29 19:18:12.234 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1CD07FF08017F1E5460080A000FF7F00<DATAERROR1E90000000C000000001EB01830C90000000000000000191091E091E091E0000<DATAERROR0F13406001ED00000000000008001EF000000003C107650400000000003D10BUFFERFULL
+2022-01-29 19:18:12.234 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 19:18:14.624 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[8] to queue...
+2022-01-29 19:18:14.625 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:14.625 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[8] from queue...
+2022-01-29 19:18:14.625 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:15.075 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:15.075 29705-29770/com.example.ids_for_can D/ContentValues: 1CB 10 00 00 
+    0F1 00 06 00 40 
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00 00 FF 
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    1F3 80 80 <DATA ERROR
+    1EB 01 83 
+    0C9 00 00 00 07 00 00 00 00 
+    191 09 1E 09 1E 09 1E 00 00 <DATA ERROR
+    1ED 00 00 00 00 
+    BUFFER FULL
+2022-01-29 19:18:15.075 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:15.075 29705-29770/com.example.ids_for_can D/ContentValues: 1CB 10 00 00 
+    0F1 00 06 00 40 
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00 00 FF 
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    1F3 80 80 <DATA ERROR
+    1EB 01 83 
+    0C9 00 00 00 07 00 00 00 00 
+    191 09 1E 09 1E 09 1E 00 00 <DATA ERROR
+    1ED 00 00 00 00 
+    BUFFER FULL
+2022-01-29 19:18:15.078 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:15.078 29705-29770/com.example.ids_for_can D/ContentValues: 1CB1000000F1000600400C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1F38080<DATAERROR1EB01830C90000000700000000191091E091E091E0000<DATAERROR1ED00000000BUFFERFULL
+2022-01-29 19:18:15.082 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 1CB1000000F1000600400C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1F38080<DATAERROR1EB01830C90000000700000000191091E091E091E0000<DATAERROR1ED00000000BUFFERFULL
+2022-01-29 19:18:15.082 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 1CB1000000F1000600400C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1F38080<DATAERROR1EB01830C90000000700000000191091E091E091E0000<DATAERROR1ED00000000BUFFERFULL
+2022-01-29 19:18:15.089 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1CB1000000F1000600400C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1F38080<DATAERROR1EB01830C90000000700000000191091E091E091E0000<DATAERROR1ED00000000BUFFERFULL
+2022-01-29 19:18:15.089 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 19:18:18.629 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[9] to queue...
+2022-01-29 19:18:18.629 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:18.630 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[9] from queue...
+2022-01-29 19:18:18.630 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:19.531 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:19.531 29705-29770/com.example.ids_for_can D/ContentValues: 0F1 28 06 00 40 
+    0C9 00 00 00 0A 00 00 00 00 
+    191 09 1E 09 1E 09 1E 00 00 <DATA ERROR
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C1 07 65 04 00 00 00 00 00 
+    1EB 01 83 
+    3D1 00 45 00 00 00 00 00 00 
+    1E1 00 FE 16 00 40 
+    3E9 00 00 00 00 00 00 00 00 
+    19D C0 00 3F FD 00 
+    BUFFER FULL
+2022-01-29 19:18:19.531 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:19.531 29705-29770/com.example.ids_for_can D/ContentValues: 0F1 28 06 00 40 
+    0C9 00 00 00 0A 00 00 00 00 
+    191 09 1E 09 1E 09 1E 00 00 <DATA ERROR
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C1 07 65 04 00 00 00 00 00 
+    1EB 01 83 
+    3D1 00 45 00 00 00 00 00 00 
+    1E1 00 FE 16 00 40 
+    3E9 00 00 00 00 00 00 00 00 
+    19D C0 00 3F FD 00 
+    BUFFER FULL
+2022-01-29 19:18:19.534 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:19.534 29705-29770/com.example.ids_for_can D/ContentValues: 0F1280600400C90000000A00000000191091E091E091E0000<DATAERROR1ED00000000000008001EF000000003C107650400000000001EB01833D100450000000000001E100FE1600403E9000000000000000019DC0003FFD00BUFFERFULL
+2022-01-29 19:18:19.537 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 0F1280600400C90000000A00000000191091E091E091E0000<DATAERROR1ED00000000000008001EF000000003C107650400000000001EB01833D100450000000000001E100FE1600403E9000000000000000019DC0003FFD00BUFFERFULL
+2022-01-29 19:18:19.537 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 0F1280600400C90000000A00000000191091E091E091E0000<DATAERROR1ED00000000000008001EF000000003C107650400000000001EB01833D100450000000000001E100FE1600403E9000000000000000019DC0003FFD00BUFFERFULL
+2022-01-29 19:18:19.540 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0F1280600400C90000000A00000000191091E091E091E0000<DATAERROR1ED00000000000008001EF000000003C107650400000000001EB01833D100450000000000001E100FE1600403E9000000000000000019DC0003FFD00BUFFERFULL
+2022-01-29 19:18:19.540 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 19:18:22.633 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[10] to queue...
+2022-01-29 19:18:22.634 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:22.635 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[10] from queue...
+2022-01-29 19:18:22.635 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:23.540 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:23.540 29705-29770/com.example.ids_for_can D/ContentValues: 0C1 00 00 00 00 00 00 00 00 
+    0C5 00 00 00 00 00 00 00 00 
+    184 00 00 00 00 00 00 
+    19D C0 00 3F FD 00 00 00 FF <DATA ERROR
+    1C7 0F FF 30 01 03 FF 3F <DATA ERROR
+    1AF 00 00 00 
+    1CD 87 FF 07 FF 7F <DATA ERROR
+    1E5 46 00 80 A0 00 FF 7F 00 <DATA ERROR
+    1F5 0F 0F 00 21
+    BUFFER FULL
+2022-01-29 19:18:23.540 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:23.540 29705-29770/com.example.ids_for_can D/ContentValues: 0C1 00 00 00 00 00 00 00 00 
+    0C5 00 00 00 00 00 00 00 00 
+    184 00 00 00 00 00 00 
+    19D C0 00 3F FD 00 00 00 FF <DATA ERROR
+    1C7 0F FF 30 01 03 FF 3F <DATA ERROR
+    1AF 00 00 00 
+    1CD 87 FF 07 FF 7F <DATA ERROR
+    1E5 46 00 80 A0 00 FF 7F 00 <DATA ERROR
+    1F5 0F 0F 00 21
+    BUFFER FULL
+2022-01-29 19:18:23.543 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:23.543 29705-29770/com.example.ids_for_can D/ContentValues: 0C100000000000000000C5000000000000000018400000000000019DC0003FFD000000FF<DATAERROR1C70FFF300103FF3F<DATAERROR1AF0000001CD87FF07FF7F<DATAERROR1E5460080A000FF7F00<DATAERROR1F50F0F0021BUFFERFULL
+2022-01-29 19:18:23.545 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 0C100000000000000000C5000000000000000018400000000000019DC0003FFD000000FF<DATAERROR1C70FFF300103FF3F<DATAERROR1AF0000001CD87FF07FF7F<DATAERROR1E5460080A000FF7F00<DATAERROR1F50F0F0021BUFFERFULL
+2022-01-29 19:18:23.545 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 0C100000000000000000C5000000000000000018400000000000019DC0003FFD000000FF<DATAERROR1C70FFF300103FF3F<DATAERROR1AF0000001CD87FF07FF7F<DATAERROR1E5460080A000FF7F00<DATAERROR1F50F0F0021BUFFERFULL
+2022-01-29 19:18:23.554 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0C100000000000000000C5000000000000000018400000000000019DC0003FFD000000FF<DATAERROR1C70FFF300103FF3F<DATAERROR1AF0000001CD87FF07FF7F<DATAERROR1E5460080A000FF7F00<DATAERROR1F50F0F0021BUFFERFULL
+2022-01-29 19:18:23.554 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 19:18:26.639 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[11] to queue...
+2022-01-29 19:18:26.639 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:26.640 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[11] from queue...
+2022-01-29 19:18:26.640 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:26.999 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:26.999 29705-29770/com.example.ids_for_can D/ContentValues: 1F5 0F 0F 00 21 00 00 03 00 <DATA ERROR
+    2C3 86 31 06 B8 06 B8 C1 00 <DATA ERROR
+    0F1 34 06 00 
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00 00 FF 
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    1E1 00 FF 15 00 20 
+    0C9 00 00 00 0A 00 00 00 00 
+    191 09
+    BUFFER FULL
+2022-01-29 19:18:26.999 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:26.999 29705-29770/com.example.ids_for_can D/ContentValues: 1F5 0F 0F 00 21 00 00 03 00 <DATA ERROR
+    2C3 86 31 06 B8 06 B8 C1 00 <DATA ERROR
+    0F1 34 06 00 
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00 00 FF 
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    1E1 00 FF 15 00 20 
+    0C9 00 00 00 0A 00 00 00 00 
+    191 09
+    BUFFER FULL
+2022-01-29 19:18:27.002 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:27.002 29705-29770/com.example.ids_for_can D/ContentValues: 1F50F0F002100000300<DATAERROR2C3863106B806B8C100<DATAERROR0F13406000C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1E100FF1500200C90000000A0000000019109BUFFERFULL
+2022-01-29 19:18:27.004 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 1F50F0F002100000300<DATAERROR2C3863106B806B8C100<DATAERROR0F13406000C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1E100FF1500200C90000000A0000000019109BUFFERFULL
+2022-01-29 19:18:27.004 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 1F50F0F002100000300<DATAERROR2C3863106B806B8C100<DATAERROR0F13406000C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1E100FF1500200C90000000A0000000019109BUFFERFULL
+2022-01-29 19:18:27.020 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1F50F0F002100000300<DATAERROR2C3863106B806B8C100<DATAERROR0F13406000C703FE00000F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR1E100FF1500200C90000000A0000000019109BUFFERFULL
+2022-01-29 19:18:27.020 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 19:18:30.644 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[12] to queue...
+2022-01-29 19:18:30.644 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:30.645 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[12] from queue...
+2022-01-29 19:18:30.645 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 19:18:31.196 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- res
+2022-01-29 19:18:31.196 29705-29770/com.example.ids_for_can D/ContentValues: 0C1 20 00 00 00 20 00 00 00 
+    0C5 20 00 00 00 20 00 00 00 
+    184 00 01 00 00 01 FF 
+    1C7 0F FF 70 00 03 FF 3F <DATA ERROR
+    1CD C7 FF 07 FE 7F <DATA ERROR
+    1E5 46 00 80 E0 00 FF 7D 00 <DATA ERROR
+    19D C0 00 3F FD 00 00 00 FF <DATA ERROR
+    CAN ERROR
+    1E9 00 00 00 0C 00
+    BUFFER FULL
+2022-01-29 19:18:31.197 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 19:18:31.197 29705-29770/com.example.ids_for_can D/ContentValues: 0C1 20 00 00 00 20 00 00 00 
+    0C5 20 00 00 00 20 00 00 00 
+    184 00 01 00 00 01 FF 
+    1C7 0F FF 70 00 03 FF 3F <DATA ERROR
+    1CD C7 FF 07 FE 7F <DATA ERROR
+    1E5 46 00 80 E0 00 FF 7D 00 <DATA ERROR
+    19D C0 00 3F FD 00 00 00 FF <DATA ERROR
+    CAN ERROR
+    1E9 00 00 00 0C 00
+    BUFFER FULL
+2022-01-29 19:18:31.199 29705-29770/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 19:18:31.199 29705-29770/com.example.ids_for_can D/ContentValues: 0C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR19DC0003FFD000000FF<DATAERRORCANERROR1E90000000C00BUFFERFULL
+2022-01-29 19:18:31.202 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: com.github.pires.obd.exceptions.UnknownErrorException: Error running AT MA, response: 0C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR19DC0003FFD000000FF<DATAERRORCANERROR1E90000000C00BUFFERFULL
+2022-01-29 19:18:31.202 29705-29770/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> Error running AT MA, response: 0C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR19DC0003FFD000000FF<DATAERRORCANERROR1E90000000C00BUFFERFULL
+2022-01-29 19:18:31.205 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR19DC0003FFD000000FF<DATAERRORCANERROR1E90000000C00BUFFERFULL
+2022-01-29 19:18:31.205 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-01-29 19:18:34.649 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[13] to queue...
+2022-01-29 19:18:34.650 29705-29705/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 19:18:34.650 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[13] from queue...
+2022-01-29 19:18:34.650 29705-29770/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+

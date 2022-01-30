@@ -14,15 +14,17 @@ package com.github.pires.obd.commands;
 
 import static android.content.ContentValues.TAG;
 
+import static com.example.ids_for_can.MainActivity.IDSOn;
+
 import android.util.Log;
 
-import com.example.ids_for_can.MainActivity;
 import com.github.pires.obd.exceptions.*;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 /**
@@ -50,6 +52,8 @@ public abstract class ObdCommand {
     protected Long responseDelayInMs = null;
     private long start;
     private long end;
+    private String ATMAString;
+    public static HashMap<String, ArrayList<String>> ATMAMap = new HashMap<>();
 
     /**
      * Default ctor to use
@@ -88,7 +92,7 @@ public abstract class ObdCommand {
      */
     public void run(InputStream in, OutputStream out) throws IOException,
             InterruptedException {
-        synchronized (ObdCommand.class) {//Only one command can write and read a data in one time.
+        synchronized (ObdCommand.class) { //Only one command can write and read a data at one time.
             start = System.currentTimeMillis();
             sendCommand(out);
             readResult(in);
@@ -143,9 +147,13 @@ public abstract class ObdCommand {
      */
     protected void readResult(InputStream in) throws IOException {
         readRawData(in);
-        checkForErrors();
-        fillBuffer();
-        performCalculations();
+        if (IDSOn) {
+            processAndSave();
+        } else {
+            checkForErrors();
+            fillBuffer();
+            performCalculations();
+        }
     }
 
     /**
@@ -168,31 +176,32 @@ public abstract class ObdCommand {
     }
 
     /**
-     * <p>fillBuffer.</p>
+     * <p>
+     * processAndSave.</p>
      */
-    protected void fillBuffer() {
-        Log.d(TAG, "fillBuffer -- rawData");
-        Log.d(TAG, rawData);
+    protected void processAndSave() {
+        String ATMAArray[] = ATMAString.split("\\r?\\n");
 
-        rawData = removeAll(WHITESPACE_PATTERN, rawData); //removes all [ \t\n\x0B\f\r]
-        rawData = removeAll(BUSINIT_PATTERN, rawData);
-
-        if (!DIGITS_LETTERS_PATTERN.matcher(rawData).matches()) {
-            throw new NonNumericResponseException(rawData);
+        Log.d(TAG, "ATMAArray");
+        for (String atma : ATMAArray) {
+            Log.d(TAG, atma);
+            if (!atma.equals("BUFFER FULL") && !atma.equals("NO DATA")) {
+                atma = atma.trim();
+                String temp[] = atma.split(" ", 2);
+                String arbitrationId = temp[0];
+                ArrayList<String> data;
+                if (ATMAMap.containsKey(arbitrationId)) {
+                    data = ATMAMap.get(arbitrationId);
+                } else {
+                    data = new ArrayList<>();
+                }
+                data.add(temp[1]);
+                ATMAMap.put(arbitrationId, data);
+            }
         }
 
-        // read string each two chars
-        buffer.clear();
-        int begin = 0;
-        int end = 2;
-        while (end <= rawData.length()) {
-            buffer.add(Integer.decode("0x" + rawData.substring(begin, end)));
-            begin = end;
-            end += 2;
-        }
-
-        Log.d(TAG, "fillBuffer -- buffer");
-        Log.d(TAG, String.valueOf(buffer));
+        Log.d(TAG, "ATMAMap");
+        Log.d(TAG, String.valueOf(ATMAMap));
     }
 
     /**
@@ -213,18 +222,14 @@ public abstract class ObdCommand {
             c = (char) b;
             if (c == '>') // read until '>' arrives
             {
-                //if (MainActivity.monitoringOn) {
-                    //Log.d(TAG, "Encountered '>' character");
-                    //res.append("\n");
-                //} else {
-                    break;
-                //}
+                break;
             }
             res.append(c);
         }
 
-        Log.d(TAG, "readRawData -- res");
-        Log.d(TAG, res.toString());
+        ATMAString = res.toString();
+        Log.d(TAG, "readRawData -- ATMAString");
+        Log.d(TAG, ATMAString);
 
     /*
      * Imagine the following response 41 0c 00 0d.
@@ -266,6 +271,34 @@ public abstract class ObdCommand {
                 throw messageError;
             }
         }
+    }
+
+    /**
+     * <p>fillBuffer.</p>
+     */
+    protected void fillBuffer() {
+        Log.d(TAG, "fillBuffer -- rawData");
+        Log.d(TAG, rawData);
+
+        rawData = removeAll(WHITESPACE_PATTERN, rawData); //removes all [ \t\n\x0B\f\r]
+        rawData = removeAll(BUSINIT_PATTERN, rawData);
+
+        if (!DIGITS_LETTERS_PATTERN.matcher(rawData).matches()) {
+            throw new NonNumericResponseException(rawData);
+        }
+
+        // read string each two chars
+        buffer.clear();
+        int begin = 0;
+        int end = 2;
+        while (end <= rawData.length()) {
+            buffer.add(Integer.decode("0x" + rawData.substring(begin, end)));
+            begin = end;
+            end += 2;
+        }
+
+        Log.d(TAG, "fillBuffer -- buffer");
+        Log.d(TAG, String.valueOf(buffer));
     }
 
     /**
@@ -315,7 +348,7 @@ public abstract class ObdCommand {
      * @return a String representing a unit or "", never null
      */
     public String getResultUnit() {
-        return "";//no unit by default
+        return ""; //no unit by default
     }
 
     /**

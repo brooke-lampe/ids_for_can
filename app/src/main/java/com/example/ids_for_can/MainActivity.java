@@ -40,7 +40,6 @@ import com.github.pires.obd.commands.MonitorAllCommand;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.commands.protocol.EchoOffCommand;
 import com.github.pires.obd.commands.protocol.HeadersOnCommand;
-import com.github.pires.obd.commands.protocol.LineFeedOffCommand;
 import com.github.pires.obd.commands.protocol.LineFeedOnCommand;
 import com.github.pires.obd.commands.protocol.ObdWarmStartCommand;
 import com.github.pires.obd.commands.protocol.SelectProtocolCommand;
@@ -70,14 +69,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int NO_BLUETOOTH_ID = 0;
     private static final int BLUETOOTH_DISABLED = 1;
     private static final int START_LIVE_DATA = 2;
-    private static final int STOP_LIVE_DATA = 3;
-    private static final int START_MONITORING = 4;
+    private static final int START_IDS = 3;
+    private static final int STOP_LIVE_DATA_OR_IDS = 4;
     private static final int SETTINGS = 5;
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
-    private static boolean initMonitorDone = false;
-    public static boolean monitoringOn = false;
+    private static boolean initIDSDone = false;
+    public static boolean IDSOn = false;
 
     public static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
 
@@ -126,7 +125,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             service.setContext(MainActivity.this);
             Log.d(TAG, "START LIVE DATA");
             try {
-                initMonitorDone = false;
+                initIDSDone = false;
                 service.startService();
                 if (preRequisites)
                     btStatusTextView.setText(getString(R.string.status_bluetooth_connected));
@@ -178,7 +177,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             if (cmdResult != null && isServiceBound && !cmdName.equals("Monitor all")) {
                 obdStatusTextView.setText(cmdResult.toLowerCase());
             } else {
-                obdStatusTextView.setText("Monitoring...");
+                obdStatusTextView.setText(getString(R.string.ids_active));
             }
         } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.BROKEN_PIPE)) {
             if (isServiceBound)
@@ -294,7 +293,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         super.onDestroy();
 
         Log.d(TAG, "Entered onDestroy...");
-        monitoringOn = false;
+        IDSOn = false;
 
         if (isServiceBound) {
             //we don't want to unbind the service
@@ -340,8 +339,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
-        menu.add(0, STOP_LIVE_DATA, 0, getString(R.string.menu_stop_live_data));
-        menu.add(0, START_MONITORING, 0, "Start Monitoring");
+        menu.add(0, START_IDS, 0, getString(R.string.start_ids));
+        menu.add(0, STOP_LIVE_DATA_OR_IDS, 0, getString(R.string.stop_live_data_ids));
         menu.add(0, SETTINGS, 0, getString(R.string.menu_settings));
         Log.d(TAG, "Creating menu...");
         return true;
@@ -353,11 +352,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             case START_LIVE_DATA:
                 startLiveData();
                 return true;
-            case STOP_LIVE_DATA:
-                stopLiveData();
+            case START_IDS:
+                startIDS();
                 return true;
-            case START_MONITORING:
-                startMonitoring();
+            case STOP_LIVE_DATA_OR_IDS:
+                stopLiveData();
                 return true;
             case SETTINGS:
                 updateConfig();
@@ -376,9 +375,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         new Handler().post(mQueueCommands);
     }
 
-    private void startMonitoring() {
-        Log.d(TAG, "Starting monitoring...");
-        monitoringOn = true;
+    private void startIDS() {
+        Log.d(TAG, "Starting IDS...");
+        IDSOn = true;
 
         tl.removeAllViews(); //start fresh
         doBindService();
@@ -389,7 +388,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void stopLiveData() {
         Log.d(TAG, "Stopping live data...");
-        monitoringOn = false;
+        IDSOn = false;
 
         doUnbindService();
     }
@@ -410,16 +409,19 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem startItem = menu.findItem(START_LIVE_DATA);
-        MenuItem stopItem = menu.findItem(STOP_LIVE_DATA);
+        MenuItem idsItem = menu.findItem(START_IDS);
+        MenuItem stopItem = menu.findItem(STOP_LIVE_DATA_OR_IDS);
         MenuItem settingsItem = menu.findItem(SETTINGS);
 
         if (service != null && service.isRunning()) {
             startItem.setEnabled(false);
+            idsItem.setEnabled(false);
             stopItem.setEnabled(true);
             settingsItem.setEnabled(false);
         } else {
             stopItem.setEnabled(false);
             startItem.setEnabled(true);
+            idsItem.setEnabled(true);
             settingsItem.setEnabled(true);
         }
 
@@ -461,7 +463,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void monitorAllCommands() {
         if (isServiceBound) {
-            if (!initMonitorDone) {
+            if (!initIDSDone) {
                 //service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
                 service.queueJob(new ObdCommandJob(new ObdWarmStartCommand()));
                 service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
@@ -469,7 +471,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 service.queueJob(new ObdCommandJob(new SpacesOnCommand()));
                 service.queueJob(new ObdCommandJob(new HeadersOnCommand()));
                 service.queueJob(new ObdCommandJob(new SelectProtocolCommand(ISO_15765_4_CAN)));
-                initMonitorDone = true;
+                initIDSDone = true;
             }
             service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
         }

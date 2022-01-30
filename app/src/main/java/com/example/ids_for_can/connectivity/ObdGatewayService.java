@@ -131,14 +131,14 @@ public class ObdGatewayService extends AbstractGatewayService {
      */
         queueJob(new ObdCommandJob(new EchoOffCommand()));
         //queueJob(new ObdCommandJob(new LineFeedOffCommand()));
-        queueJob(new ObdCommandJob(new TimeoutCommand(62)));
+        queueJob(new ObdCommandJob(new TimeoutCommand(60)));
 
         // Get protocol from preferences
         final String protocol = prefs.getString(ConfigActivity.PROTOCOLS_LIST_KEY, "AUTO");
         queueJob(new ObdCommandJob(new SelectProtocolCommand(ObdProtocols.valueOf(protocol))));
 
         // Job for returning dummy data
-        queueJob(new ObdCommandJob(new AmbientAirTemperatureCommand()));
+        //queueJob(new ObdCommandJob(new AmbientAirTemperatureCommand()));
 
         queueCounter = 0L;
         Log.d(TAG, "Initialization jobs queued.");

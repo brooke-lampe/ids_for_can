@@ -1,0 +1,767 @@
+2022-01-29 21:43:23.795 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Starting IDS...
+2022-01-29 21:43:23.795 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Binding OBD service..
+2022-01-29 21:43:23.838 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Creating service...
+2022-01-29 21:43:23.839 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Service created.
+2022-01-29 21:43:23.840 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Executing queue...
+2022-01-29 21:43:23.852 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: ComponentInfo{com.example.ids_for_can/com.example.ids_for_can.connectivity.ObdGatewayService} service is bound
+2022-01-29 21:43:23.852 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: START LIVE DATA
+2022-01-29 21:43:23.852 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting service...
+2022-01-29 21:43:23.852 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Stopping Bluetooth discovery.
+2022-01-29 21:43:23.855 18617-18617/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10376; state: ENABLED
+    
+    --------- beginning of system
+2022-01-29 21:43:23.862 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting OBD connection...
+2022-01-29 21:43:23.862 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.BluetoothManager: Starting Bluetooth connection...
+2022-01-29 21:43:26.594 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Queueing jobs for connection configuration...
+2022-01-29 21:43:26.596 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[1] to queue...
+2022-01-29 21:43:26.596 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:26.597 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[1] from queue...
+2022-01-29 21:43:26.597 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:27.097 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[2] to queue...
+2022-01-29 21:43:27.098 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:27.098 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[3] to queue...
+2022-01-29 21:43:27.098 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:27.098 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[4] to queue...
+2022-01-29 21:43:27.098 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:27.099 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[5] to queue...
+2022-01-29 21:43:27.099 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:27.100 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[6] to queue...
+2022-01-29 21:43:27.100 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:27.100 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Initialization jobs queued.
+2022-01-29 21:43:27.107 18617-18617/com.example.ids_for_can I/Choreographer: Skipped 293 frames!  The application may be doing too much work on its main thread.
+2022-01-29 21:43:27.113 18617-18643/com.example.ids_for_can D/OpenGLRenderer: endAllActiveAnimators on 0xb400007c4c339df0 (MenuPopupWindow$MenuDropDownListView) with handle 0xb400007b5c3362a0
+2022-01-29 21:43:27.135 18617-18634/com.example.ids_for_can I/OpenGLRenderer: Davey! duration=3277ms; Flags=0, FrameTimelineVsyncId=6591428, IntendedVsync=332360203838823, Vsync=332363459394346, InputEventId=0, HandleInputStart=332363461192642, AnimationStart=332363461198424, PerformTraversalsStart=332363474919050, DrawStart=332363476237071, FrameDeadline=332360224338823, FrameInterval=332363461052590, FrameStartTime=11111111, SyncQueued=332363478119623, SyncStart=332363478311186, IssueDrawCommandsStart=332363478421550, SwapBuffers=332363479308790, FrameCompleted=332363481704572, DequeueBufferDuration=19062, QueueBufferDuration=808333, GpuCompleted=332363481704572, SwapBuffersCompleted=332363480592853, DisplayPresentTime=0, 
+2022-01-29 21:43:27.799 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:27.800 18617-18684/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 21:43:27.800 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:27.800 18617-18684/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 21:43:27.801 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:27.801 18617-18684/com.example.ids_for_can D/ContentValues: ELM327v1.5
+2022-01-29 21:43:27.801 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:27.801 18617-18684/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 21:43:27.801 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:27.802 18617-18684/com.example.ids_for_can D/ContentValues: {ELM327=[v1.5]}
+2022-01-29 21:43:27.802 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[2] from queue...
+2022-01-29 21:43:27.803 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:27.814 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Reset OBD, cmdResult: ELM327v1.5
+2022-01-29 21:43:27.814 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Reset OBD, rawCmdResult: ELM327v1.5
+2022-01-29 21:43:28.011 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:28.011 18617-18684/com.example.ids_for_can D/ContentValues: AT E0OK
+2022-01-29 21:43:28.011 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:28.011 18617-18684/com.example.ids_for_can D/ContentValues: AT E0OK
+2022-01-29 21:43:28.011 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:28.011 18617-18684/com.example.ids_for_can D/ContentValues: ATE0OK
+2022-01-29 21:43:28.012 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:28.012 18617-18684/com.example.ids_for_can D/ContentValues: AT E0OK
+2022-01-29 21:43:28.012 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:28.012 18617-18684/com.example.ids_for_can D/ContentValues: {ELM327=[v1.5], AT=[E0OK]}
+2022-01-29 21:43:28.012 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[3] from queue...
+2022-01-29 21:43:28.012 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:28.019 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: ATE0OK
+2022-01-29 21:43:28.019 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: ATE0OK
+2022-01-29 21:43:28.204 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:28.204 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.204 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:28.204 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.204 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:28.204 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.205 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:28.205 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.205 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:28.205 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:28.206 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[4] from queue...
+2022-01-29 21:43:28.206 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:28.209 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: OK
+2022-01-29 21:43:28.209 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: 
+2022-01-29 21:43:28.280 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:28.280 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.280 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:28.280 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.280 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:28.280 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.281 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:28.281 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.281 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:28.281 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:28.281 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[5] from queue...
+2022-01-29 21:43:28.281 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:28.288 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Timeout, cmdResult: OK
+2022-01-29 21:43:28.288 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Timeout, rawCmdResult: 
+2022-01-29 21:43:28.398 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:28.398 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.399 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:28.399 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.399 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:28.399 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.399 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:28.399 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:28.400 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:28.400 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:28.400 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[6] from queue...
+2022-01-29 21:43:28.400 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:28.408 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol AUTO, cmdResult: OK
+2022-01-29 21:43:28.408 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol AUTO, rawCmdResult: 
+2022-01-29 21:43:29.114 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:29.114 18617-18684/com.example.ids_for_can D/ContentValues: SEARCHING...41 46 35 
+2022-01-29 21:43:29.115 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:29.115 18617-18684/com.example.ids_for_can D/ContentValues: ...41 46 35 
+2022-01-29 21:43:29.115 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:29.115 18617-18684/com.example.ids_for_can D/ContentValues: ...414635
+2022-01-29 21:43:29.116 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:29.116 18617-18684/com.example.ids_for_can D/ContentValues: SEARCHING...41 46 35 
+2022-01-29 21:43:29.116 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:29.117 18617-18684/com.example.ids_for_can D/ContentValues: {ELM327=[v1.5], AT=[E0OK], SEARCHING...41=[46 35]}
+2022-01-29 21:43:29.125 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, cmdResult: 0C
+2022-01-29 21:43:29.125 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: AMBIENT_AIR_TEMP, rawCmdResult: ...414635
+2022-01-29 21:43:31.846 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[1] to queue...
+2022-01-29 21:43:31.846 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.846 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[2] to queue...
+2022-01-29 21:43:31.847 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.847 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[3] to queue...
+2022-01-29 21:43:31.847 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[1] from queue...
+2022-01-29 21:43:31.847 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:31.848 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.848 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[4] to queue...
+2022-01-29 21:43:31.849 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.849 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[5] to queue...
+2022-01-29 21:43:31.849 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.849 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[6] to queue...
+2022-01-29 21:43:31.849 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.850 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[7] to queue...
+2022-01-29 21:43:31.850 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:31.988 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:31.988 18617-18684/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 21:43:31.988 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:31.988 18617-18684/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 21:43:31.989 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:31.989 18617-18684/com.example.ids_for_can D/ContentValues: ELM327v1.5
+2022-01-29 21:43:31.989 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:31.989 18617-18684/com.example.ids_for_can D/ContentValues: ELM327 v1.5
+2022-01-29 21:43:31.990 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:31.990 18617-18684/com.example.ids_for_can D/ContentValues: {ELM327=[v1.5, v1.5], AT=[E0OK], SEARCHING...41=[46 35]}
+2022-01-29 21:43:31.990 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[2] from queue...
+2022-01-29 21:43:31.991 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:31.999 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: WarmStart OBD, cmdResult: ELM327v1.5
+2022-01-29 21:43:31.999 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: WarmStart OBD, rawCmdResult: ELM327v1.5
+2022-01-29 21:43:32.143 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:32.143 18617-18684/com.example.ids_for_can D/ContentValues: AT L1OK
+2022-01-29 21:43:32.143 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:32.143 18617-18684/com.example.ids_for_can D/ContentValues: AT L1OK
+2022-01-29 21:43:32.144 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:32.144 18617-18684/com.example.ids_for_can D/ContentValues: ATL1OK
+2022-01-29 21:43:32.144 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:32.144 18617-18684/com.example.ids_for_can D/ContentValues: AT L1OK
+2022-01-29 21:43:32.144 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:32.145 18617-18684/com.example.ids_for_can D/ContentValues: {ELM327=[v1.5, v1.5], AT=[E0OK, L1OK], SEARCHING...41=[46 35]}
+2022-01-29 21:43:32.145 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[3] from queue...
+2022-01-29 21:43:32.145 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:32.152 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed On, cmdResult: ATL1OK
+2022-01-29 21:43:32.152 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Line Feed On, rawCmdResult: ATL1OK
+2022-01-29 21:43:32.259 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:32.259 18617-18684/com.example.ids_for_can D/ContentValues: AT E0
+    OK
+2022-01-29 21:43:32.259 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:32.259 18617-18684/com.example.ids_for_can D/ContentValues: AT E0
+    OK
+2022-01-29 21:43:32.260 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:32.260 18617-18684/com.example.ids_for_can D/ContentValues: ATE0OK
+2022-01-29 21:43:32.260 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:32.260 18617-18684/com.example.ids_for_can D/ContentValues: AT E0
+2022-01-29 21:43:32.261 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.261 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:32.261 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:32.261 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[4] from queue...
+2022-01-29 21:43:32.261 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:32.264 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, cmdResult: ATE0OK
+2022-01-29 21:43:32.264 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Echo Off, rawCmdResult: 
+2022-01-29 21:43:32.352 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:32.352 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.352 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:32.352 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.353 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:32.353 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.353 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:32.353 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.353 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:32.353 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:32.354 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[5] from queue...
+2022-01-29 21:43:32.354 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:32.360 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Spaces On, cmdResult: OK
+2022-01-29 21:43:32.361 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Spaces On, rawCmdResult: 
+2022-01-29 21:43:32.485 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:32.486 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.486 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:32.486 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.486 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:32.486 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.487 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:32.487 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.487 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:32.487 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:32.487 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[6] from queue...
+2022-01-29 21:43:32.487 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:32.494 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Headers Enabled, cmdResult: OK
+2022-01-29 21:43:32.494 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Headers Enabled, rawCmdResult: 
+2022-01-29 21:43:32.618 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:32.618 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.618 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:32.619 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.619 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:32.619 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.619 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:32.620 18617-18684/com.example.ids_for_can D/ContentValues: OK
+2022-01-29 21:43:32.620 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: java.lang.ArrayIndexOutOfBoundsException: length=1; index=1
+2022-01-29 21:43:32.620 18617-18684/com.example.ids_for_can E/com.example.ids_for_can.connectivity.ObdGatewayService: Failed to run command. -> length=1; index=1
+2022-01-29 21:43:32.620 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[7] from queue...
+2022-01-29 21:43:32.620 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:32.629 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol ISO_15765_4_CAN, cmdResult: OK
+2022-01-29 21:43:32.629 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: Select Protocol ISO_15765_4_CAN, rawCmdResult: 
+2022-01-29 21:43:33.282 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:33.282 18617-18684/com.example.ids_for_can D/ContentValues: 1E1 00 00 14 00 00 
+    1EB 00 52 
+    4D9 00 00 00 
+    0C1 20 00 00 00 20 00 00 00 
+    0C5 20 00 00 00 20 00 00 00 
+    184 00 01 00 00 01 FF 
+    1C7 0F FF 70 00 03 FF 3F <DATA ERROR
+    1CD C7 FF 07 FE 7F <DATA ERROR
+    1E5 46 00 80 E0 00 FF 7D 00 <DATA ERROR
+    0C9 00 00 00 0A 00 00 00 
+    BUFFER FULL
+2022-01-29 21:43:33.283 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:33.283 18617-18684/com.example.ids_for_can D/ContentValues: 1E1 00 00 14 00 00 
+    1EB 00 52 
+    4D9 00 00 00 
+    0C1 20 00 00 00 20 00 00 00 
+    0C5 20 00 00 00 20 00 00 00 
+    184 00 01 00 00 01 FF 
+    1C7 0F FF 70 00 03 FF 3F <DATA ERROR
+    1CD C7 FF 07 FE 7F <DATA ERROR
+    1E5 46 00 80 E0 00 FF 7D 00 <DATA ERROR
+    0C9 00 00 00 0A 00 00 00 
+    BUFFER FULL
+2022-01-29 21:43:33.285 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:33.285 18617-18684/com.example.ids_for_can D/ContentValues: 1E100001400001EB00524D90000000C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR0C90000000A000000BUFFERFULL
+2022-01-29 21:43:33.286 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:33.286 18617-18684/com.example.ids_for_can D/ContentValues: 1E1 00 00 14 00 00 
+2022-01-29 21:43:33.286 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+2022-01-29 21:43:33.286 18617-18684/com.example.ids_for_can D/ContentValues: 4D9 00 00 00 
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 20 00 00 00 20 00 00 00 
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 20 00 00 00 20 00 00 00 
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 184 00 01 00 00 01 FF 
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 1C7 0F FF 70 00 03 FF 3F <DATA ERROR
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 1CD C7 FF 07 FE 7F <DATA ERROR
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 1E5 46 00 80 E0 00 FF 7D 00 <DATA ERROR
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 0A 00 00 00 
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:33.287 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:33.288 18617-18684/com.example.ids_for_can D/ContentValues: {1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR], 0C5=[20 00 00 00 20 00 00 00], ELM327=[v1.5, v1.5], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], 1EB=[00 52], 1CD=[C7 FF 07 FE 7F <DATA ERROR], AT=[E0OK, L1OK, E0], SEARCHING...41=[46 35], 1E1=[00 00 14 00 00], 0C1=[20 00 00 00 20 00 00 00]}
+2022-01-29 21:43:33.289 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 1E100001400001EB00524D90000000C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR0C90000000A000000BUFFERFULL
+2022-01-29 21:43:33.289 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:33.295 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1E100001400001EB00524D90000000C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR0C90000000A000000BUFFERFULL
+2022-01-29 21:43:33.295 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 1E100001400001EB00524D90000000C120000000200000000C520000000200000001840001000001FF1C70FFF700003FF3F<DATAERROR1CDC7FF07FE7F<DATAERROR1E5460080E000FF7D00<DATAERROR0C90000000A000000BUFFERFULL
+2022-01-29 21:43:35.854 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[8] to queue...
+2022-01-29 21:43:35.854 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:35.855 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[8] from queue...
+2022-01-29 21:43:35.855 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:36.589 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:36.589 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+    0C9 00 00 00 00 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    12A 47 00 00 00 BE 5C 3F FF <DATA ERROR
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 80 C0 00 FF 7E 00 <DATA ERROR
+    1F1 95 0F 
+    BUFFER FULL
+2022-01-29 21:43:36.589 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:36.589 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+    0C9 00 00 00 00 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    12A 47 00 00 00 BE 5C 3F FF <DATA ERROR
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 80 C0 00 FF 7E 00 <DATA ERROR
+    1F1 95 0F 
+    BUFFER FULL
+2022-01-29 21:43:36.592 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:36.592 18617-18684/com.example.ids_for_can D/ContentValues: 0F11C0600400C90000000000000000191062B090C090C001ED00000000000008001EF0000000012A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR1F1950FBUFFERFULL
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 00 00 00 00 00 
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00 
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 12A 47 00 00 00 BE 5C 3F FF <DATA ERROR
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 10 00 00 00 10 00 00 00 
+2022-01-29 21:43:36.593 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 10 00 00 00 10 00 00 00 
+2022-01-29 21:43:36.594 18617-18684/com.example.ids_for_can D/ContentValues: 1E5 46 00 80 C0 00 FF 7E 00 <DATA ERROR
+2022-01-29 21:43:36.594 18617-18684/com.example.ids_for_can D/ContentValues: 1F1 95 0F 
+2022-01-29 21:43:36.594 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:36.594 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:36.595 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00], ELM327=[v1.5, v1.5], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00], 4D9=[00 00 00], 191=[06 2B 09 0C 09 0C 00], 184=[00 01 00 00 01 FF], 1EB=[00 52], 1ED=[00 00 00 00 00 00 08 00], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00], AT=[E0OK, L1OK, E0], SEARCHING...41=[46 35], 0F1=[1C 06 00 40], 1F1=[95 0F], 1E1=[00 00 14 00 00], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00]}
+2022-01-29 21:43:36.596 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 0F11C0600400C90000000000000000191062B090C090C001ED00000000000008001EF0000000012A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR1F1950FBUFFERFULL
+2022-01-29 21:43:36.596 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:36.604 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0F11C0600400C90000000000000000191062B090C090C001ED00000000000008001EF0000000012A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR1F1950FBUFFERFULL
+2022-01-29 21:43:36.604 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 0F11C0600400C90000000000000000191062B090C090C001ED00000000000008001EF0000000012A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR1F1950FBUFFERFULL
+2022-01-29 21:43:39.859 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[9] to queue...
+2022-01-29 21:43:39.859 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:39.860 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[9] from queue...
+2022-01-29 21:43:39.860 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:40.533 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:40.533 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+    1EB 00 52 
+    12A 47 00 00 00 BE 5C 3F FF <DATA ERROR
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 80 C0 00 FF 7E 00 <DATA ERROR
+    334 00 00 
+    1E1 00 FF 15 00 20 
+    1F1 95 0F BB 14 08 00 00 7A <DATA ERROR
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00
+    BUFFER FULL
+2022-01-29 21:43:40.533 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:40.533 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+    1EB 00 52 
+    12A 47 00 00 00 BE 5C 3F FF <DATA ERROR
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 80 C0 00 FF 7E 00 <DATA ERROR
+    334 00 00 
+    1E1 00 FF 15 00 20 
+    1F1 95 0F BB 14 08 00 00 7A <DATA ERROR
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00
+    BUFFER FULL
+2022-01-29 21:43:40.536 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:40.536 18617-18684/com.example.ids_for_can D/ContentValues: 0F11C0600401EB005212A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR33400001E100FF1500201F1950FBB140800007A<DATAERROR0C703FE00000F9000040000000BUFFERFULL
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 12A 47 00 00 00 BE 5C 3F FF <DATA ERROR
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 10 00 00 00 10 00 00 00 
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 10 00 00 00 10 00 00 00 
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 1E5 46 00 80 C0 00 FF 7E 00 <DATA ERROR
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 334 00 00 
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 1E1 00 FF 15 00 20 
+2022-01-29 21:43:40.537 18617-18684/com.example.ids_for_can D/ContentValues: 1F1 95 0F BB 14 08 00 00 7A <DATA ERROR
+2022-01-29 21:43:40.538 18617-18684/com.example.ids_for_can D/ContentValues: 0C7 03 FE 00 00 
+2022-01-29 21:43:40.538 18617-18684/com.example.ids_for_can D/ContentValues: 0F9 00 00 40 00 00 00
+2022-01-29 21:43:40.538 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:40.538 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:40.538 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00], 0C7=[03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00], 4D9=[00 00 00], 191=[06 2B 09 0C 09 0C 00], 184=[00 01 00 00 01 FF], 1EB=[00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00], AT=[E0OK, L1OK, E0], 334=[00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 1E1=[00 00 14 00 00, 00 FF 15 00 20], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00]}
+2022-01-29 21:43:40.539 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 0F11C0600401EB005212A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR33400001E100FF1500201F1950FBB140800007A<DATAERROR0C703FE00000F9000040000000BUFFERFULL
+2022-01-29 21:43:40.539 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:40.545 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0F11C0600401EB005212A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR33400001E100FF1500201F1950FBB140800007A<DATAERROR0C703FE00000F9000040000000BUFFERFULL
+2022-01-29 21:43:40.545 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 0F11C0600401EB005212A47000000BE5C3FFF<DATAERROR0C110000000100000000C510000000100000001E5460080C000FF7E00<DATAERROR33400001E100FF1500201F1950FBB140800007A<DATAERROR0C703FE00000F9000040000000BUFFERFULL
+2022-01-29 21:43:43.864 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[10] to queue...
+2022-01-29 21:43:43.864 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:43.865 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[10] from queue...
+2022-01-29 21:43:43.865 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:44.195 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:44.195 18617-18684/com.example.ids_for_can D/ContentValues: 17F 00 00 00 00 00 00 00 00 
+    34A 00 00 00 00 
+    1EB 00 52 
+    19D 00 00 00 00 00 00 00 FF 
+    1AF 00 00 00 
+    0F1 1C 06 00 40 
+    1F5 0F 0F 00 21 00 00 03 00 <DATA ERROR
+    2D1 03 00 00 00 
+    1F3 40 40 <DATA ERROR
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 80 C0 00 F
+    BUFFER FULL
+2022-01-29 21:43:44.196 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:44.196 18617-18684/com.example.ids_for_can D/ContentValues: 17F 00 00 00 00 00 00 00 00 
+    34A 00 00 00 00 
+    1EB 00 52 
+    19D 00 00 00 00 00 00 00 FF 
+    1AF 00 00 00 
+    0F1 1C 06 00 40 
+    1F5 0F 0F 00 21 00 00 03 00 <DATA ERROR
+    2D1 03 00 00 00 
+    1F3 40 40 <DATA ERROR
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 80 C0 00 F
+    BUFFER FULL
+2022-01-29 21:43:44.199 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:44.199 18617-18684/com.example.ids_for_can D/ContentValues: 17F000000000000000034A000000001EB005219D00000000000000FF1AF0000000F11C0600401F50F0F002100000300<DATAERROR2D1030000001F34040<DATAERROR0C110000000100000000C510000000100000001E5460080C000FBUFFERFULL
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 17F 00 00 00 00 00 00 00 00 
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 34A 00 00 00 00 
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 19D 00 00 00 00 00 00 00 FF 
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 1AF 00 00 00 
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+2022-01-29 21:43:44.200 18617-18684/com.example.ids_for_can D/ContentValues: 1F5 0F 0F 00 21 00 00 03 00 <DATA ERROR
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: 2D1 03 00 00 00 
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: 1F3 40 40 <DATA ERROR
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 10 00 00 00 10 00 00 00 
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 10 00 00 00 10 00 00 00 
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: 1E5 46 00 80 C0 00 F
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:44.201 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:44.202 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00], 0C7=[03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00], 191=[06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00], 334=[00 00], 1AF=[00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF], 1F3=[40 40 <DATA ERROR], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00]}
+2022-01-29 21:43:44.203 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 17F000000000000000034A000000001EB005219D00000000000000FF1AF0000000F11C0600401F50F0F002100000300<DATAERROR2D1030000001F34040<DATAERROR0C110000000100000000C510000000100000001E5460080C000FBUFFERFULL
+2022-01-29 21:43:44.203 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:44.206 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 17F000000000000000034A000000001EB005219D00000000000000FF1AF0000000F11C0600401F50F0F002100000300<DATAERROR2D1030000001F34040<DATAERROR0C110000000100000000C510000000100000001E5460080C000FBUFFERFULL
+2022-01-29 21:43:44.206 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 17F000000000000000034A000000001EB005219D00000000000000FF1AF0000000F11C0600401F50F0F002100000300<DATAERROR2D1030000001F34040<DATAERROR0C110000000100000000C510000000100000001E5460080C000FBUFFERFULL
+2022-01-29 21:43:47.869 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[11] to queue...
+2022-01-29 21:43:47.870 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:47.871 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[11] from queue...
+2022-01-29 21:43:47.871 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:48.357 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:48.357 18617-18684/com.example.ids_for_can D/ContentValues: 3F1 00 FF 57 18 6E F3 00 68 
+    0C7 03 FE 00 00 
+    0F1 1C 06 00 40 
+    0F9 00 00 40 00 00 00 00 FF 
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    0C9 00 00 00 0A 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 0
+    BUFFER FULL
+2022-01-29 21:43:48.357 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:48.358 18617-18684/com.example.ids_for_can D/ContentValues: 3F1 00 FF 57 18 6E F3 00 68 
+    0C7 03 FE 00 00 
+    0F1 1C 06 00 40 
+    0F9 00 00 40 00 00 00 00 FF 
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    0C9 00 00 00 0A 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 0
+    BUFFER FULL
+2022-01-29 21:43:48.360 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:48.360 18617-18684/com.example.ids_for_can D/ContentValues: 3F100FF57186EF300680C703FE00000F11C0600400F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191062B090C090C001ED00000000000008001EF00000BUFFERFULL
+2022-01-29 21:43:48.361 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:48.361 18617-18684/com.example.ids_for_can D/ContentValues: 3F1 00 FF 57 18 6E F3 00 68 
+2022-01-29 21:43:48.361 18617-18684/com.example.ids_for_can D/ContentValues: 0C7 03 FE 00 00 
+2022-01-29 21:43:48.361 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+2022-01-29 21:43:48.361 18617-18684/com.example.ids_for_can D/ContentValues: 0F9 00 00 40 00 00 00 00 FF 
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: 189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: 199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 0A 00 00 00 00 
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 0
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:48.362 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:48.363 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00], 0C7=[03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0], 334=[00 00], 1AF=[00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF], 1F3=[40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00]}
+2022-01-29 21:43:48.364 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 3F100FF57186EF300680C703FE00000F11C0600400F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191062B090C090C001ED00000000000008001EF00000BUFFERFULL
+2022-01-29 21:43:48.364 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:48.368 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 3F100FF57186EF300680C703FE00000F11C0600400F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191062B090C090C001ED00000000000008001EF00000BUFFERFULL
+2022-01-29 21:43:48.368 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 3F100FF57186EF300680C703FE00000F11C0600400F900004000000000FF189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C90000000A00000000191062B090C090C001ED00000000000008001EF00000BUFFERFULL
+2022-01-29 21:43:51.875 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[12] to queue...
+2022-01-29 21:43:51.875 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:51.876 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[12] from queue...
+2022-01-29 21:43:51.876 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:52.265 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:52.265 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 07 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00 00 
+    0F1 1C 06 00 40 
+    1F3 40 40 <DATA ERROR
+    19D 00 00 00 00 00 00 00 FF 
+    1AF 00 00 00 
+    1F5 0F 0F 00 21 00 00
+    BUFFER FULL
+2022-01-29 21:43:52.266 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:52.266 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 07 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00 00 
+    0F1 1C 06 00 40 
+    1F3 40 40 <DATA ERROR
+    19D 00 00 00 00 00 00 00 FF 
+    1AF 00 00 00 
+    1F5 0F 0F 00 21 00 00
+    BUFFER FULL
+2022-01-29 21:43:52.269 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:52.269 18617-18684/com.example.ids_for_can D/ContentValues: 0C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401F34040<DATAERROR19D00000000000000FF1AF0000001F50F0F00210000BUFFERFULL
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 07 00 00 00 00 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 1A1 00 10 00 00 00 00 00 00 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 1C3 06 2B 06 2B 00 00 00 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 1F3 40 40 <DATA ERROR
+2022-01-29 21:43:52.270 18617-18684/com.example.ids_for_can D/ContentValues: 19D 00 00 00 00 00 00 00 FF 
+2022-01-29 21:43:52.271 18617-18684/com.example.ids_for_can D/ContentValues: 1AF 00 00 00 
+2022-01-29 21:43:52.271 18617-18684/com.example.ids_for_can D/ContentValues: 1F5 0F 0F 00 21 00 00
+2022-01-29 21:43:52.271 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:52.271 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:52.272 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F], 1A1=[00 10 00 00 00 00 00 00], 1C3=[06 2B 06 2B 00 00 00], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00], 0C7=[03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00, 00 00 00 07 00 00 00 00], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0, 00 00 00 00], 334=[00 00], 1AF=[00 00 00, 00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF, 00 00 00 00 00 00 00 FF], 1F3=[40 40 <DATA ERROR, 40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR, 0F 0F 00 21 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00]}
+2022-01-29 21:43:52.272 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 0C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401F34040<DATAERROR19D00000000000000FF1AF0000001F50F0F00210000BUFFERFULL
+2022-01-29 21:43:52.273 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:52.278 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401F34040<DATAERROR19D00000000000000FF1AF0000001F50F0F00210000BUFFERFULL
+2022-01-29 21:43:52.279 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 0C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401F34040<DATAERROR19D00000000000000FF1AF0000001F50F0F00210000BUFFERFULL
+2022-01-29 21:43:55.879 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[13] to queue...
+2022-01-29 21:43:55.880 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:55.881 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[13] from queue...
+2022-01-29 21:43:55.881 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:43:56.538 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:43:56.539 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 34 06 00 
+    1F3 40 40 <DATA ERROR
+    0C1 30 00 00 
+    0C5 30 00 00 
+    1E5 46 00 80 80 00 FF 80 00 <DATA ERROR
+    0C9 00 00 00 0D 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    19D 40 00 3F FF 00 00 00 FF <DATA ERROR
+    1A1 00 10 00 00 00 00 00 0
+    BUFFER FULL
+2022-01-29 21:43:56.539 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:43:56.539 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 34 06 00 
+    1F3 40 40 <DATA ERROR
+    0C1 30 00 00 
+    0C5 30 00 00 
+    1E5 46 00 80 80 00 FF 80 00 <DATA ERROR
+    0C9 00 00 00 0D 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    19D 40 00 3F FF 00 00 00 FF <DATA ERROR
+    1A1 00 10 00 00 00 00 00 0
+    BUFFER FULL
+2022-01-29 21:43:56.542 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:43:56.542 18617-18684/com.example.ids_for_can D/ContentValues: 0F13406001F34040<DATAERROR0C13000000C53000001E54600808000FF8000<DATAERROR0C90000000D00000000191062B090C090C001ED00000000000008001EF0000000019D40003FFF000000FF<DATAERROR1A1001000000000000BUFFERFULL
+2022-01-29 21:43:56.542 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:43:56.542 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 34 06 00 
+2022-01-29 21:43:56.542 18617-18684/com.example.ids_for_can D/ContentValues: 1F3 40 40 <DATA ERROR
+2022-01-29 21:43:56.542 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 30 00 00 
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 30 00 00 
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 1E5 46 00 80 80 00 FF 80 00 <DATA ERROR
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 0D 00 00 00 00 
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00 
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 19D 40 00 3F FF 00 00 00 FF <DATA ERROR
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: 1A1 00 10 00 00 00 00 00 0
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:43:56.543 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:43:56.544 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F, 46 00 80 80 00 FF 80 00 <DATA ERROR], 1A1=[00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 0], 1C3=[06 2B 06 2B 00 00 00], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00], 0C7=[03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0, 00 00 00 00, 00 00 00 00], 334=[00 00], 1AF=[00 00 00, 00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 34 06 00], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF, 00 00 00 00 00 00 00 FF, 40 00 3F FF 00 00 00 FF <DATA ERROR], 1F3=[40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR, 0F 0F 00 21 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00]}
+2022-01-29 21:43:56.545 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 0F13406001F34040<DATAERROR0C13000000C53000001E54600808000FF8000<DATAERROR0C90000000D00000000191062B090C090C001ED00000000000008001EF0000000019D40003FFF000000FF<DATAERROR1A1001000000000000BUFFERFULL
+2022-01-29 21:43:56.545 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:43:56.548 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 0F13406001F34040<DATAERROR0C13000000C53000001E54600808000FF8000<DATAERROR0C90000000D00000000191062B090C090C001ED00000000000008001EF0000000019D40003FFF000000FF<DATAERROR1A1001000000000000BUFFERFULL
+2022-01-29 21:43:56.548 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 0F13406001F34040<DATAERROR0C13000000C53000001E54600808000FF8000<DATAERROR0C90000000D00000000191062B090C090C001ED00000000000008001EF0000000019D40003FFF000000FF<DATAERROR1A1001000000000000BUFFERFULL
+2022-01-29 21:43:59.885 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[14] to queue...
+2022-01-29 21:43:59.886 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:43:59.886 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[14] from queue...
+2022-01-29 21:43:59.886 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:44:00.918 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:44:00.918 18617-18684/com.example.ids_for_can D/ContentValues: 4E1 42 4A 33 31 31 38 35 38 <DATA ERROR
+    0F1 28 06 00 40 
+    1E1 00 00 14 00 00 
+    1EB 00 52 
+    0C9 00 00 00 07 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00 00 
+    4E9 E1 20 56 E1 48 <DATA E
+    BUFFER FULL
+2022-01-29 21:44:00.918 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:44:00.918 18617-18684/com.example.ids_for_can D/ContentValues: 4E1 42 4A 33 31 31 38 35 38 <DATA ERROR
+    0F1 28 06 00 40 
+    1E1 00 00 14 00 00 
+    1EB 00 52 
+    0C9 00 00 00 07 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00 00 
+    4E9 E1 20 56 E1 48 <DATA E
+    BUFFER FULL
+2022-01-29 21:44:00.921 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:44:00.921 18617-18684/com.example.ids_for_can D/ContentValues: 4E1424A333131383538<DATAERROR0F1280600401E100001400001EB00520C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000004E9E12056E148<DATAEBUFFERFULL
+2022-01-29 21:44:00.922 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:44:00.922 18617-18684/com.example.ids_for_can D/ContentValues: 4E1 42 4A 33 31 31 38 35 38 <DATA ERROR
+2022-01-29 21:44:00.922 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 28 06 00 40 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 1E1 00 00 14 00 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 07 00 00 00 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 1A1 00 10 00 00 00 00 00 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 1C3 06 2B 06 2B 00 00 00 
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: 4E9 E1 20 56 E1 48 <DATA E
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:44:00.923 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:44:00.924 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 4E1=[42 4A 33 31 31 38 35 38 <DATA ERROR], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F, 46 00 80 80 00 FF 80 00 <DATA ERROR], 1A1=[00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 0, 00 10 00 00 00 00 00 00], 1C3=[06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00], 0C7=[03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00, 00 00 00 07 00 00 00 00], 4E9=[E1 20 56 E1 48 <DATA E], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0, 00 00 00 00, 00 00 00 00, 00 00 00 00], 334=[00 00], 1AF=[00 00 00, 00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 34 06 00, 28 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF, 00 00 00 00 00 00 00 FF, 40 00 3F FF 00 00 00 FF <DATA ERROR], 1F3=[40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR, 0F 0F 00 21 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20, 00 00 14 00 00], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00]}
+2022-01-29 21:44:00.925 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 4E1424A333131383538<DATAERROR0F1280600401E100001400001EB00520C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000004E9E12056E148<DATAEBUFFERFULL
+2022-01-29 21:44:00.925 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:44:00.932 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 4E1424A333131383538<DATAERROR0F1280600401E100001400001EB00520C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000004E9E12056E148<DATAEBUFFERFULL
+2022-01-29 21:44:00.932 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 4E1424A333131383538<DATAERROR0F1280600401E100001400001EB00520C90000000700000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000004E9E12056E148<DATAEBUFFERFULL
+2022-01-29 21:44:03.890 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[15] to queue...
+2022-01-29 21:44:03.891 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:44:03.892 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[15] from queue...
+2022-01-29 21:44:03.892 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:44:04.326 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:44:04.326 18617-18684/com.example.ids_for_can D/ContentValues: 1E9 00 00 00 0C 00 00 00 00 
+    0C9 00 00 00 0D 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00 00 
+    0F1 1C 06 00 40 
+    1EB 00 52 
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 
+    BUFFER FULL
+2022-01-29 21:44:04.326 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:44:04.326 18617-18684/com.example.ids_for_can D/ContentValues: 1E9 00 00 00 0C 00 00 00 00 
+    0C9 00 00 00 0D 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00 00 
+    0F1 1C 06 00 40 
+    1EB 00 52 
+    0C1 10 00 00 00 10 00 00 00 
+    0C5 10 00 00 00 10 00 00 00 
+    1E5 46 00 
+    BUFFER FULL
+2022-01-29 21:44:04.329 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:44:04.329 18617-18684/com.example.ids_for_can D/ContentValues: 1E90000000C000000000C90000000D00000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401EB00520C110000000100000000C510000000100000001E54600BUFFERFULL
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 1E9 00 00 00 0C 00 00 00 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 0D 00 00 00 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 1A1 00 10 00 00 00 00 00 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 1C3 06 2B 06 2B 00 00 00 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 0F1 1C 06 00 40 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+2022-01-29 21:44:04.330 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 10 00 00 00 10 00 00 00 
+2022-01-29 21:44:04.331 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 10 00 00 00 10 00 00 00 
+2022-01-29 21:44:04.331 18617-18684/com.example.ids_for_can D/ContentValues: 1E5 46 00 
+2022-01-29 21:44:04.331 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:44:04.331 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:44:04.332 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 4E1=[42 4A 33 31 31 38 35 38 <DATA ERROR], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F, 46 00 80 80 00 FF 80 00 <DATA ERROR, 46 00], 1A1=[00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 0, 00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 00], 1C3=[06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00, 10 00 00 00 10 00 00 00], 0C7=[03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR], 1E9=[00 00 00 0C 00 00 00 00], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00], 4E9=[E1 20 56 E1 48 <DATA E], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0, 00 00 00 00, 00 00 00 00, 00 00 00 00, 00 00 00 00], 334=[00 00], 1AF=[00 00 00, 00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 34 06 00, 28 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF, 00 00 00 00 00 00 00 FF, 40 00 3F FF 00 00 00 FF <DATA ERROR], 1F3=[40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR, 0F 0F 00 21 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20, 00 00 14 00 00], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00, 10 00 00 00 10 00 00 00]}
+2022-01-29 21:44:04.333 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 1E90000000C000000000C90000000D00000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401EB00520C110000000100000000C510000000100000001E54600BUFFERFULL
+2022-01-29 21:44:04.333 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:44:04.339 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1E90000000C000000000C90000000D00000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401EB00520C110000000100000000C510000000100000001E54600BUFFERFULL
+2022-01-29 21:44:04.339 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 1E90000000C000000000C90000000D00000000191062B090C090C001ED00000000000008001EF000000001A100100000000000001C3062B062B0000000F11C0600401EB00520C110000000100000000C510000000100000001E54600BUFFERFULL
+2022-01-29 21:44:07.898 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[16] to queue...
+2022-01-29 21:44:07.899 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:44:07.900 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[16] from queue...
+2022-01-29 21:44:07.900 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:44:08.467 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:44:08.467 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00 00 FF 
+    1F3 40 40 <DATA ERROR
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    0C1 00 00 00 00 00 00 00 00 
+    1CB 10 00 00 
+    0C5 00 00 00 00 00 00 00 00 
+    184 00 02 00 00 01 FE 
+    1C7 0F
+    BUFFER FULL
+2022-01-29 21:44:08.467 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:44:08.467 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+    0C7 03 FE 00 00 
+    0F9 00 00 40 00 00 00 00 FF 
+    1F3 40 40 <DATA ERROR
+    189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+    199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+    0C1 00 00 00 00 00 00 00 00 
+    1CB 10 00 00 
+    0C5 00 00 00 00 00 00 00 00 
+    184 00 02 00 00 01 FE 
+    1C7 0F
+    BUFFER FULL
+2022-01-29 21:44:08.469 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:44:08.469 18617-18684/com.example.ids_for_can D/ContentValues: 1EB00520C703FE00000F900004000000000FF1F34040<DATAERROR189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C100000000000000001CB1000000C500000000000000001840002000001FE1C70FBUFFERFULL
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 1EB 00 52 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 0C7 03 FE 00 00 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 0F9 00 00 40 00 00 00 00 FF 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 1F3 40 40 <DATA ERROR
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 189 CF FF 0F FF 2F FE 00 FF <DATA ERROR
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 199 CF FF 0E 70 F1 8D 00 FF <DATA ERROR
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 0C1 00 00 00 00 00 00 00 00 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 1CB 10 00 00 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 0C5 00 00 00 00 00 00 00 00 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 184 00 02 00 00 01 FE 
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: 1C7 0F
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:44:08.470 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:44:08.472 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 4E1=[42 4A 33 31 31 38 35 38 <DATA ERROR], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F, 46 00 80 80 00 FF 80 00 <DATA ERROR, 46 00], 1A1=[00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 0, 00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 00], 1C3=[06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00, 10 00 00 00 10 00 00 00, 00 00 00 00 00 00 00 00], 0C7=[03 FE 00 00, 03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR, 0F], 1E9=[00 00 00 0C 00 00 00 00], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00], 4E9=[E1 20 56 E1 48 <DATA E], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 1EB=[00 52, 00 52, 00 52, 00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 1CB=[10 00 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR, CF FF 0E 70 F1 8D 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0, 00 00 00 00, 00 00 00 00, 00 00 00 00, 00 00 00 00], 334=[00 00], 1AF=[00 00 00, 00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 34 06 00, 28 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF, 00 00 00 00 00 00 00 FF, 40 00 3F FF 00 00 00 FF <DATA ERROR], 1F3=[40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR, 0F 0F 00 21 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF, 00 02 00 00 01 FE], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR, CF FF 0F FF 2F FE 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20, 00 00 14 00 00], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00, 10 00 00 00 10 00 00 00, 00 00 00 00 00 00 00 00]}
+2022-01-29 21:44:08.472 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 1EB00520C703FE00000F900004000000000FF1F34040<DATAERROR189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C100000000000000001CB1000000C500000000000000001840002000001FE1C70FBUFFERFULL
+2022-01-29 21:44:08.473 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:44:08.481 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1EB00520C703FE00000F900004000000000FF1F34040<DATAERROR189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C100000000000000001CB1000000C500000000000000001840002000001FE1C70FBUFFERFULL
+2022-01-29 21:44:08.481 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 1EB00520C703FE00000F900004000000000FF1F34040<DATAERROR189CFFF0FFF2FFE00FF<DATAERROR199CFFF0E70F18D00FF<DATAERROR0C100000000000000001CB1000000C500000000000000001840002000001FE1C70FBUFFERFULL
+2022-01-29 21:44:11.906 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[17] to queue...
+2022-01-29 21:44:11.907 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-01-29 21:44:11.908 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[17] from queue...
+2022-01-29 21:44:11.908 18617-18684/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-01-29 21:44:12.511 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-01-29 21:44:12.512 18617-18684/com.example.ids_for_can D/ContentValues: 189 8F FF 0F FF 2F FF 00 FF <DATA ERROR
+    199 8F FF 0E 70 F1 8E 00 FF <DATA ERROR
+    0C9 00 00 00 07 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C9 07 66 00 00 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00
+    BUFFER FULL
+2022-01-29 21:44:12.512 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- SEARCHING_PATTERN
+2022-01-29 21:44:12.512 18617-18684/com.example.ids_for_can D/ContentValues: 189 8F FF 0F FF 2F FF 00 FF <DATA ERROR
+    199 8F FF 0E 70 F1 8E 00 FF <DATA ERROR
+    0C9 00 00 00 07 00 00 00 00 
+    191 06 2B 09 0C 09 0C 00 
+    1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C9 07 66 00 00 00 00 00 00 
+    1A1 00 10 00 00 00 00 00 00 
+    1C3 06 2B 06 2B 00 00
+    BUFFER FULL
+2022-01-29 21:44:12.512 18617-18684/com.example.ids_for_can D/ContentValues: readRawData -- rawData -- WHITESPACE PATTERN
+2022-01-29 21:44:12.512 18617-18684/com.example.ids_for_can D/ContentValues: 1898FFF0FFF2FFF00FF<DATAERROR1998FFF0E70F18E00FF<DATAERROR0C90000000700000000191062B090C090C001ED00000000000008001EF000000003C907660000000000001A100100000000000001C3062B062B0000BUFFERFULL
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 189 8F FF 0F FF 2F FF 00 FF <DATA ERROR
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 199 8F FF 0E 70 F1 8E 00 FF <DATA ERROR
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 0C9 00 00 00 07 00 00 00 00 
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 191 06 2B 09 0C 09 0C 00 
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00 
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 3C9 07 66 00 00 00 00 00 00 
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 1A1 00 10 00 00 00 00 00 00 
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: 1C3 06 2B 06 2B 00 00
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: BUFFER FULL
+2022-01-29 21:44:12.513 18617-18684/com.example.ids_for_can D/ContentValues: ATMAMap
+2022-01-29 21:44:12.514 18617-18684/com.example.ids_for_can D/ContentValues: {12A=[47 00 00 00 BE 5C 3F FF <DATA ERROR, 47 00 00 00 BE 5C 3F FF <DATA ERROR], 34A=[00 00 00 00], 4E1=[42 4A 33 31 31 38 35 38 <DATA ERROR], 1E5=[46 00 80 E0 00 FF 7D 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 FF 7E 00 <DATA ERROR, 46 00 80 C0 00 F, 46 00 80 80 00 FF 80 00 <DATA ERROR, 46 00], 1A1=[00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 0, 00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 00, 00 10 00 00 00 00 00 00], 1C3=[06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00 00, 06 2B 06 2B 00 00], 0C5=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00, 10 00 00 00 10 00 00 00, 00 00 00 00 00 00 00 00], 0C7=[03 FE 00 00, 03 FE 00 00, 03 FE 00 00], 1C7=[0F FF 70 00 03 FF 3F <DATA ERROR, 0F], 1E9=[00 00 00 0C 00 00 00 00], 0C9=[00 00 00 0A 00 00 00, 00 00 00 00 00 00 00 00, 00 00 00 0A 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00, 00 00 00 07 00 00 00 00, 00 00 00 0D 00 00 00 00, 00 00 00 07 00 00 00 00], 4E9=[E1 20 56 E1 48 <DATA E], 191=[06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00, 06 2B 09 0C 09 0C 00], 3C9=[07 66 00 00 00 00 00 00], 1EB=[00 52, 00 52, 00 52, 00 52, 00 52, 00 52], 1ED=[00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00, 00 00 00 00 00 00 08 00], 1CB=[10 00 00], 199=[CF FF 0E 70 F1 8D 00 FF <DATA ERROR, CF FF 0E 70 F1 8D 00 FF <DATA ERROR, 8F FF 0E 70 F1 8E 00 FF <DATA ERROR], 1CD=[C7 FF 07 FE 7F <DATA ERROR], 1EF=[00 00 00 00, 00 00 0, 00 00 00 00, 00 00 00 00, 00 00 00 00, 00 00 00 00, 00 00 00 00], 334=[00 00], 1AF=[00 00 00, 00 00 00], SEARCHING...41=[46 35], 0F1=[1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 1C 06 00 40, 34 06 00, 28 06 00 40, 1C 06 00 40], 1F1=[95 0F, 95 0F BB 14 08 00 00 7A <DATA ERROR], 19D=[00 00 00 00 00 00 00 FF, 00 00 00 00 00 00 00 FF, 40 00 3F FF 00 00 00 FF <DATA ERROR], 1F3=[40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR, 40 40 <DATA ERROR], 3F1=[00 FF 57 18 6E F3 00 68], 2D1=[03 00 00 00], 17F=[00 00 00 00 00 00 00 00], 1F5=[0F 0F 00 21 00 00 03 00 <DATA ERROR, 0F 0F 00 21 00 00], ELM327=[v1.5, v1.5], 0F9=[00 00 40 00 00 00, 00 00 40 00 00 00 00 FF, 00 00 40 00 00 00 00 FF], 4D9=[00 00 00], 184=[00 01 00 00 01 FF, 00 02 00 00 01 FE], 189=[CF FF 0F FF 2F FE 00 FF <DATA ERROR, CF FF 0F FF 2F FE 00 FF <DATA ERROR, 8F FF 0F FF 2F FF 00 FF <DATA ERROR], AT=[E0OK, L1OK, E0], 1E1=[00 00 14 00 00, 00 FF 15 00 20, 00 00 14 00 00], 0C1=[20 00 00 00 20 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 10 00 00 00 10 00 00 00, 30 00 00, 10 00 00 00 10 00 00 00, 00 00 00 00 00 00 00 00]}
+2022-01-29 21:44:12.514 18617-18617/com.example.ids_for_can D/ContentValues: rawData: 1898FFF0FFF2FFF00FF<DATAERROR1998FFF0E70F18E00FF<DATAERROR0C90000000700000000191062B090C090C001ED00000000000008001EF000000003C907660000000000001A100100000000000001C3062B062B0000BUFFERFULL
+2022-01-29 21:44:12.514 18617-18617/com.example.ids_for_can D/ContentValues: buffer: []
+2022-01-29 21:44:12.519 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, cmdResult: 1898FFF0FFF2FFF00FF<DATAERROR1998FFF0E70F18E00FF<DATAERROR0C90000000700000000191062B090C090C001ED00000000000008001EF000000003C907660000000000001A100100000000000001C3062B062B0000BUFFERFULL
+2022-01-29 21:44:12.519 18617-18617/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 1898FFF0FFF2FFF00FF<DATAERROR1998FFF0E70F18E00FF<DATAERROR0C90000000700000000191062B090C090C001ED00000000000008001EF000000003C907660000000000001A100100000000000001C3062B062B0000BUFFERFULL
+

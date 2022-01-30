@@ -105,4 +105,7 @@
     <string name="title_pref_full_logging"> Full logging configuration </string>
     <string name="title_pref_gps" translatable="false">GPS</string>
     <string name="title_pref_obd">OBD Preferences</string>
+    <string name="ids_active">IDS active...</string>
+    <string name="start_ids">Start IDS</string>
+    <string name="stop_live_data_ids">STOP LIVE DATA / STOP IDS</string>
 </resources>
