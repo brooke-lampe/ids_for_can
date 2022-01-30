@@ -51,5 +51,4 @@ public class ResetTroubleCodesCommand extends ObdCommand {
     public String getName() {
         return getResult();
     }
-
 }

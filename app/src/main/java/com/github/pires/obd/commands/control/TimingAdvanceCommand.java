@@ -42,5 +42,4 @@ public class TimingAdvanceCommand extends PercentageObdCommand {
     public String getName() {
         return AvailableCommandNames.TIMING_ADVANCE.getValue();
     }
-
 }

@@ -49,5 +49,4 @@ public class TimeoutCommand extends ObdProtocolCommand {
     public String getName() {
         return "Timeout";
     }
-
 }

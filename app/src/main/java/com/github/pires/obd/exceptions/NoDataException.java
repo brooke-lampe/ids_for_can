@@ -24,5 +24,4 @@ public class NoDataException extends ResponseException {
     public NoDataException() {
         super("NO DATA");
     }
-
 }

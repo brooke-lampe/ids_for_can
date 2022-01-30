@@ -99,5 +99,4 @@ public abstract class PressureCommand extends ObdCommand implements
     public String getResultUnit() {
         return useImperialUnits ? "psi" : "kPa";
     }
-
 }

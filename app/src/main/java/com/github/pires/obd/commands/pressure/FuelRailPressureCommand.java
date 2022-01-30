@@ -39,7 +39,6 @@ public class FuelRailPressureCommand extends PressureCommand {
     /**
      * {@inheritDoc}
      * <p>
-     * TODO describe of why we multiply by 3
      */
     @Override
     protected final int preparePressureValue() {
@@ -53,5 +52,4 @@ public class FuelRailPressureCommand extends PressureCommand {
     public String getName() {
         return AvailableCommandNames.FUEL_RAIL_PRESSURE.getValue();
     }
-
 }

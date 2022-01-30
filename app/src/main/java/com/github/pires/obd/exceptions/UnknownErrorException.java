@@ -24,5 +24,4 @@ public class UnknownErrorException extends ResponseException {
     public UnknownErrorException() {
         super("ERROR");
     }
-
 }

@@ -12,6 +12,11 @@
  */
 package com.github.pires.obd.commands;
 
+import static android.content.ContentValues.TAG;
+
+import android.util.Log;
+
+import com.example.ids_for_can.MainActivity;
 import com.github.pires.obd.exceptions.*;
 
 import java.io.IOException;
@@ -166,6 +171,9 @@ public abstract class ObdCommand {
      * <p>fillBuffer.</p>
      */
     protected void fillBuffer() {
+        Log.d(TAG, "fillBuffer -- rawData");
+        Log.d(TAG, rawData);
+
         rawData = removeAll(WHITESPACE_PATTERN, rawData); //removes all [ \t\n\x0B\f\r]
         rawData = removeAll(BUSINIT_PATTERN, rawData);
 
@@ -182,6 +190,9 @@ public abstract class ObdCommand {
             begin = end;
             end += 2;
         }
+
+        Log.d(TAG, "fillBuffer -- buffer");
+        Log.d(TAG, String.valueOf(buffer));
     }
 
     /**
@@ -202,10 +213,18 @@ public abstract class ObdCommand {
             c = (char) b;
             if (c == '>') // read until '>' arrives
             {
-                break;
+                //if (MainActivity.monitoringOn) {
+                    //Log.d(TAG, "Encountered '>' character");
+                    //res.append("\n");
+                //} else {
+                    break;
+                //}
             }
             res.append(c);
         }
+
+        Log.d(TAG, "readRawData -- res");
+        Log.d(TAG, res.toString());
 
     /*
      * Imagine the following response 41 0c 00 0d.
@@ -216,6 +235,8 @@ public abstract class ObdCommand {
      * processing..
      */
         rawData = removeAll(SEARCHING_PATTERN, res.toString());
+        Log.d(TAG, "readRawData -- rawData -- SEARCHING_PATTERN");
+        Log.d(TAG, rawData);
 
     /*
      * Data may have echo or informative text like "INIT BUS..." or similar.
@@ -224,6 +245,8 @@ public abstract class ObdCommand {
      */
         //kills multiline.. rawData = rawData.substring(rawData.lastIndexOf(13) + 1);
         rawData = removeAll(WHITESPACE_PATTERN, rawData);//removes all [ \t\n\x0B\f\r]
+        Log.d(TAG, "readRawData -- rawData -- WHITESPACE PATTERN");
+        Log.d(TAG, rawData);
     }
 
     void checkForErrors() {
@@ -330,7 +353,6 @@ public abstract class ObdCommand {
         this.responseDelayInMs = responseDelayInMs;
     }
 
-    //fixme resultunit
     /**
      * <p>Getter for the field <code>start</code>.</p>
      *

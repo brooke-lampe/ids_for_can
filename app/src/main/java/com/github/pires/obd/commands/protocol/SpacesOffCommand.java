@@ -14,12 +14,12 @@ package com.github.pires.obd.commands.protocol;
 
 
 /**
- * Turn-off spaces.
+ * Turns off spaces.
  */
 public class SpacesOffCommand extends ObdProtocolCommand {
 
     public SpacesOffCommand() {
-        super("ATS0");
+        super("AT S0");
     }
 
     /**

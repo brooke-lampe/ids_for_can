@@ -50,5 +50,4 @@ public class AdaptiveTimingCommand extends ObdProtocolCommand {
     public String getName() {
         return "Adaptive timing set";
     }
-
 }

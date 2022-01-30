@@ -24,5 +24,4 @@ public class BusInitException extends ResponseException {
     public BusInitException() {
         super("BUS INIT... ERROR");
     }
-
 }

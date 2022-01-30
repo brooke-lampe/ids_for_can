@@ -139,7 +139,6 @@ public class PendingTroubleCodesCommand extends ObdCommand {
         }
 
         rawData = res.toString().trim();
-
     }
 
     /** {@inheritDoc} */
@@ -153,5 +152,4 @@ public class PendingTroubleCodesCommand extends ObdCommand {
     public String getName() {
         return AvailableCommandNames.PENDING_TROUBLE_CODES.getValue();
     }
-
 }

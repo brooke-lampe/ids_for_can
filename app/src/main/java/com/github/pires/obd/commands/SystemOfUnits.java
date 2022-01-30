@@ -25,5 +25,4 @@ public interface SystemOfUnits {
      * @return a float.
      */
     float getImperialUnit();
-
 }

@@ -39,7 +39,6 @@ public class FuelPressureCommand extends PressureCommand {
     /**
      * {@inheritDoc}
      * <p>
-     * TODO describe of why we multiply by 3
      */
     @Override
     protected final int preparePressureValue() {
@@ -51,5 +50,4 @@ public class FuelPressureCommand extends PressureCommand {
     public String getName() {
         return AvailableCommandNames.FUEL_PRESSURE.getValue();
     }
-
 }

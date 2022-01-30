@@ -65,5 +65,4 @@ public class WidebandAirFuelRatioCommand extends ObdCommand {
     public String getName() {
         return AvailableCommandNames.WIDEBAND_AIR_FUEL_RATIO.getValue();
     }
-
 }

@@ -71,5 +71,4 @@ public abstract class PercentageObdCommand extends ObdCommand {
     public String getCalculatedResult() {
         return String.valueOf(percentage);
     }
-
 }

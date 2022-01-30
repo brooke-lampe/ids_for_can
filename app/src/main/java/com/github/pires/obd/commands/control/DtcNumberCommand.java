@@ -93,5 +93,4 @@ public class DtcNumberCommand extends ObdCommand {
     public String getName() {
         return AvailableCommandNames.DTC_NUMBER.getValue();
     }
-
 }

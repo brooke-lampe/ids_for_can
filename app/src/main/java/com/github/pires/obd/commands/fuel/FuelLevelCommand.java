@@ -49,5 +49,4 @@ public class FuelLevelCommand extends PercentageObdCommand {
     public float getFuelLevel() {
         return percentage;
     }
-
 }

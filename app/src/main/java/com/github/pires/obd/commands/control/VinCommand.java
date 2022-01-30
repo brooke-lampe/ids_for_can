@@ -100,5 +100,3 @@ public class VinCommand extends PersistentCommand {
         return sb.toString();
     }
 }
-
-

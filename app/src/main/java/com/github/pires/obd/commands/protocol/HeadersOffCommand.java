@@ -13,7 +13,7 @@
 package com.github.pires.obd.commands.protocol;
 
 /**
- * Turn-off headers.
+ * Turns off headers.
  *
  */
 public class HeadersOffCommand extends ObdProtocolCommand {
@@ -43,7 +43,6 @@ public class HeadersOffCommand extends ObdProtocolCommand {
     /** {@inheritDoc} */
     @Override
     public String getName() {
-        return "Headers disabled";
+        return "Headers Disabled";
     }
-
 }

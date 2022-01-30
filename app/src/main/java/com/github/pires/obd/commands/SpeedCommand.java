@@ -99,5 +99,4 @@ public class SpeedCommand extends ObdCommand implements SystemOfUnits {
     public String getName() {
         return AvailableCommandNames.SPEED.getValue();
     }
-
 }

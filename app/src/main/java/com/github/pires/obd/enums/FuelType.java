@@ -87,5 +87,4 @@ public enum FuelType {
     public String getDescription() {
         return description;
     }
-
 }

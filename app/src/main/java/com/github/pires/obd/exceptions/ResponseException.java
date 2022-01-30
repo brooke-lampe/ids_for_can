@@ -79,5 +79,4 @@ public class ResponseException extends RuntimeException {
     public String getMessage() {
         return "Error running " + command + ", response: " + response;
     }
-
 }

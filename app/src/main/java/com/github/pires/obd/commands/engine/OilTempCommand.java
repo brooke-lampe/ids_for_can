@@ -42,5 +42,4 @@ public class OilTempCommand extends TemperatureCommand {
     public String getName() {
         return AvailableCommandNames.ENGINE_OIL_TEMP.getValue();
     }
-
 }

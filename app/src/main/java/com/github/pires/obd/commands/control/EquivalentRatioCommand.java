@@ -29,7 +29,6 @@ import com.github.pires.obd.enums.AvailableCommandNames;
  */
 public class EquivalentRatioCommand extends PercentageObdCommand {
 
-
     /**
      * Default ctor.
      */
@@ -55,7 +54,6 @@ public class EquivalentRatioCommand extends PercentageObdCommand {
         percentage = (a * 256 + b) / 32768;
     }
 
-
     /**
      * <p>getRatio.</p>
      *
@@ -70,5 +68,4 @@ public class EquivalentRatioCommand extends PercentageObdCommand {
     public String getName() {
         return AvailableCommandNames.EQUIV_RATIO.getValue();
     }
-
 }

@@ -64,5 +64,3 @@ public class IgnitionMonitorCommand extends ObdCommand {
         return ignitionOn;
     }
 }
-
-

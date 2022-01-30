@@ -13,17 +13,25 @@
 package com.github.pires.obd.commands.protocol;
 
 /**
- * This class allows for an unspecified command to be sent.
+ * Turns on line-feed.
+ *
  */
-public class ObdRawCommand extends ObdProtocolCommand {
+public class LineFeedOnCommand extends ObdProtocolCommand {
 
     /**
-     * <p>Constructor for ObdRawCommand.</p>
-     *
-     * @param command a {@link java.lang.String} object.
+     * <p>Constructor for LineFeedOnCommand.</p>
      */
-    public ObdRawCommand(String command) {
-        super(command);
+    public LineFeedOnCommand() {
+        super("AT L1");
+    }
+
+    /**
+     * <p>Constructor for LineFeedOnCommand.</p>
+     *
+     * @param other a {@link com.github.pires.obd.commands.protocol.LineFeedOnCommand} object.
+     */
+    public LineFeedOnCommand(LineFeedOnCommand other) {
+        super(other);
     }
 
     /** {@inheritDoc} */
@@ -35,6 +43,6 @@ public class ObdRawCommand extends ObdProtocolCommand {
     /** {@inheritDoc} */
     @Override
     public String getName() {
-        return "Custom command " + getCommandPID();
+        return "Line Feed On";
     }
 }

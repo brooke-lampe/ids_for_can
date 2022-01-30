@@ -13,17 +13,25 @@
 package com.github.pires.obd.commands.protocol;
 
 /**
- * This class allows for an unspecified command to be sent.
+ * Warm-start the OBD connection.
+ *
  */
-public class ObdRawCommand extends ObdProtocolCommand {
+public class ObdWarmStartCommand extends ObdProtocolCommand {
 
     /**
-     * <p>Constructor for ObdRawCommand.</p>
-     *
-     * @param command a {@link java.lang.String} object.
+     * <p>Constructor for ObdWarmStartCommand.</p>
      */
-    public ObdRawCommand(String command) {
-        super(command);
+    public ObdWarmStartCommand() {
+        super("AT WS");
+    }
+
+    /**
+     * <p>Constructor for ObdWarmStartCommand.</p>
+     *
+     * @param other a {@link ObdWarmStartCommand} object.
+     */
+    public ObdWarmStartCommand(ObdWarmStartCommand other) {
+        super(other);
     }
 
     /** {@inheritDoc} */
@@ -35,6 +43,6 @@ public class ObdRawCommand extends ObdProtocolCommand {
     /** {@inheritDoc} */
     @Override
     public String getName() {
-        return "Custom command " + getCommandPID();
+        return "WarmStart OBD";
     }
 }

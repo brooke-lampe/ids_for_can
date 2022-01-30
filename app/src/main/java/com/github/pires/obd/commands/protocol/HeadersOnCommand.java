@@ -13,24 +13,24 @@
 package com.github.pires.obd.commands.protocol;
 
 /**
- * Warm-start the OBD connection.
+ * Turns on headers.
  *
  */
-public class ObdWarmstartCommand extends ObdProtocolCommand {
+public class HeadersOnCommand extends ObdProtocolCommand {
 
     /**
-     * <p>Constructor for ObdWarmstartCommand.</p>
+     * <p>Constructor for HeadersOnCommand.</p>
      */
-    public ObdWarmstartCommand() {
-        super("AT WS");
+    public HeadersOnCommand() {
+        super("ATH1");
     }
 
     /**
-     * <p>Constructor for ObdWarmstartCommand.</p>
+     * <p>Constructor for HeadersOnCommand.</p>
      *
-     * @param other a {@link com.github.pires.obd.commands.protocol.ObdWarmstartCommand} object.
+     * @param other a {@link com.github.pires.obd.commands.protocol.HeadersOnCommand} object.
      */
-    public ObdWarmstartCommand(ObdWarmstartCommand other) {
+    public HeadersOnCommand(HeadersOnCommand other) {
         super(other);
     }
 
@@ -43,7 +43,6 @@ public class ObdWarmstartCommand extends ObdProtocolCommand {
     /** {@inheritDoc} */
     @Override
     public String getName() {
-        return "Warmstart OBD";
+        return "Headers Enabled";
     }
-
 }

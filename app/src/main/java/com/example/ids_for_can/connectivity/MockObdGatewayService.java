@@ -37,12 +37,9 @@ public class MockObdGatewayService extends AbstractGatewayService {
 
     /*
      * Will send second-time based on tests.
-     *
-     * TODO this can be done w/o having to queue jobs by just issuing
-     * command.run(), command.getResult() and validate the result.
      */
         queueJob(new ObdCommandJob(new EchoOffCommand()));
-        queueJob(new ObdCommandJob(new LineFeedOffCommand()));
+        //queueJob(new ObdCommandJob(new LineFeedOffCommand()));
         queueJob(new ObdCommandJob(new TimeoutCommand(62)));
 
         // For now set protocol to AUTO

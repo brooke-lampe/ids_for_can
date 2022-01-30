@@ -73,5 +73,4 @@ public class RuntimeCommand extends ObdCommand {
     public String getName() {
         return AvailableCommandNames.ENGINE_RUNTIME.getValue();
     }
-
 }

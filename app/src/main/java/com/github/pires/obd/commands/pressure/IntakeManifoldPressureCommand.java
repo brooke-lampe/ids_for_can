@@ -41,5 +41,4 @@ public class IntakeManifoldPressureCommand extends PressureCommand {
     public String getName() {
         return AvailableCommandNames.INTAKE_MANIFOLD_PRESSURE.getValue();
     }
-
 }

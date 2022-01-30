@@ -153,5 +153,4 @@ public class TroubleCodesCommand extends ObdCommand {
     public String getName() {
         return AvailableCommandNames.TROUBLE_CODES.getValue();
     }
-
 }

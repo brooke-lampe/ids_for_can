@@ -78,5 +78,4 @@ public enum AvailableCommandNames {
     public final String getValue() {
         return value;
     }
-
 }

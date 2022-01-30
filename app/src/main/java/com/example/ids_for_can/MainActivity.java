@@ -1,15 +1,13 @@
 package com.example.ids_for_can;
 
-import static com.github.pires.obd.enums.AvailableCommandNames.MONITOR_ALL;
+import static com.github.pires.obd.enums.ObdProtocols.ISO_15765_4_CAN;
 
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,7 +23,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
@@ -41,19 +38,20 @@ import androidx.core.content.ContextCompat;
 
 import com.github.pires.obd.commands.MonitorAllCommand;
 import com.github.pires.obd.commands.ObdCommand;
-import com.github.pires.obd.commands.SpeedCommand;
-import com.github.pires.obd.commands.engine.RPMCommand;
-import com.github.pires.obd.commands.engine.RuntimeCommand;
+import com.github.pires.obd.commands.protocol.EchoOffCommand;
+import com.github.pires.obd.commands.protocol.HeadersOnCommand;
+import com.github.pires.obd.commands.protocol.LineFeedOffCommand;
+import com.github.pires.obd.commands.protocol.LineFeedOnCommand;
+import com.github.pires.obd.commands.protocol.ObdWarmStartCommand;
+import com.github.pires.obd.commands.protocol.SelectProtocolCommand;
+import com.github.pires.obd.commands.protocol.SpacesOnCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
-import com.example.ids_for_can.R;
 import com.example.ids_for_can.connectivity.ObdConfig;
 import com.example.ids_for_can.connectivity.AbstractGatewayService;
 import com.example.ids_for_can.connectivity.MockObdGatewayService;
 import com.example.ids_for_can.connectivity.ObdCommandJob;
 import com.example.ids_for_can.connectivity.ObdGatewayService;
 import com.example.ids_for_can.connectivity.ObdProgressListener;
-import com.example.ids_for_can.connectivity.ObdReading;
-import com.example.ids_for_can.connectivity.ObdService;
 import com.google.inject.Inject;
 
 import java.io.IOException;
@@ -78,6 +76,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
+    private static boolean initMonitorDone = false;
+    public static boolean monitoringOn = false;
 
     public static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
 
@@ -126,6 +126,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             service.setContext(MainActivity.this);
             Log.d(TAG, "START LIVE DATA");
             try {
+                initMonitorDone = false;
                 service.startService();
                 if (preRequisites)
                     btStatusTextView.setText(getString(R.string.status_bluetooth_connected));
@@ -284,13 +285,16 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     @Override
     protected void onStart() {
         super.onStart();
+
         Log.d(TAG, "Entered onStart...");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
         Log.d(TAG, "Entered onDestroy...");
+        monitoringOn = false;
 
         if (isServiceBound) {
             //we don't want to unbind the service
@@ -374,6 +378,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void startMonitoring() {
         Log.d(TAG, "Starting monitoring...");
+        monitoringOn = true;
 
         tl.removeAllViews(); //start fresh
         doBindService();
@@ -384,6 +389,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void stopLiveData() {
         Log.d(TAG, "Stopping live data...");
+        monitoringOn = false;
 
         doUnbindService();
     }
@@ -455,6 +461,16 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void monitorAllCommands() {
         if (isServiceBound) {
+            if (!initMonitorDone) {
+                //service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
+                service.queueJob(new ObdCommandJob(new ObdWarmStartCommand()));
+                service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
+                service.queueJob(new ObdCommandJob(new EchoOffCommand()));
+                service.queueJob(new ObdCommandJob(new SpacesOnCommand()));
+                service.queueJob(new ObdCommandJob(new HeadersOnCommand()));
+                service.queueJob(new ObdCommandJob(new SelectProtocolCommand(ISO_15765_4_CAN)));
+                initMonitorDone = true;
+            }
             service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
         }
     }

@@ -24,5 +24,4 @@ public class StoppedException extends ResponseException {
     public StoppedException() {
         super("STOPPED");
     }
-
 }

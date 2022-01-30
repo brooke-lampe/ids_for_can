@@ -45,5 +45,4 @@ public class EchoOffCommand extends ObdProtocolCommand {
     public String getName() {
         return "Echo Off";
     }
-
 }

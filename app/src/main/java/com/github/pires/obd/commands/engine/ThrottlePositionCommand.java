@@ -42,5 +42,4 @@ public class ThrottlePositionCommand extends PercentageObdCommand {
     public String getName() {
         return AvailableCommandNames.THROTTLE_POS.getValue();
     }
-
 }

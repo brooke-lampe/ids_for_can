@@ -47,5 +47,4 @@ public class LoadCommand extends PercentageObdCommand {
     public String getName() {
         return AvailableCommandNames.ENGINE_LOAD.getValue();
     }
-
 }

@@ -41,5 +41,4 @@ public class BarometricPressureCommand extends PressureCommand {
     public String getName() {
         return AvailableCommandNames.BAROMETRIC_PRESSURE.getValue();
     }
-
 }

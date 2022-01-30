@@ -81,5 +81,4 @@ public class ModuleVoltageCommand extends ObdCommand {
     public String getName() {
         return AvailableCommandNames.CONTROL_MODULE_VOLTAGE.getValue();
     }
-
 }

@@ -12,29 +12,32 @@
  */
 package com.github.pires.obd.commands.protocol;
 
-/**
- * This class allows for an unspecified command to be sent.
- */
-public class ObdRawCommand extends ObdProtocolCommand {
 
-    /**
-     * <p>Constructor for ObdRawCommand.</p>
-     *
-     * @param command a {@link java.lang.String} object.
-     */
-    public ObdRawCommand(String command) {
-        super(command);
+/**
+ * Turns on spaces.
+ */
+public class SpacesOnCommand extends ObdProtocolCommand {
+
+    public SpacesOnCommand() {
+        super("AT S1");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * <p>Constructor for SpacesOnCommand.</p>
+     *
+     * @param other a {@link SpacesOnCommand} object.
+     */
+    public SpacesOnCommand(SpacesOnCommand other) {
+        super(other);
+    }
+
     @Override
     public String getFormattedResult() {
         return getResult();
     }
 
-    /** {@inheritDoc} */
     @Override
     public String getName() {
-        return "Custom command " + getCommandPID();
+        return "Spaces On";
     }
 }

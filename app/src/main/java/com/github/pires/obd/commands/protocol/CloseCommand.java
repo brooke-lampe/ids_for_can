@@ -58,5 +58,4 @@ public class CloseCommand extends ObdProtocolCommand {
     public String getName() {
         return "Protocol Close";
     }
-
 }

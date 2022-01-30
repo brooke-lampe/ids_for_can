@@ -78,5 +78,4 @@ public enum FuelTrim {
     public final String buildObdCommand() {
         return new String("01 0" + value);
     }
-
 }

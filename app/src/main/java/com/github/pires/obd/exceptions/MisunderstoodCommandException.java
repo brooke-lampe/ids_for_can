@@ -24,5 +24,4 @@ public class MisunderstoodCommandException extends ResponseException {
     public MisunderstoodCommandException() {
         super("?");
     }
-
 }

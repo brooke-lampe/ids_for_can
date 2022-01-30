@@ -78,5 +78,4 @@ public class RPMCommand extends ObdCommand {
     public int getRPM() {
         return rpm;
     }
-
 }

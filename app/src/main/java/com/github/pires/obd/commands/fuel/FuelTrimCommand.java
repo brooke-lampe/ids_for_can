@@ -83,5 +83,4 @@ public class FuelTrimCommand extends PercentageObdCommand {
     public String getName() {
         return bank.getBank();
     }
-
 }

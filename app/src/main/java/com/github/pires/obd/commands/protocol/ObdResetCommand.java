@@ -45,5 +45,4 @@ public class ObdResetCommand extends ObdProtocolCommand {
     public String getName() {
         return "Reset OBD";
     }
-
 }

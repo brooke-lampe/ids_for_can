@@ -43,5 +43,4 @@ public class SelectProtocolCommand extends ObdProtocolCommand {
     public String getName() {
         return "Select Protocol " + protocol.name();
     }
-
 }
