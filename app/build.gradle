@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.example.ids_for_can"
         minSdk 21
-        targetSdk 32
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
@@ -28,7 +28,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
@@ -38,5 +37,4 @@ dependencies {
     implementation 'org.roboguice:roboguice:3.0.1'
     compileOnly 'org.roboguice:roboblender:3.0.1'
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
-
 }

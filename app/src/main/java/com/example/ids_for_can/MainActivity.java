@@ -266,6 +266,23 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
 
         obdStatusTextView.setText(getString(R.string.status_obd_disconnected));
+
+        if (ContextCompat.checkSelfPermission(
+                this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(
+                this, Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED) {
+            Log.d(TAG, "READ_AND_WRITE_EXTERNAL_STORAGE PERMISSION GRANTED!");
+        } else {
+            // You can directly ask for the permission.
+            // The registered ActivityResultCallback gets the result of this request.
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE},
+                    PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE);
+            Log.d(TAG, "READ_AND_WRITE_EXTERNAL_STORAGE PERMISSION REQUESTED!");
+        }
     }
 
     @Override
@@ -522,7 +539,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private void monitorAllCommands() {
         if (isServiceBound) {
             if (!initIDSDone) {
-                //service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
                 service.queueJob(new ObdCommandJob(new ObdWarmStartCommand()));
                 service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
                 service.queueJob(new ObdCommandJob(new EchoOffCommand()));
@@ -532,6 +548,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 initIDSDone = true;
             }
             service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
+
+            if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
+                sendNotification();
+                ObdCommand.ATMAMap.remove("ELM327");
+            }
         }
     }
 

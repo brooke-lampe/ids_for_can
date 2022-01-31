@@ -18,6 +18,7 @@ import static com.example.ids_for_can.MainActivity.IDSOn;
 
 import com.example.ids_for_can.Log;
 
+import com.example.ids_for_can.MainActivity;
 import com.github.pires.obd.exceptions.*;
 
 import java.io.IOException;
@@ -186,19 +187,23 @@ public abstract class ObdCommand {
 
         Log.d(TAG, "ATMAArray");
         for (String atma : ATMAArray) {
+            atma = atma.trim();
             Log.d(TAG, atma);
-            if (!atma.equals("BUFFER FULL") && !atma.equals("NO DATA")) {
-                atma = atma.trim();
+            if (!atma.equals("BUFFER FULL") && !atma.equals("NO DATA") && !atma.equals("OK")
+                    && !atma.equals("STOPPED") && !atma.equals("?")) {
                 String temp[] = atma.split(" ", 2);
-                String arbitrationId = temp[0];
-                Set<String> data;
-                if (ATMAMap.containsKey(arbitrationId)) {
-                    data = ATMAMap.get(arbitrationId);
-                } else {
-                    data = new HashSet<>();
+                if (temp.length > 1 && !temp[0].equals("AT")) {
+                //if (temp.length > 1 && !temp[0].equals("AT") && !temp[0].equals("ELM327")) {
+                    String arbitrationId = temp[0];
+                    Set<String> data;
+                    if (ATMAMap.containsKey(arbitrationId)) {
+                        data = ATMAMap.get(arbitrationId);
+                    } else {
+                        data = new HashSet<>();
+                    }
+                    data.add(temp[1]);
+                    ATMAMap.put(arbitrationId, data);
                 }
-                data.add(temp[1]);
-                ATMAMap.put(arbitrationId, data);
             }
         }
 

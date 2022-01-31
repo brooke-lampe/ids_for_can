@@ -23,6 +23,7 @@ public class Log {
         if (!mLogFile.exists()) {
             try {
                 mLogFile.createNewFile();
+                android.util.Log.d(TAG, "Log File Created!");
             } catch (final IOException e) {
                 e.printStackTrace();
             }
