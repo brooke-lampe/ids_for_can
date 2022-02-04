@@ -51,6 +51,7 @@ import com.example.ids_for_can.connectivity.ObdGatewayService;
 import com.example.ids_for_can.connectivity.ObdProgressListener;
 import com.github.pires.obd.enums.ObdProtocols;
 import com.google.inject.Inject;
+import com.network.VirtualCAN;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -211,6 +212,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.main);
+
+        Log.d(TAG, "GETTING VIRTUAL INTERFACES");
+        VirtualCAN.getInterfaces();
 
         if (ContextCompat.checkSelfPermission(
                 this, Manifest.permission.BLUETOOTH) ==
