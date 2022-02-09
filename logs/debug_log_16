@@ -1,0 +1,44 @@
+2022-02-08 18:20:26.946 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: cmdID: MONITOR_ALL, rawCmdResult: 
+2022-02-08 18:20:30.821 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[11] to queue...
+2022-02-08 18:20:30.821 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-02-08 18:20:30.821 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: trainingCounter: 5
+2022-02-08 18:20:30.821 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Creating the matrix...
+2022-02-08 18:20:30.821 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: []
+2022-02-08 18:20:30.821 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Saving the vehicle in preferences...
+2022-02-08 18:20:30.822 4825-4901/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[11] from queue...
+2022-02-08 18:20:30.822 4825-4901/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-02-08 18:20:30.831 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: commitResult: true
+2022-02-08 18:20:30.831 4825-4825/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Training complete, starting IDS...
+2022-02-08 18:20:30.941 4825-4901/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-02-08 18:20:30.942 4825-4901/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00 
+    1EF 00 00 00 00 
+    3C1 07 65 04 00 00 00 00 00 
+    3D1 00 46 00 00 00 00 00 00 
+    3E9 00 00 00 00 00 00 00 00 
+    19D C0 00 3F FD 00 00 00 FF <DATA ERROR
+    1AF 00 00 00 
+    1F5 0F 0F 00 21 00 00 03 00 <DATA ERROR
+    0F1 1C 06 00 40 
+    1EB 01 80 
+    1CB 10 00 00 
+    0C7 
+    BUFFER FULL
+2022-02-08 18:20:30.959 4825-4901/com.example.ids_for_can D/ContentValues: ATMAArray
+2022-02-08 18:20:30.960 4825-4901/com.example.ids_for_can D/ContentValues: 1ED 00 00 00 00 00 00 08 00
+2022-02-08 18:20:30.960 4825-4901/com.example.ids_for_can D/ContentValues: ATMATrace
+2022-02-08 18:20:30.961 4825-4901/com.example.ids_for_can D/ContentValues: [1ED]
+2022-02-08 18:20:30.961 4825-4901/com.example.ids_for_can D/ContentValues: 1EF 00 00 00 00
+2022-02-08 18:20:30.961 4825-4901/com.example.ids_for_can D/ContentValues: ATMATrace
+2022-02-08 18:20:30.962 4825-4901/com.example.ids_for_can D/ContentValues: [1ED, 1EF]
+2022-02-08 18:20:30.962 4825-4901/com.example.ids_for_can D/ContentValues: 3C1 07 65 04 00 00 00 00 00
+2022-02-08 18:20:30.962 4825-4901/com.example.ids_for_can D/ContentValues: ATMATrace
+2022-02-08 18:20:30.963 4825-4901/com.example.ids_for_can D/ContentValues: [1ED, 1EF, 3C1]
+2022-02-08 18:20:30.963 4825-4901/com.example.ids_for_can D/ContentValues: 3D1 00 46 00 00 00 00 00 00
+2022-02-08 18:20:30.963 4825-4901/com.example.ids_for_can D/ContentValues: ATMATrace
+2022-02-08 18:20:30.964 4825-4901/com.example.ids_for_can D/ContentValues: [1ED, 1EF, 3C1, 3D1]
+2022-02-08 18:20:30.964 4825-4901/com.example.ids_for_can D/ContentValues: 3E9 00 00 00 00 00 00 00 00
+2022-02-08 18:20:30.965 4825-4901/com.example.ids_for_can D/ContentValues: ATMATrace
+2022-02-08 18:20:30.965 4825-4901/com.example.ids_for_can D/ContentValues: [1ED, 1EF, 3C1, 3D1, 3E9]
+2022-02-08 18:20:30.965 4825-4901/com.example.ids_for_can D/ContentValues: 19D C0 00 3F FD 00 00 00 FF <DATA ERROR
+2022-02-08 18:20:30.965 4825-4901/com.example.ids_for_can D/ContentValues: ATMATrace
+2022-02-08 18:20:30.966 4825-4901/com.example.ids_for_can D/ContentValues: [1ED, 1EF, 3C1, 3D1, 3E9, 19D]

@@ -57,6 +57,7 @@ public abstract class ObdCommand {
     private long end;
     private String ATMAString;
     public static HashMap<String, Set<String>> ATMAMap = new HashMap<>();
+    public static ArrayList<String> ATMATrace = new ArrayList<>();
 
     /**
      * Default ctor to use
@@ -203,6 +204,10 @@ public abstract class ObdCommand {
                     }
                     data.add(temp[1]);
                     ATMAMap.put(arbitrationId, data);
+
+                    ATMATrace.add(arbitrationId);
+                    Log.d(TAG, "ATMATrace");
+                    Log.d(TAG, ATMATrace.toString());
                 }
             }
         }
@@ -247,8 +252,8 @@ public abstract class ObdCommand {
      * processing..
      */
         rawData = removeAll(SEARCHING_PATTERN, res.toString());
-        Log.d(TAG, "readRawData -- rawData -- SEARCHING_PATTERN");
-        Log.d(TAG, rawData);
+        //Log.d(TAG, "readRawData -- rawData -- SEARCHING_PATTERN");
+        //Log.d(TAG, rawData);
 
     /*
      * Data may have echo or informative text like "INIT BUS..." or similar.
@@ -257,8 +262,8 @@ public abstract class ObdCommand {
      */
         //kills multiline.. rawData = rawData.substring(rawData.lastIndexOf(13) + 1);
         rawData = removeAll(WHITESPACE_PATTERN, rawData);//removes all [ \t\n\x0B\f\r]
-        Log.d(TAG, "readRawData -- rawData -- WHITESPACE PATTERN");
-        Log.d(TAG, rawData);
+        //Log.d(TAG, "readRawData -- rawData -- WHITESPACE PATTERN");
+        //Log.d(TAG, rawData);
     }
 
     void checkForErrors() {

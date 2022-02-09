@@ -1,6 +1,3 @@
-/*
- * TODO put header
- */
 package com.example.ids_for_can.connectivity;
 
 import com.github.pires.obd.commands.ObdCommand;

@@ -1,5 +1,7 @@
 package com.example.ids_for_can;
 
+import static android.content.ContentValues.TAG;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -54,7 +56,9 @@ import com.google.inject.Inject;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -71,16 +75,39 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int NO_BLUETOOTH_ID = 0;
     private static final int BLUETOOTH_DISABLED = 1;
     private static final int START_LIVE_DATA = 2;
-    private static final int START_IDS = 3;
-    private static final int STOP_LIVE_DATA_OR_IDS = 4;
-    private static final int START_LOGGING = 5;
-    private static final int SETTINGS = 6;
-    private static final int QUIT_APPLICATION = 7;
+    private static final int TRAIN_IDS = 3;
+    private static final int START_IDS = 4;
+    private static final int STOP_LIVE_DATA_OR_IDS = 5;
+    private static final int START_LOGGING = 6;
+    private static final int SETTINGS = 7;
+    private static final int QUIT_APPLICATION = 8;
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
+
+    // This variable runs the commands needed to train or start the IDS
+    // Without this variable, the app runs the commands needed to fetch diagnostic data
     private static boolean initIDSDone = false;
+
+    // This variable determines if the IDS has been trained on the current vehicle
+    public static boolean trainingComplete = false;
+
+    // This variable is a counter for the training data
+    public static int trainingCounter = 0;
+
+    // This variable is a threshold for the training data
+    // When the trainingCounter reaches this threshold, we have sufficient data to create the matrix
+    // About 10 CAN messages are captured in one 'AT MA' command,
+    // so the threshold is 10x the value of this variable
+    public static int trainingThreshold = 3;
+
+    // The IDS is currently training
+    public static boolean IDSTrain = false;
+
+    // The IDS is currently running
     public static boolean IDSOn = false;
+
+    // Logging to external storage is enabled
     public static boolean loggingOn = false;
 
     private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
@@ -183,7 +210,13 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             if (cmdResult != null && isServiceBound && !cmdName.equals("Monitor all")) {
                 obdStatusTextView.setText(cmdResult.toLowerCase());
             } else {
-                obdStatusTextView.setText(getString(R.string.ids_active));
+                if (IDSTrain) {
+                    obdStatusTextView.setText(getString(R.string.ids_training));
+                } else if (IDSOn) {
+                    obdStatusTextView.setText(getString(R.string.ids_active));
+                } else {
+                    obdStatusTextView.setText(getString(R.string.unknown_state));
+                }
             }
         } else if (job.getState().equals(ObdCommandJob.ObdCommandJobState.BROKEN_PIPE)) {
             if (isServiceBound)
@@ -369,6 +402,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
+        menu.add(0, TRAIN_IDS, 0, getString(R.string.train_retrain_ids));
         menu.add(0, START_IDS, 0, getString(R.string.start_ids));
         menu.add(0, STOP_LIVE_DATA_OR_IDS, 0, getString(R.string.stop_live_data_ids));
         menu.add(0, START_LOGGING, 0, getString(R.string.start_logging));
@@ -383,6 +417,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         switch (item.getItemId()) {
             case START_LIVE_DATA:
                 startLiveData();
+                return true;
+            case TRAIN_IDS:
+                trainIDS();
                 return true;
             case START_IDS:
                 startIDS();
@@ -413,6 +450,19 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         new Handler().post(mQueueCommands);
     }
 
+    private void trainIDS() {
+        Log.d(TAG, "Training IDS...");
+        IDSTrain = true;
+        trainingComplete = false;
+        trainingCounter = 0;
+
+        tl.removeAllViews(); //start fresh
+        doBindService();
+
+        // start command execution
+        new Handler().post(mMonitorAllCommands);
+    }
+
     private void startIDS() {
         Log.d(TAG, "Starting IDS...");
         IDSOn = true;
@@ -426,6 +476,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void stopLiveData() {
         Log.d(TAG, "Stopping live data...");
+        initIDSDone = false;
+        IDSTrain = false;
         IDSOn = false;
 
         doUnbindService();
@@ -478,6 +530,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem startItem = menu.findItem(START_LIVE_DATA);
+        MenuItem trainItem = menu.findItem(TRAIN_IDS);
         MenuItem idsItem = menu.findItem(START_IDS);
         MenuItem stopItem = menu.findItem(STOP_LIVE_DATA_OR_IDS);
         MenuItem loggingItem = menu.findItem(START_LOGGING);
@@ -485,13 +538,19 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         if (service != null && service.isRunning()) {
             startItem.setEnabled(false);
+            trainItem.setEnabled(false);
             idsItem.setEnabled(false);
             stopItem.setEnabled(true);
             settingsItem.setEnabled(false);
         } else {
             stopItem.setEnabled(false);
+            trainItem.setEnabled(true);
             startItem.setEnabled(true);
-            idsItem.setEnabled(true);
+            if (trainingComplete) {
+                idsItem.setEnabled(true);
+            } else {
+                idsItem.setEnabled(false);
+            }
             settingsItem.setEnabled(true);
         }
 
@@ -548,6 +607,13 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 initIDSDone = true;
             }
             service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
+            trainingCounter++;
+            Log.d(TAG, "trainingCounter: " + trainingCounter);
+
+            // We are in training mode, and we have sufficient data to create the matrix
+            if (IDSTrain && trainingCounter >= trainingThreshold) {
+                createMatrix();
+            }
 
             if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
                 sendNotification();
@@ -595,6 +661,54 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void createMatrix() {
+        // Create the matrix/profile for this vehicle, which enables the IDS to function
+
+        // TODO: Create and store the matrix/profile for this vehicle
+
+        Log.d(TAG, "Creating the matrix...");
+        Log.d(TAG, ObdCommand.ATMATrace.toString());
+
+        // Now that we have a matrix/profile for this vehicle, we need to save this vehicle as an option in preferences
+        Log.d(TAG, "Saving the vehicle in preferences...");
+
+        SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
+        HashSet<String> all_vehicles = new HashSet<>();
+        if (vehiclePreference.contains("ALL_VEHICLES")) {
+            all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+        } else {
+            all_vehicles.add("NEW");
+        }
+        Log.d(TAG, "all_vehicles: " + all_vehicles);
+
+        // TODO: Create a dialog so that the user can select the vehicle name (for preferences)
+
+        // Default name is "vehicle 1"
+        String default_name = "vehicle 1";
+
+        all_vehicles.add(default_name);
+        String selected_vehicle = default_name;
+
+        SharedPreferences.Editor editor = vehiclePreference.edit();
+        editor.clear();
+        editor.putStringSet("ALL_VEHICLES", all_vehicles);
+        editor.putString("SELECTED_VEHICLE", selected_vehicle);
+        boolean commitResult = editor.commit();
+        Log.d(TAG, "commitResult: " + commitResult);
+
+        HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+        Log.d(TAG, "resultHashSet: " + resultHashSet);
+
+        String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+        Log.d(TAG, "resultString: " + resultString);
+
+        Log.d(TAG, "Training complete, starting IDS...");
+
+        trainingComplete = true;
+        IDSTrain = false;
+        IDSOn = true;
     }
 
     public void sendNotification() {

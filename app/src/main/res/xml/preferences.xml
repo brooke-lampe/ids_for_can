@@ -17,6 +17,13 @@
             android:title="@string/pref_bluetooth_list_devices_title" />
     </PreferenceCategory>
     <PreferenceCategory
+        android:title="@string/vehicle_selection_title">
+        <ListPreference
+            android:key="vehicle_list_preference"
+            android:summary="@string/trained_vehicles_summary"
+            android:title="@string/vehicles" />
+    </PreferenceCategory>
+    <PreferenceCategory
         android:title="@string/title_pref_obd">
         <ListPreference
             android:defaultValue="AUTO"
@@ -32,7 +39,7 @@
             android:summaryOn="@string/pref_imperial_units_summaryOn"
             android:title="@string/pref_imperial_units_title" />
         <EditTextPreference
-            android:defaultValue="4"
+            android:defaultValue="1"
             android:dialogTitle="@string/pref_obd_update_period_title"
             android:key="obd_update_period_preference"
             android:summary="@string/pref_obd_update_period_summary"
