@@ -11,6 +11,7 @@ import android.app.NotificationManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -20,12 +21,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import com.example.ids_for_can.Log;
+
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -109,6 +113,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     // Logging to external storage is enabled
     public static boolean loggingOn = false;
+
+    // Default name is "My Vehicle"
+    private String userText = "My Vehicle";
+
+    // Waiting on user input
+    public static boolean waitingOnUser = false;
+
+    public static boolean profileMatrix[][] = null;
 
     private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
     private static final int PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE = 2;
@@ -356,6 +368,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "Entered onDestroy...");
         IDSOn = false;
+        IDSTrain = false;
+        trainingComplete = false;
+        trainingCounter = 0;
         loggingOn = false;
 
         if (isServiceBound) {
@@ -477,8 +492,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private void stopLiveData() {
         Log.d(TAG, "Stopping live data...");
         initIDSDone = false;
-        IDSTrain = false;
         IDSOn = false;
+        IDSTrain = false;
+        trainingCounter = 0;
 
         doUnbindService();
     }
@@ -596,7 +612,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     }
 
     private void monitorAllCommands() {
-        if (isServiceBound) {
+        if (isServiceBound && !waitingOnUser) {
             if (!initIDSDone) {
                 service.queueJob(new ObdCommandJob(new ObdWarmStartCommand()));
                 service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
@@ -667,6 +683,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // Create the matrix/profile for this vehicle, which enables the IDS to function
 
         // TODO: Create and store the matrix/profile for this vehicle
+        // we need to associate the vehicle name/nickname with the matrix/profile,
+        // so that we can check if the matrix/profile exists
+        // in order to determine if we should allow "Start IDS" or not
 
         Log.d(TAG, "Creating the matrix...");
         Log.d(TAG, ObdCommand.ATMATrace.toString());
@@ -674,6 +693,33 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // Now that we have a matrix/profile for this vehicle, we need to save this vehicle as an option in preferences
         Log.d(TAG, "Saving the vehicle in preferences...");
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter a nickname for this vehicle: ");
+        EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                userText = input.getText().toString();
+                updateSharedPreferences();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                updateSharedPreferences();
+            }
+        });
+
+        waitingOnUser = true;
+        Log.d(TAG, "waitingOnUser: " + waitingOnUser);
+        builder.show();
+    }
+
+    public void updateSharedPreferences() {
         SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
         HashSet<String> all_vehicles = new HashSet<>();
         if (vehiclePreference.contains("ALL_VEHICLES")) {
@@ -683,13 +729,21 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
         Log.d(TAG, "all_vehicles: " + all_vehicles);
 
-        // TODO: Create a dialog so that the user can select the vehicle name (for preferences)
+        // We need to enforce unique names (we have a HashSet).
+        // So if the name exists in the HashSet, we append a number.
+        // If the name still exists in the HashSet, we increment the number and append.
+        // On and on, until we find a name that is not in the HashSet.
 
-        // Default name is "vehicle 1"
-        String default_name = "vehicle 1";
+        userText = "My Vehicle";
+        String newUserText = userText;
+        int counter = 1;
+        while (all_vehicles.contains(newUserText)) {
+            newUserText = userText + " (" + counter + ")";
+            counter++;
+        }
 
-        all_vehicles.add(default_name);
-        String selected_vehicle = default_name;
+        all_vehicles.add(newUserText);
+        String selected_vehicle = newUserText;
 
         SharedPreferences.Editor editor = vehiclePreference.edit();
         editor.clear();
@@ -709,6 +763,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         trainingComplete = true;
         IDSTrain = false;
         IDSOn = true;
+        waitingOnUser = false;
     }
 
     public void sendNotification() {

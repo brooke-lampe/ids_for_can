@@ -181,6 +181,29 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
      */
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 
+        Log.d(TAG, "preference: " + preference);
+        Log.d(TAG, "newValue: " + newValue);
+
+        if (VEHICLE_LIST_KEY.equals(preference.getKey())) {
+            // TODO Implement profile/matrix check
+            // We need to check if we have a profile/matrix for this vehicle
+            // If we do, then training is complete,
+            // and we can pull up the profile/matrix and run the IDS
+
+            // If not, then training is not complete,
+            // and the IDS is unavailable
+
+            Log.d(TAG, "HERE!");
+            if (false) {
+                // TODO Pull up the profile/matrix for the vehicle
+                MainActivity.profileMatrix = new boolean[2][2];
+                MainActivity.trainingComplete = true;
+            } else {
+                MainActivity.profileMatrix = null;
+                MainActivity.trainingComplete = false;
+            }
+        }
+
         if (OBD_UPDATE_PERIOD_KEY.equals(preference.getKey())) {
             try {
                 Double.parseDouble(newValue.toString().replace(",", "."));
