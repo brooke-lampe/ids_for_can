@@ -23,6 +23,9 @@ import com.github.pires.obd.enums.ObdProtocols;
 import com.example.ids_for_can.R;
 import com.example.ids_for_can.connectivity.ObdConfig;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;

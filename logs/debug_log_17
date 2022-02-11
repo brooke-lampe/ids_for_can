@@ -1,0 +1,13 @@
+2022-02-10 20:41:42.164 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: resultString: My Vehicle (6)
+2022-02-10 20:41:42.164 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: resultJSON: [{"profileName":"My Vehicle","matrix":[[true,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,true]]},{"profileName":"My Vehicle","matrix":[[true,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,true]]}]
+2022-02-10 20:41:42.164 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: storedJSON: [{"profileName":"My Vehicle","matrix":[[true,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,true]]},{"profileName":"My Vehicle","matrix":[[true,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,true]]}]
+2022-02-10 20:41:42.165 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: recoveredMatrix: [[Z@e746080
+2022-02-10 20:41:42.165 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: Training complete, starting IDS...
+2022-02-10 20:41:42.169 19152-19178/com.example.ids_for_can D/OpenGLRenderer: endAllActiveAnimators on 0x74b92252a0 (RippleDrawable) with handle 0x73c921bc10
+2022-02-10 20:41:43.315 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Adding job[10] to queue...
+2022-02-10 20:41:43.315 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Job queued successfully.
+2022-02-10 20:41:43.315 19152-19152/com.example.ids_for_can D/com.example.ids_for_can.MainActivity: trainingCounter: 4
+2022-02-10 20:41:43.316 19152-19649/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Taking job[10] from queue...
+2022-02-10 20:41:43.316 19152-19649/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Job state is NEW. Run it...
+2022-02-10 20:41:43.470 19152-19649/com.example.ids_for_can D/ContentValues: readRawData -- ATMAString
+2022-02-10 20:41:43.470 19152-19649/com.example.ids_for_can D/ContentValues: 287 C1 00 00 <DATA ERROR

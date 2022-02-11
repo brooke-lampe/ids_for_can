@@ -58,7 +58,13 @@ import com.example.ids_for_can.connectivity.ObdProgressListener;
 import com.github.pires.obd.enums.ObdProtocols;
 import com.google.inject.Inject;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -683,9 +689,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // Create the matrix/profile for this vehicle, which enables the IDS to function
 
         // TODO: Create and store the matrix/profile for this vehicle
-        // we need to associate the vehicle name/nickname with the matrix/profile,
+        // we need to associate the vehicle nickname with the matrix/profile,
         // so that we can check if the matrix/profile exists
         // in order to determine if we should allow "Start IDS" or not
+        profileMatrix = new boolean[4][4];
+        profileMatrix[0][0] = true;
+        profileMatrix[3][3] = true;
+
+        Log.d(TAG, "profileMatrix: " + profileMatrix);
 
         Log.d(TAG, "Creating the matrix...");
         Log.d(TAG, ObdCommand.ATMATrace.toString());
@@ -703,14 +714,22 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 userText = input.getText().toString();
-                updateSharedPreferences();
+                try {
+                    updateSharedPreferences();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                updateSharedPreferences();
+                try {
+                    updateSharedPreferences();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -719,8 +738,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         builder.show();
     }
 
-    public void updateSharedPreferences() {
+    public void updateSharedPreferences() throws JSONException {
         SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
+
+        // Retrieve the HashSet of all vehicles
         HashSet<String> all_vehicles = new HashSet<>();
         if (vehiclePreference.contains("ALL_VEHICLES")) {
             all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
@@ -729,12 +750,32 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
         Log.d(TAG, "all_vehicles: " + all_vehicles);
 
+        // Retrieve the string that represents the "profiles" JSON object
+        String jsonString = null;
+        if (vehiclePreference.contains("PROFILES")) {
+            jsonString = vehiclePreference.getString("PROFILES", new String());
+        }
+        Log.d(TAG, "jsonString: " + jsonString);
+
+        JSONArray profiles = null;
+        if (jsonString != null) {
+            profiles = new JSONArray(jsonString);
+        }
+        Log.d(TAG, "profiles: " + profiles);
+
+        if (profiles == null) {
+            profiles = new JSONArray();
+        }
+
         // We need to enforce unique names (we have a HashSet).
         // So if the name exists in the HashSet, we append a number.
         // If the name still exists in the HashSet, we increment the number and append.
         // On and on, until we find a name that is not in the HashSet.
 
-        userText = "My Vehicle";
+        if (userText.isEmpty()) {
+            userText = "My Vehicle";
+        }
+
         String newUserText = userText;
         int counter = 1;
         while (all_vehicles.contains(newUserText)) {
@@ -745,10 +786,38 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         all_vehicles.add(newUserText);
         String selected_vehicle = newUserText;
 
+        // TODO DELETE
+        profileMatrix = new boolean[4][4];
+        profileMatrix[0][0] = true;
+        profileMatrix[3][3] = true;
+
+        // Create the JSON for the new vehicle matrix/profile
+        JSONObject newProfile = new JSONObject();
+        newProfile.put("profileName", newUserText);
+
+        JSONArray parentArray = new JSONArray();
+        // loop by row, then by column
+        for (int i = 0;  i < profileMatrix.length; i++){
+            JSONArray childArray = new JSONArray();
+            for (int j = 0; j < profileMatrix[i].length; j++){
+                childArray.put(profileMatrix[i][j]);
+            }
+            parentArray.put(childArray);
+        }
+
+        newProfile.put("matrix", parentArray);
+        Log.d(TAG, "newProfile: " + newProfile);
+
+        // Add the new vehicle matrix/profile to the "profiles" JSON object
+        profiles.put(newProfile);
+        String updatedJSONData = profiles.toString();
+        Log.d(TAG, "updatedJSONData: " + updatedJSONData);
+
         SharedPreferences.Editor editor = vehiclePreference.edit();
         editor.clear();
         editor.putStringSet("ALL_VEHICLES", all_vehicles);
         editor.putString("SELECTED_VEHICLE", selected_vehicle);
+        editor.putString("PROFILES", updatedJSONData);
         boolean commitResult = editor.commit();
         Log.d(TAG, "commitResult: " + commitResult);
 
@@ -757,6 +826,48 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
         Log.d(TAG, "resultString: " + resultString);
+
+        String resultJSON = vehiclePreference.getString("PROFILES", new String());
+        Log.d(TAG, "resultJSON: " + resultJSON);
+
+        JSONArray storedJSON = new JSONArray(resultJSON);
+        Log.d(TAG, "storedJSON: " + storedJSON);
+
+        JSONObject obj = null;
+        for (int i = 0; i < storedJSON.length(); i++) {
+            obj = storedJSON.getJSONObject(i);
+            Log.d(TAG, "obj: " + obj);
+            if (obj.get("profileName").equals(selected_vehicle)) {
+                Log.d(TAG, "MATCH!  obj: " + obj);
+                break;
+            }
+        }
+
+        boolean recoveredMatrix[][] = null;
+
+        JSONArray matrixParent = null;
+        if (obj != null) {
+            matrixParent = obj.getJSONArray("matrix");
+
+            // If the matrix exists, it should be at least 1 x 1
+            int rows = matrixParent.length();
+            int cols = matrixParent.getJSONArray(0).length();
+            recoveredMatrix = new boolean[rows][cols];
+
+            for (int i = 0; i < matrixParent.length(); i++) {
+                JSONArray matrixChild = matrixParent.getJSONArray(i);
+                for (int j = 0; j < matrixChild.length(); j++) {
+                    recoveredMatrix[i][j] = matrixChild.getBoolean(j);
+                }
+            }
+        }
+
+        Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
+
+        Log.d(TAG, "Printing recoveredMatrix...");
+        for (boolean[] arr : recoveredMatrix) {
+            Log.d(TAG, Arrays.toString(arr));
+        }
 
         Log.d(TAG, "Training complete, starting IDS...");
 
