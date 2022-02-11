@@ -692,7 +692,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // we need to associate the vehicle nickname with the matrix/profile,
         // so that we can check if the matrix/profile exists
         // in order to determine if we should allow "Start IDS" or not
-        profileMatrix = new boolean[4][4];
+        profileMatrix = new boolean[6][6];
         profileMatrix[0][0] = true;
         profileMatrix[3][3] = true;
 
@@ -786,11 +786,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         all_vehicles.add(newUserText);
         String selected_vehicle = newUserText;
 
-        // TODO DELETE
-        profileMatrix = new boolean[4][4];
-        profileMatrix[0][0] = true;
-        profileMatrix[3][3] = true;
-
         // Create the JSON for the new vehicle matrix/profile
         JSONObject newProfile = new JSONObject();
         newProfile.put("profileName", newUserText);
@@ -821,6 +816,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         boolean commitResult = editor.commit();
         Log.d(TAG, "commitResult: " + commitResult);
 
+        // START - VALIDATION CODE
+        // **
         HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
         Log.d(TAG, "resultHashSet: " + resultHashSet);
 
@@ -835,9 +832,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         JSONObject obj = null;
         for (int i = 0; i < storedJSON.length(); i++) {
-            obj = storedJSON.getJSONObject(i);
-            Log.d(TAG, "obj: " + obj);
-            if (obj.get("profileName").equals(selected_vehicle)) {
+            JSONObject temp_obj = storedJSON.getJSONObject(i);
+            Log.d(TAG, "temp_obj: " + obj);
+            if (temp_obj.get("profileName").equals(selected_vehicle)) {
+                obj = temp_obj;
                 Log.d(TAG, "MATCH!  obj: " + obj);
                 break;
             }
@@ -864,10 +862,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
 
-        Log.d(TAG, "Printing recoveredMatrix...");
-        for (boolean[] arr : recoveredMatrix) {
-            Log.d(TAG, Arrays.toString(arr));
+        if (recoveredMatrix != null) {
+            Log.d(TAG, "Printing recoveredMatrix...");
+            for (boolean[] arr : recoveredMatrix) {
+                Log.d(TAG, Arrays.toString(arr));
+            }
         }
+        // **
+        // END - VALIDATION CODE
 
         Log.d(TAG, "Training complete, starting IDS...");
 

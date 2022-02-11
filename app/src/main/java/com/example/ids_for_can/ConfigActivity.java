@@ -24,9 +24,11 @@ import com.example.ids_for_can.R;
 import com.example.ids_for_can.connectivity.ObdConfig;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -71,6 +73,7 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 .findPreference(VEHICLE_LIST_KEY);
         vehicleListPreference.setEntries(all_vehicles.toArray(new CharSequence[0]));
         vehicleListPreference.setEntryValues(all_vehicles.toArray(new CharSequence[0]));
+        vehicleListPreference.setOnPreferenceChangeListener(this);
 
         /*
          * Available OBD protocols
@@ -188,7 +191,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         Log.d(TAG, "newValue: " + newValue);
 
         if (VEHICLE_LIST_KEY.equals(preference.getKey())) {
-            // TODO Implement profile/matrix check
             // We need to check if we have a profile/matrix for this vehicle
             // If we do, then training is complete,
             // and we can pull up the profile/matrix and run the IDS
@@ -196,14 +198,73 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
             // If not, then training is not complete,
             // and the IDS is unavailable
 
-            Log.d(TAG, "HERE!");
-            if (false) {
-                // TODO Pull up the profile/matrix for the vehicle
-                MainActivity.profileMatrix = new boolean[2][2];
-                MainActivity.trainingComplete = true;
-            } else {
-                MainActivity.profileMatrix = null;
-                MainActivity.trainingComplete = false;
+            try {
+                SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
+
+                HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+                Log.d(TAG, "resultHashSet: " + resultHashSet);
+
+                String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+                Log.d(TAG, "resultString: " + resultString);
+
+                String resultJSON = vehiclePreference.getString("PROFILES", new String());
+                Log.d(TAG, "resultJSON: " + resultJSON);
+
+                JSONArray storedJSON = new JSONArray(resultJSON);
+                Log.d(TAG, "storedJSON: " + storedJSON);
+
+                JSONObject obj = null;
+                for (int i = 0; i < storedJSON.length(); i++) {
+                    JSONObject temp_obj = storedJSON.getJSONObject(i);
+                    Log.d(TAG, "temp_obj: " + obj);
+                    if (temp_obj.get("profileName").equals(newValue)) {
+                        obj = temp_obj;
+                        Log.d(TAG, "MATCH!  obj: " + obj);
+                        break;
+                    }
+                }
+
+                boolean recoveredMatrix[][] = null;
+
+                JSONArray matrixParent = null;
+                if (obj != null) {
+                    matrixParent = obj.getJSONArray("matrix");
+
+                    // If the matrix exists, it should be at least 1 x 1
+                    int rows = matrixParent.length();
+                    int cols = matrixParent.getJSONArray(0).length();
+                    recoveredMatrix = new boolean[rows][cols];
+
+                    for (int i = 0; i < matrixParent.length(); i++) {
+                        JSONArray matrixChild = matrixParent.getJSONArray(i);
+                        for (int j = 0; j < matrixChild.length(); j++) {
+                            recoveredMatrix[i][j] = matrixChild.getBoolean(j);
+                        }
+                    }
+                }
+
+                Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
+
+                if (recoveredMatrix != null) {
+                    Log.d(TAG, "Printing recoveredMatrix...");
+                    for (boolean[] arr : recoveredMatrix) {
+                        Log.d(TAG, Arrays.toString(arr));
+                    }
+
+                    MainActivity.profileMatrix = recoveredMatrix;
+                    MainActivity.trainingComplete = true;
+                } else {
+                    MainActivity.profileMatrix = null;
+                    MainActivity.trainingComplete = false;
+                }
+
+                // We need to change the preference,
+                // even if we don't have a matrix/profile
+                // so the user can train the vehicle if desired
+                return true;
+
+            } catch (JSONException jsonException) {
+                jsonException.printStackTrace();
             }
         }
 
