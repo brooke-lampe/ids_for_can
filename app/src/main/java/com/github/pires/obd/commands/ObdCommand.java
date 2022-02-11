@@ -58,6 +58,7 @@ public abstract class ObdCommand {
     private String ATMAString;
     public static HashMap<String, Set<String>> ATMAMap = new HashMap<>();
     public static ArrayList<String> ATMATrace = new ArrayList<>();
+    public static ArrayList<String> currentIDs = new ArrayList<>();
 
     /**
      * Default ctor to use
@@ -186,6 +187,8 @@ public abstract class ObdCommand {
     protected void processAndSave() {
         String ATMAArray[] = ATMAString.split("\\r?\\n");
 
+        currentIDs = new ArrayList<>();
+
         Log.d(TAG, "ATMAArray");
         for (String atma : ATMAArray) {
             atma = atma.trim();
@@ -208,6 +211,10 @@ public abstract class ObdCommand {
                     ATMATrace.add(arbitrationId);
                     Log.d(TAG, "ATMATrace");
                     Log.d(TAG, ATMATrace.toString());
+
+                    currentIDs.add(arbitrationId);
+                    Log.d(TAG, "currentIDs");
+                    Log.d(TAG, currentIDs.toString());
                 }
             }
         }

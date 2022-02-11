@@ -59,11 +59,12 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         if (vehiclePreference.contains("ALL_VEHICLES")) {
             all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
         } else {
-            all_vehicles.add("NEW");
+            //all_vehicles.add("NEW");
         }
         Log.d(TAG, "all_vehicles: " + all_vehicles);
 
-        String selected_vehicle = "NEW";
+        //String selected_vehicle = "NEW";
+        String selected_vehicle = null;
         if (vehiclePreference.contains("SELECTED_VEHICLE")) {
             selected_vehicle = vehiclePreference.getString("SELECTED_VEHICLE", new String());
         }
@@ -213,11 +214,19 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 JSONArray storedJSON = new JSONArray(resultJSON);
                 Log.d(TAG, "storedJSON: " + storedJSON);
 
+                SharedPreferences.Editor editor = vehiclePreference.edit();
+                editor.putString("SELECTED_VEHICLE", newValue.toString());
+                boolean commitResult = editor.commit();
+                Log.d(TAG, "commitResult: " + commitResult);
+
+                String updatedResultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+                Log.d(TAG, "updatedResultString: " + updatedResultString);
+
                 JSONObject obj = null;
                 for (int i = 0; i < storedJSON.length(); i++) {
                     JSONObject temp_obj = storedJSON.getJSONObject(i);
-                    Log.d(TAG, "temp_obj: " + obj);
-                    if (temp_obj.get("profileName").equals(newValue)) {
+                    Log.d(TAG, "temp_obj: " + temp_obj);
+                    if (temp_obj.get("profileName").equals(newValue.toString())) {
                         obj = temp_obj;
                         Log.d(TAG, "MATCH!  obj: " + obj);
                         break;

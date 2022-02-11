@@ -110,11 +110,12 @@
     <string name="stop_live_data_ids">Stop Live Data / Stop IDS</string>
     <string name="start_logging">Start Logging</string>
     <string name="quit_application">Quit</string>
-    <string name="train_ids">Train IDS</string>
     <string name="vehicle_selection_title">Vehicle Selection</string>
     <string name="trained_vehicles_summary">List of previously \'trained\' vehicles.</string>
     <string name="vehicles">Vehicles</string>
     <string name="train_retrain_ids">Train / Retrain IDS</string>
     <string name="ids_training">IDS training...</string>
     <string name="unknown_state">unknown state...</string>
+    <string name="train_ids">Train IDS</string>
+    <string name="re_train_ids">Re-train IDS</string>
 </resources>

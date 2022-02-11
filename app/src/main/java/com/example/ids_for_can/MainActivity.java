@@ -20,7 +20,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import com.example.ids_for_can.Log;
 
 import android.text.InputType;
 import android.view.Gravity;
@@ -62,16 +61,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import roboguice.RoboGuice;
 import roboguice.activity.RoboActivity;
@@ -86,11 +80,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int BLUETOOTH_DISABLED = 1;
     private static final int START_LIVE_DATA = 2;
     private static final int TRAIN_IDS = 3;
-    private static final int START_IDS = 4;
-    private static final int STOP_LIVE_DATA_OR_IDS = 5;
-    private static final int START_LOGGING = 6;
-    private static final int SETTINGS = 7;
-    private static final int QUIT_APPLICATION = 8;
+    private static final int RETRAIN_IDS = 4;
+    private static final int START_IDS = 5;
+    private static final int STOP_LIVE_DATA_OR_IDS = 6;
+    private static final int START_LOGGING = 7;
+    private static final int SETTINGS = 8;
+    private static final int QUIT_APPLICATION = 9;
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
@@ -111,8 +106,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     // so the threshold is 10x the value of this variable
     public static int trainingThreshold = 3;
 
-    // The IDS is currently training
-    public static boolean IDSTrain = false;
+    // The IDS is currently training/re-training
+    public static boolean IDSTrainOrRetrain = false;
+
+    // The IDS is explicitly re-training (update the old matrix/profile)
+    public static boolean retrainONLY = false;
 
     // The IDS is currently running
     public static boolean IDSOn = false;
@@ -228,7 +226,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             if (cmdResult != null && isServiceBound && !cmdName.equals("Monitor all")) {
                 obdStatusTextView.setText(cmdResult.toLowerCase());
             } else {
-                if (IDSTrain) {
+                if (IDSTrainOrRetrain) {
                     obdStatusTextView.setText(getString(R.string.ids_training));
                 } else if (IDSOn) {
                     obdStatusTextView.setText(getString(R.string.ids_active));
@@ -374,7 +372,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "Entered onDestroy...");
         IDSOn = false;
-        IDSTrain = false;
+        IDSTrainOrRetrain = false;
         trainingComplete = false;
         trainingCounter = 0;
         loggingOn = false;
@@ -423,7 +421,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
-        menu.add(0, TRAIN_IDS, 0, getString(R.string.train_retrain_ids));
+        menu.add(0, TRAIN_IDS, 0, getString(R.string.train_ids));
+        menu.add(0, RETRAIN_IDS, 0, getString(R.string.re_train_ids));
         menu.add(0, START_IDS, 0, getString(R.string.start_ids));
         menu.add(0, STOP_LIVE_DATA_OR_IDS, 0, getString(R.string.stop_live_data_ids));
         menu.add(0, START_LOGGING, 0, getString(R.string.start_logging));
@@ -440,6 +439,13 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 startLiveData();
                 return true;
             case TRAIN_IDS:
+                Log.d(TAG, "Train IDS");
+                retrainONLY = false;
+                trainIDS();
+                return true;
+            case RETRAIN_IDS:
+                Log.d(TAG, "Re-train IDS");
+                retrainONLY = true;
                 trainIDS();
                 return true;
             case START_IDS:
@@ -457,8 +463,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             case QUIT_APPLICATION:
                 finishAndRemoveTask();
                 return true;
+            default:
+                return false;
         }
-        return false;
     }
 
     private void startLiveData() {
@@ -473,7 +480,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void trainIDS() {
         Log.d(TAG, "Training IDS...");
-        IDSTrain = true;
+        IDSTrainOrRetrain = true;
         trainingComplete = false;
         trainingCounter = 0;
 
@@ -499,7 +506,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "Stopping live data...");
         initIDSDone = false;
         IDSOn = false;
-        IDSTrain = false;
+        IDSTrainOrRetrain = false;
         trainingCounter = 0;
 
         doUnbindService();
@@ -553,6 +560,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem startItem = menu.findItem(START_LIVE_DATA);
         MenuItem trainItem = menu.findItem(TRAIN_IDS);
+        MenuItem retrainItem = menu.findItem(RETRAIN_IDS);
         MenuItem idsItem = menu.findItem(START_IDS);
         MenuItem stopItem = menu.findItem(STOP_LIVE_DATA_OR_IDS);
         MenuItem loggingItem = menu.findItem(START_LOGGING);
@@ -561,6 +569,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         if (service != null && service.isRunning()) {
             startItem.setEnabled(false);
             trainItem.setEnabled(false);
+            retrainItem.setEnabled(false);
             idsItem.setEnabled(false);
             stopItem.setEnabled(true);
             settingsItem.setEnabled(false);
@@ -569,8 +578,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             trainItem.setEnabled(true);
             startItem.setEnabled(true);
             if (trainingComplete) {
+                retrainItem.setEnabled(true);
                 idsItem.setEnabled(true);
             } else {
+                retrainItem.setEnabled(false);
                 idsItem.setEnabled(false);
             }
             settingsItem.setEnabled(true);
@@ -633,8 +644,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             Log.d(TAG, "trainingCounter: " + trainingCounter);
 
             // We are in training mode, and we have sufficient data to create the matrix
-            if (IDSTrain && trainingCounter >= trainingThreshold) {
+            if (IDSTrainOrRetrain && trainingCounter >= trainingThreshold) {
                 createMatrix();
+            }
+
+            if (IDSOn) {
+                idsDetect();
             }
 
             if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
@@ -692,9 +707,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // we need to associate the vehicle nickname with the matrix/profile,
         // so that we can check if the matrix/profile exists
         // in order to determine if we should allow "Start IDS" or not
-        profileMatrix = new boolean[6][6];
+        profileMatrix = new boolean[2][2];
         profileMatrix[0][0] = true;
-        profileMatrix[3][3] = true;
+        profileMatrix[1][1] = true;
 
         Log.d(TAG, "profileMatrix: " + profileMatrix);
 
@@ -704,41 +719,51 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // Now that we have a matrix/profile for this vehicle, we need to save this vehicle as an option in preferences
         Log.d(TAG, "Saving the vehicle in preferences...");
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Enter a nickname for this vehicle: ");
-        EditText input = new EditText(this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
+        if (!retrainONLY) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Enter a nickname for this vehicle: ");
+            EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            builder.setView(input);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                userText = input.getText().toString();
-                try {
-                    updateSharedPreferences();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    userText = input.getText().toString();
+                    try {
+                        appendToSharedPreferences();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-                try {
-                    updateSharedPreferences();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                    try {
+                        appendToSharedPreferences();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
 
-        waitingOnUser = true;
-        Log.d(TAG, "waitingOnUser: " + waitingOnUser);
-        builder.show();
+            waitingOnUser = true;
+            Log.d(TAG, "waitingOnUser: " + waitingOnUser);
+            builder.show();
+        } else {
+            try {
+                updateSharedPreferences();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void updateSharedPreferences() throws JSONException {
+    public void appendToSharedPreferences() throws JSONException {
+        Log.d(TAG, "Appending to SharedPreferences...");
+
         SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
 
         // Retrieve the HashSet of all vehicles
@@ -746,7 +771,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         if (vehiclePreference.contains("ALL_VEHICLES")) {
             all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
         } else {
-            all_vehicles.add("NEW");
+            //all_vehicles.add("NEW");
         }
         Log.d(TAG, "all_vehicles: " + all_vehicles);
 
@@ -809,7 +834,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "updatedJSONData: " + updatedJSONData);
 
         SharedPreferences.Editor editor = vehiclePreference.edit();
-        editor.clear();
+        //editor.clear();
         editor.putStringSet("ALL_VEHICLES", all_vehicles);
         editor.putString("SELECTED_VEHICLE", selected_vehicle);
         editor.putString("PROFILES", updatedJSONData);
@@ -833,7 +858,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         JSONObject obj = null;
         for (int i = 0; i < storedJSON.length(); i++) {
             JSONObject temp_obj = storedJSON.getJSONObject(i);
-            Log.d(TAG, "temp_obj: " + obj);
+            Log.d(TAG, "temp_obj: " + temp_obj);
             if (temp_obj.get("profileName").equals(selected_vehicle)) {
                 obj = temp_obj;
                 Log.d(TAG, "MATCH!  obj: " + obj);
@@ -874,9 +899,170 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "Training complete, starting IDS...");
 
         trainingComplete = true;
-        IDSTrain = false;
+        IDSTrainOrRetrain = false;
         IDSOn = true;
         waitingOnUser = false;
+    }
+
+    public void updateSharedPreferences() throws JSONException {
+        Log.d(TAG, "Updating SharedPreferences...");
+
+        SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
+
+        // Retrieve the HashSet of all vehicles
+        HashSet<String> all_vehicles = new HashSet<>();
+        if (vehiclePreference.contains("ALL_VEHICLES")) {
+            all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+        } else {
+            //all_vehicles.add("NEW");
+        }
+        Log.d(TAG, "all_vehicles: " + all_vehicles);
+
+        // Retrieve the String of the selected vehicle
+        String selected_vehicle = null;
+        if (vehiclePreference.contains("SELECTED_VEHICLE")) {
+            selected_vehicle = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+        }
+        Log.d(TAG, "selected_vehicle: " + selected_vehicle);
+
+        // Retrieve the string that represents the "profiles" JSON object
+        String jsonString = null;
+        if (vehiclePreference.contains("PROFILES")) {
+            jsonString = vehiclePreference.getString("PROFILES", new String());
+        }
+        Log.d(TAG, "jsonString: " + jsonString);
+
+        JSONArray profiles = null;
+        if (jsonString != null) {
+            profiles = new JSONArray(jsonString);
+        }
+        Log.d(TAG, "profiles: " + profiles);
+
+        if (profiles == null) {
+            // If we don't have a pre-existing matrix/profile,
+            // then we need to add to the shared preferences
+            // because there is no existing matrix/profile to update
+            appendToSharedPreferences();
+        }
+
+        JSONObject profileToUpdate = null;
+        for (int i = 0; i < profiles.length(); i++) {
+            JSONObject temp_obj = profiles.getJSONObject(i);
+            Log.d(TAG, "temp_obj: " + temp_obj);
+            if (temp_obj.get("profileName").equals(selected_vehicle)) {
+                profileToUpdate = temp_obj;
+                Log.d(TAG, "MATCH!  obj: " + profileToUpdate);
+                break;
+            }
+        }
+
+        if (profileToUpdate == null) {
+            // If we don't have a pre-existing matrix/profile,
+            // then we need to add to the shared preferences
+            // because there is no existing matrix/profile to update
+            appendToSharedPreferences();
+        }
+
+        JSONArray parentArray = new JSONArray();
+        // loop by row, then by column
+        for (int i = 0;  i < profileMatrix.length; i++){
+            JSONArray childArray = new JSONArray();
+            for (int j = 0; j < profileMatrix[i].length; j++){
+                childArray.put(profileMatrix[i][j]);
+            }
+            parentArray.put(childArray);
+        }
+
+        profileToUpdate.put("matrix", parentArray);
+        Log.d(TAG, "profileToUpdate: " + profileToUpdate);
+
+        String updatedJSONData = profiles.toString();
+        Log.d(TAG, "updatedJSONData: " + updatedJSONData);
+
+        SharedPreferences.Editor editor = vehiclePreference.edit();
+        //editor.clear();
+        editor.putStringSet("ALL_VEHICLES", all_vehicles);
+        editor.putString("SELECTED_VEHICLE", selected_vehicle);
+        editor.putString("PROFILES", updatedJSONData);
+        boolean commitResult = editor.commit();
+        Log.d(TAG, "commitResult: " + commitResult);
+
+        // START - VALIDATION CODE
+        // **
+        HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+        Log.d(TAG, "resultHashSet: " + resultHashSet);
+
+        String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+        Log.d(TAG, "resultString: " + resultString);
+
+        String resultJSON = vehiclePreference.getString("PROFILES", new String());
+        Log.d(TAG, "resultJSON: " + resultJSON);
+
+        JSONArray storedJSON = new JSONArray(resultJSON);
+        Log.d(TAG, "storedJSON: " + storedJSON);
+
+        JSONObject obj = null;
+        for (int i = 0; i < storedJSON.length(); i++) {
+            JSONObject temp_obj = storedJSON.getJSONObject(i);
+            Log.d(TAG, "temp_obj: " + temp_obj);
+            if (temp_obj.get("profileName").equals(selected_vehicle)) {
+                obj = temp_obj;
+                Log.d(TAG, "MATCH!  obj: " + obj);
+                break;
+            }
+        }
+
+        boolean recoveredMatrix[][] = null;
+
+        JSONArray matrixParent = null;
+        if (obj != null) {
+            matrixParent = obj.getJSONArray("matrix");
+
+            // If the matrix exists, it should be at least 1 x 1
+            int rows = matrixParent.length();
+            int cols = matrixParent.getJSONArray(0).length();
+            recoveredMatrix = new boolean[rows][cols];
+
+            for (int i = 0; i < matrixParent.length(); i++) {
+                JSONArray matrixChild = matrixParent.getJSONArray(i);
+                for (int j = 0; j < matrixChild.length(); j++) {
+                    recoveredMatrix[i][j] = matrixChild.getBoolean(j);
+                }
+            }
+        }
+
+        Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
+
+        if (recoveredMatrix != null) {
+            Log.d(TAG, "Printing recoveredMatrix...");
+            for (boolean[] arr : recoveredMatrix) {
+                Log.d(TAG, Arrays.toString(arr));
+            }
+        }
+        // **
+        // END - VALIDATION CODE
+
+        Log.d(TAG, "Training complete, starting IDS...");
+
+        trainingComplete = true;
+        IDSTrainOrRetrain = false;
+        IDSOn = true;
+        waitingOnUser = false;
+    }
+
+    public void idsDetect() {
+        // Use the matrix/profile to check current traffic,
+        // update false positives,
+        // and raise alerts
+
+        if (ObdCommand.currentIDs.isEmpty()) {
+            // No data received; no alert
+            return;
+        }
+
+        if (false) {
+            sendNotification();
+        }
     }
 
     public void sendNotification() {
