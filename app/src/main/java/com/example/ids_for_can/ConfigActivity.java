@@ -233,13 +233,23 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                     }
                 }
 
+                String recoveredOrder[] = null;
                 boolean recoveredMatrix[][] = null;
 
+                JSONArray orderJSON = null;
                 JSONArray matrixParent = null;
+
                 if (obj != null) {
-                    matrixParent = obj.getJSONArray("matrix");
+                    // If the array exists, it should be at least 1
+                    orderJSON = obj.getJSONArray("order");
+                    recoveredOrder = new String[orderJSON.length()];
+
+                    for (int i = 0; i < orderJSON.length(); i++) {
+                        recoveredOrder[i] = orderJSON.getString(i);
+                    }
 
                     // If the matrix exists, it should be at least 1 x 1
+                    matrixParent = obj.getJSONArray("matrix");
                     int rows = matrixParent.length();
                     int cols = matrixParent.getJSONArray(0).length();
                     recoveredMatrix = new boolean[rows][cols];
@@ -252,17 +262,22 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                     }
                 }
 
-                Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
+                if (recoveredOrder != null && recoveredMatrix != null) {
+                    if (recoveredOrder != null) {
+                        Log.d(TAG, "Printing recoveredOrder...");
+                        Log.d(TAG, Arrays.toString(recoveredOrder));
+                    }
 
-                if (recoveredMatrix != null) {
                     Log.d(TAG, "Printing recoveredMatrix...");
                     for (boolean[] arr : recoveredMatrix) {
                         Log.d(TAG, Arrays.toString(arr));
                     }
 
+                    MainActivity.ATMAOrder = recoveredOrder;
                     MainActivity.profileMatrix = recoveredMatrix;
                     MainActivity.trainingComplete = true;
                 } else {
+                    MainActivity.ATMAOrder = null;
                     MainActivity.profileMatrix = null;
                     MainActivity.trainingComplete = false;
                 }

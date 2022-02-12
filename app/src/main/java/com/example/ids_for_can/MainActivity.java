@@ -124,6 +124,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     // Waiting on user input
     public static boolean waitingOnUser = false;
 
+    public static String[] ATMAOrder = null;
     public static boolean profileMatrix[][] = null;
 
     private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
@@ -704,13 +705,28 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // Create the matrix/profile for this vehicle, which enables the IDS to function
 
         // TODO: Create and store the matrix/profile for this vehicle
-        // we need to associate the vehicle nickname with the matrix/profile,
-        // so that we can check if the matrix/profile exists
-        // in order to determine if we should allow "Start IDS" or not
-        profileMatrix = new boolean[2][2];
-        profileMatrix[0][0] = true;
-        profileMatrix[1][1] = true;
 
+        // We need to associate the vehicle nickname with the matrix/profile,
+        // so that we can check if the matrix/profile exists to determine if we should allow "Start IDS" or not
+
+//        ATMAOrder = new String[2];
+//        ATMAOrder[0] = "XY1";
+//        ATMAOrder[0] = "VW2";
+//
+//        profileMatrix = new boolean[2][2];
+//        profileMatrix[0][0] = true;
+//        profileMatrix[1][1] = true;
+
+        ATMAOrder = new String[3];
+        ATMAOrder[0] = "AB1";
+        ATMAOrder[1] = "CD2";
+        ATMAOrder[2] = "EF3";
+
+        profileMatrix = new boolean[3][3];
+        profileMatrix[0][0] = true;
+        profileMatrix[2][2] = true;
+
+        Log.d(TAG, "ATMAOrder: " + ATMAOrder);
         Log.d(TAG, "profileMatrix: " + profileMatrix);
 
         Log.d(TAG, "Creating the matrix...");
@@ -815,6 +831,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         JSONObject newProfile = new JSONObject();
         newProfile.put("profileName", newUserText);
 
+        JSONArray orderArray = new JSONArray(ATMAOrder);
+        //JSONArray orderArray = new JSONArray(Arrays.asList(ATMAOrder));
+        newProfile.put("order", orderArray);
+
         JSONArray parentArray = new JSONArray();
         // loop by row, then by column
         for (int i = 0;  i < profileMatrix.length; i++){
@@ -866,13 +886,23 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
 
+        String recoveredOrder[] = null;
         boolean recoveredMatrix[][] = null;
 
+        JSONArray orderJSON = null;
         JSONArray matrixParent = null;
+
         if (obj != null) {
-            matrixParent = obj.getJSONArray("matrix");
+            // If the array exists, it should be at least 1
+            orderJSON = obj.getJSONArray("order");
+            recoveredOrder = new String[orderJSON.length()];
+
+            for (int i = 0; i < orderJSON.length(); i++) {
+                recoveredOrder[i] = orderJSON.getString(i);
+            }
 
             // If the matrix exists, it should be at least 1 x 1
+            matrixParent = obj.getJSONArray("matrix");
             int rows = matrixParent.length();
             int cols = matrixParent.getJSONArray(0).length();
             recoveredMatrix = new boolean[rows][cols];
@@ -885,7 +915,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
 
-        Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
+        if (recoveredOrder != null) {
+            Log.d(TAG, "Printing recoveredOrder...");
+            Log.d(TAG, Arrays.toString(recoveredOrder));
+        }
 
         if (recoveredMatrix != null) {
             Log.d(TAG, "Printing recoveredMatrix...");
@@ -963,6 +996,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             appendToSharedPreferences();
         }
 
+        JSONArray orderArray = new JSONArray(ATMAOrder);
+        //JSONArray orderArray = new JSONArray(Arrays.asList(ATMAOrder));
+        profileToUpdate.put("order", orderArray);
+
         JSONArray parentArray = new JSONArray();
         // loop by row, then by column
         for (int i = 0;  i < profileMatrix.length; i++){
@@ -1012,13 +1049,23 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
 
+        String recoveredOrder[] = null;
         boolean recoveredMatrix[][] = null;
 
+        JSONArray orderJSON = null;
         JSONArray matrixParent = null;
+
         if (obj != null) {
-            matrixParent = obj.getJSONArray("matrix");
+            // If the array exists, it should be at least 1
+            orderJSON = obj.getJSONArray("order");
+            recoveredOrder = new String[orderJSON.length()];
+
+            for (int i = 0; i < orderJSON.length(); i++) {
+                recoveredOrder[i] = orderJSON.getString(i);
+            }
 
             // If the matrix exists, it should be at least 1 x 1
+            matrixParent = obj.getJSONArray("matrix");
             int rows = matrixParent.length();
             int cols = matrixParent.getJSONArray(0).length();
             recoveredMatrix = new boolean[rows][cols];
@@ -1031,7 +1078,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
 
-        Log.d(TAG, "recoveredMatrix: " + recoveredMatrix);
+        if (recoveredOrder != null) {
+            Log.d(TAG, "Printing recoveredOrder...");
+            Log.d(TAG, Arrays.toString(recoveredOrder));
+        }
 
         if (recoveredMatrix != null) {
             Log.d(TAG, "Printing recoveredMatrix...");
