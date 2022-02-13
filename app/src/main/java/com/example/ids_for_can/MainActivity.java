@@ -125,7 +125,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public static boolean waitingOnUser = false;
 
     public static String[] ATMAOrder = null;
-    public static boolean profileMatrix[][] = null;
+    public static boolean[][] profileMatrix = null;
 
     private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
     private static final int PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE = 2;
@@ -134,7 +134,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         RoboGuice.setUseAnnotationDatabases(false);
     }
 
-    public Map<String, String> commandResult = new HashMap<String, String>();
+    public Map<String, String> commandResult = new HashMap<>();
     
     @InjectView(R.id.BT_STATUS) TextView btStatusTextView;
     @InjectView(R.id.OBD_STATUS) TextView obdStatusTextView;
@@ -336,7 +336,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case PERMISSIONS_REQUEST_BLUETOOTH:
                 if (grantResults.length > 4 && grantResults[0] == PackageManager.PERMISSION_GRANTED
@@ -886,8 +886,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
 
-        String recoveredOrder[] = null;
-        boolean recoveredMatrix[][] = null;
+        String[] recoveredOrder = null;
+        boolean[][] recoveredMatrix = null;
 
         JSONArray orderJSON = null;
         JSONArray matrixParent = null;
@@ -1049,8 +1049,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             }
         }
 
-        String recoveredOrder[] = null;
-        boolean recoveredMatrix[][] = null;
+        String[] recoveredOrder = null;
+        boolean[][] recoveredMatrix = null;
 
         JSONArray orderJSON = null;
         JSONArray matrixParent = null;

@@ -17,7 +17,7 @@
         <!-- Customize your theme here. -->
         <item name="colorSurface">@color/light_green_A400</item>
         <item name="colorOnSurface">@color/light_green_A400</item>
-        <item name="android:colorAccent">@color/light_green_A400</item>
+        <item name="android:colorAccent">@color/purple_A200</item>
     </style>
     <style name="Theme.ConfigActivity" parent="android:Theme.Material.Light.DarkActionBar">
         <!-- Primary brand color. -->

@@ -22,7 +22,7 @@
             android:key="vehicle_list_preference"
             android:summary="@string/trained_vehicles_summary"
             android:title="@string/vehicles" />
-        <ListPreference
+        <com.example.ids_for_can.myPreferenceList
             android:key="vehicle_delete_preference"
             android:summary="@string/delete_trained_vehicle"
             android:title="@string/delete_vehicle" />
