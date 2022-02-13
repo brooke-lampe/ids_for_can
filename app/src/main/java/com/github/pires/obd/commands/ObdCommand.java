@@ -14,8 +14,6 @@ package com.github.pires.obd.commands;
 
 import static android.content.ContentValues.TAG;
 
-import static com.example.ids_for_can.MainActivity.IDSOn;
-
 import com.example.ids_for_can.Log;
 
 import com.example.ids_for_can.MainActivity;
@@ -55,7 +53,7 @@ public abstract class ObdCommand {
     protected Long responseDelayInMs = null;
     private long start;
     private long end;
-    private String ATMAString;
+    public static String ATMAString;
     public static HashMap<String, Set<String>> ATMAMap = new HashMap<>();
     public static ArrayList<String> ATMATrace = new ArrayList<>();
     public static ArrayList<String> currentIDs = new ArrayList<>();
@@ -152,7 +150,7 @@ public abstract class ObdCommand {
      */
     protected void readResult(InputStream in) throws IOException {
         readRawData(in);
-        if (IDSOn) {
+        if (MainActivity.IDSTrainOrRetrain || MainActivity.IDSOn) {
             processAndSave();
         } else {
             checkForErrors();

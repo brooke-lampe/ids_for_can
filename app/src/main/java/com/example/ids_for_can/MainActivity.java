@@ -75,7 +75,6 @@ import roboguice.inject.InjectView;
 @ContentView(R.layout.main)
 public class MainActivity extends RoboActivity implements ObdProgressListener {
 
-    private static final String TAG = MainActivity.class.getName();
     private static final int NO_BLUETOOTH_ID = 0;
     private static final int BLUETOOTH_DISABLED = 1;
     private static final int START_LIVE_DATA = 2;
@@ -154,17 +153,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
     };
 
-    private final Runnable mMonitorAllCommands = new Runnable() {
-        public void run() {
-            if (service != null && service.isRunning() && service.queueEmpty()) {
-                monitorAllCommands();
-                commandResult.clear();
-            }
-            // run again in period defined in preferences
-            new Handler().postDelayed(mMonitorAllCommands, ConfigActivity.getObdUpdatePeriod(prefs));
-        }
-    };
-
     private boolean preRequisites = true;
     private ServiceConnection serviceConn = new ServiceConnection() {
         @Override
@@ -173,14 +161,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             isServiceBound = true;
             service = ((AbstractGatewayService.AbstractGatewayServiceBinder) binder).getService();
             service.setContext(MainActivity.this);
-            Log.d(TAG, "START LIVE DATA");
+            Log.d(TAG, "CONNECT SERVICE");
             try {
                 initIDSDone = false;
                 service.startService();
                 if (preRequisites)
                     btStatusTextView.setText(getString(R.string.status_bluetooth_connected));
             } catch (IOException ioe) {
-                Log.e(TAG, "FAILED TO START LIVE DATA");
+                Log.e(TAG, "FAILED TO CONNECT SERVICE");
                 btStatusTextView.setText(getString(R.string.status_bluetooth_error_connecting));
                 doUnbindService();
             }
@@ -224,9 +212,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         if (job.getState().equals(ObdCommandJob.ObdCommandJobState.EXECUTION_ERROR)) {
             cmdResult = job.getCommand().getResult();
-            if (cmdResult != null && isServiceBound && !cmdName.equals("Monitor all")) {
+            if (cmdResult != null && isServiceBound && !cmdName.equals("Monitor All")) {
                 obdStatusTextView.setText(cmdResult.toLowerCase());
             } else {
+                cmdResult = job.getCommand().getFormattedResult();
                 if (IDSTrainOrRetrain) {
                     obdStatusTextView.setText(getString(R.string.ids_training));
                 } else if (IDSOn) {
@@ -489,7 +478,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         doBindService();
 
         // start command execution
-        new Handler().post(mMonitorAllCommands);
+        new Handler().post(mQueueCommands);
     }
 
     private void startIDS() {
@@ -500,7 +489,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         doBindService();
 
         // start command execution
-        new Handler().post(mMonitorAllCommands);
+        new Handler().post(mQueueCommands);
     }
 
     private void stopLiveData() {
@@ -605,6 +594,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 TABLE_ROW_MARGIN);
         tr.setLayoutParams(params);
 
+        Log.d(TAG, "val: " + val);
+
         TextView name = new TextView(this);
         name.setGravity(Gravity.RIGHT);
         name.setText(key + ": ");
@@ -622,40 +613,35 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
      */
     private void queueCommands() {
         if (isServiceBound) {
-            for (ObdCommand Command : ObdConfig.getCommands()) {
-                if (prefs.getBoolean(Command.getName(), true))
-                    service.queueJob(new ObdCommandJob(Command));
-            }
-        }
-    }
+            // Live Data Mode
+            if (!IDSTrainOrRetrain && !IDSOn) {
+                for (ObdCommand Command : ObdConfig.getCommands()) {
+                    if (prefs.getBoolean(Command.getName(), true))
+                        service.queueJob(new ObdCommandJob(Command));
+                }
+            // IDS Train, IDS Re-train, or IDS On
+            } else if (!waitingOnUser) {
+                if (!initIDSDone) {
+                    service.queueJob(new ObdCommandJob(new ObdWarmStartCommand()));
+                    service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
+                    service.queueJob(new ObdCommandJob(new EchoOffCommand()));
+                    service.queueJob(new ObdCommandJob(new SpacesOnCommand()));
+                    service.queueJob(new ObdCommandJob(new HeadersOnCommand()));
+                    service.queueJob(new ObdCommandJob(new SelectProtocolCommand(ObdProtocols.ISO_15765_4_CAN)));
+                    initIDSDone = true;
+                }
+                service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
+                trainingCounter++;
+                Log.d(TAG, "trainingCounter: " + trainingCounter);
 
-    private void monitorAllCommands() {
-        if (isServiceBound && !waitingOnUser) {
-            if (!initIDSDone) {
-                service.queueJob(new ObdCommandJob(new ObdWarmStartCommand()));
-                service.queueJob(new ObdCommandJob(new LineFeedOnCommand()));
-                service.queueJob(new ObdCommandJob(new EchoOffCommand()));
-                service.queueJob(new ObdCommandJob(new SpacesOnCommand()));
-                service.queueJob(new ObdCommandJob(new HeadersOnCommand()));
-                service.queueJob(new ObdCommandJob(new SelectProtocolCommand(ObdProtocols.ISO_15765_4_CAN)));
-                initIDSDone = true;
-            }
-            service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
-            trainingCounter++;
-            Log.d(TAG, "trainingCounter: " + trainingCounter);
+                // We are in training mode, and we have sufficient data to create the matrix
+                if (IDSTrainOrRetrain && trainingCounter >= trainingThreshold) {
+                    createMatrix();
+                }
 
-            // We are in training mode, and we have sufficient data to create the matrix
-            if (IDSTrainOrRetrain && trainingCounter >= trainingThreshold) {
-                createMatrix();
-            }
-
-            if (IDSOn) {
-                idsDetect();
-            }
-
-            if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
-                sendNotification();
-                ObdCommand.ATMAMap.remove("ELM327");
+                if (IDSOn) {
+                    idsDetect();
+                }
             }
         }
     }
@@ -1108,6 +1094,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         if (ObdCommand.currentIDs.isEmpty()) {
             // No data received; no alert
             return;
+        }
+
+        if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
+            sendNotification();
+            ObdCommand.ATMAMap.remove("ELM327");
         }
 
         if (false) {

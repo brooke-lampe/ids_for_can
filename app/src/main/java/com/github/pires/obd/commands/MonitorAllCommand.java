@@ -31,14 +31,20 @@ public class MonitorAllCommand extends ObdCommand {
     public String getFormattedResult() {
         Log.d(TAG, "rawData: " + rawData);
         Log.d(TAG, "buffer: " + buffer);
-        return rawData;
+        if (ObdCommand.ATMATrace.size() > 0) {
+            return ObdCommand.ATMATrace.get(ATMATrace.size() - 1);
+        }
+        return "NODATA";
     }
 
     @Override
     public String getCalculatedResult() {
         Log.d(TAG, "!! rawData: " + rawData);
         Log.d(TAG, "!! buffer: " + buffer);
-        return rawData;
+        if (ObdCommand.ATMATrace.size() > 0) {
+            return ObdCommand.ATMATrace.get(ATMATrace.size() - 1);
+        }
+        return "NODATA";
     }
 
     @Override

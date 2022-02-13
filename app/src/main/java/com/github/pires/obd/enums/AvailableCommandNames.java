@@ -58,7 +58,7 @@ public enum AvailableCommandNames {
     DESCRIBE_PROTOCOL("Describe protocol"),
     DESCRIBE_PROTOCOL_NUMBER("Describe protocol number"),
     IGNITION_MONITOR("Ignition monitor"),
-    MONITOR_ALL("Monitor all")
+    MONITOR_ALL("Monitor All")
     ;
 
     private final String value;
