@@ -40,6 +40,7 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
     public static final String ENABLE_BT_KEY = "enable_bluetooth_preference";
     public static final String BLUETOOTH_LIST_KEY = "bluetooth_list_preference";
     public static final String VEHICLE_LIST_KEY = "vehicle_list_preference";
+    public static final String VEHICLE_DELETE_KEY = "vehicle_delete_preference";
     public static final String PROTOCOLS_LIST_KEY = "obd_protocols_preference";
     public static final String IMPERIAL_UNITS_KEY = "imperial_units_preference";
     public static final String OBD_UPDATE_PERIOD_KEY = "obd_update_period_preference";
@@ -75,6 +76,12 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         vehicleListPreference.setEntries(all_vehicles.toArray(new CharSequence[0]));
         vehicleListPreference.setEntryValues(all_vehicles.toArray(new CharSequence[0]));
         vehicleListPreference.setOnPreferenceChangeListener(this);
+
+        ListPreference vehicleDeletePreference = (ListPreference) getPreferenceScreen()
+                .findPreference(VEHICLE_DELETE_KEY);
+        vehicleDeletePreference.setEntries(all_vehicles.toArray(new CharSequence[0]));
+        vehicleDeletePreference.setEntryValues(all_vehicles.toArray(new CharSequence[0]));
+        vehicleDeletePreference.setOnPreferenceChangeListener(this);
 
         /*
          * Available OBD protocols
@@ -285,6 +292,81 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 // We need to change the preference,
                 // even if we don't have a matrix/profile
                 // so the user can train the vehicle if desired
+                return true;
+
+            } catch (JSONException jsonException) {
+                jsonException.printStackTrace();
+            }
+        }
+
+        if (VEHICLE_DELETE_KEY.equals(preference.getKey())) {
+            // Delete a previously trained vehicle and update the SharedPreferences store
+
+            try {
+                SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
+
+                HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+                Log.d(TAG, "resultHashSet: " + resultHashSet);
+
+                String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+                Log.d(TAG, "resultString: " + resultString);
+
+                String resultJSON = vehiclePreference.getString("PROFILES", new String());
+                Log.d(TAG, "resultJSON: " + resultJSON);
+
+                JSONArray storedJSON = new JSONArray(resultJSON);
+                Log.d(TAG, "storedJSON: " + storedJSON);
+
+                SharedPreferences.Editor editor = vehiclePreference.edit();
+
+                resultHashSet.remove(newValue.toString());
+                editor.putStringSet("ALL_VEHICLES", resultHashSet);
+
+                if (resultString.equals(newValue.toString())) {
+                    // We are deleting the currently selected vehicle
+                    editor.putString("SELECTED_VEHICLE", null);
+                    MainActivity.trainingComplete = false;
+                }
+
+                JSONObject obj = null;
+                for (int i = 0; i < storedJSON.length(); i++) {
+                    JSONObject temp_obj = storedJSON.getJSONObject(i);
+                    Log.d(TAG, "temp_obj: " + temp_obj);
+                    if (temp_obj.get("profileName").equals(newValue.toString())) {
+                        obj = temp_obj;
+                        Log.d(TAG, "MATCH!  obj: " + obj);
+                        // Remove the old JSONObject
+                        storedJSON.remove(i);
+                        break;
+                    }
+                }
+
+                editor.putString("PROFILES", storedJSON.toString());
+
+                boolean commitResult = editor.commit();
+                Log.d(TAG, "commitResult: " + commitResult);
+
+                HashSet<String> updatedResultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
+                Log.d(TAG, "updatedResultHashSet: " + updatedResultHashSet);
+
+                String updatedResultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
+                Log.d(TAG, "updatedResultString: " + updatedResultString);
+
+                String updatedResultJSON = vehiclePreference.getString("PROFILES", new String());
+                Log.d(TAG, "updatedResultJSON: " + updatedResultJSON);
+
+                ListPreference vehicleListPreference = (ListPreference) getPreferenceScreen()
+                        .findPreference(VEHICLE_LIST_KEY);
+                vehicleListPreference.setEntries(resultHashSet.toArray(new CharSequence[0]));
+                vehicleListPreference.setEntryValues(resultHashSet.toArray(new CharSequence[0]));
+                vehicleListPreference.setOnPreferenceChangeListener(this);
+
+                ListPreference vehicleDeletePreference = (ListPreference) getPreferenceScreen()
+                        .findPreference(VEHICLE_DELETE_KEY);
+                vehicleDeletePreference.setEntries(resultHashSet.toArray(new CharSequence[0]));
+                vehicleDeletePreference.setEntryValues(resultHashSet.toArray(new CharSequence[0]));
+                vehicleDeletePreference.setOnPreferenceChangeListener(this);
+
                 return true;
 
             } catch (JSONException jsonException) {

@@ -118,4 +118,6 @@
     <string name="unknown_state">unknown state...</string>
     <string name="train_ids">Train IDS</string>
     <string name="re_train_ids">Re-train IDS</string>
+    <string name="delete_trained_vehicle">Delete a previously \'trained\' vehicle.</string>
+    <string name="delete_vehicle">Delete Vehicle</string>
 </resources>

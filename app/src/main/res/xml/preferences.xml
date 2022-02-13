@@ -22,6 +22,10 @@
             android:key="vehicle_list_preference"
             android:summary="@string/trained_vehicles_summary"
             android:title="@string/vehicles" />
+        <ListPreference
+            android:key="vehicle_delete_preference"
+            android:summary="@string/delete_trained_vehicle"
+            android:title="@string/delete_vehicle" />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/title_pref_obd">
