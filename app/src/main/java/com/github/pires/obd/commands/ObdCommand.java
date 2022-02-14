@@ -187,10 +187,10 @@ public abstract class ObdCommand {
 
         currentIDs = new ArrayList<>();
 
-        Log.d(TAG, "ATMAArray");
+//        Log.d(TAG, "ATMAArray");
         for (String atma : ATMAArray) {
             atma = atma.trim();
-            Log.d(TAG, atma);
+//            Log.d(TAG, atma);
             if (!atma.equals("BUFFER FULL") && !atma.equals("NO DATA") && !atma.equals("OK")
                     && !atma.equals("STOPPED") && !atma.equals("?")) {
                 String temp[] = atma.split(" ", 2);
@@ -207,18 +207,18 @@ public abstract class ObdCommand {
                     ATMAMap.put(arbitrationId, data);
 
                     ATMATrace.add(arbitrationId);
-                    Log.d(TAG, "ATMATrace");
-                    Log.d(TAG, ATMATrace.toString());
+//                    Log.d(TAG, "ATMATrace");
+//                    Log.d(TAG, ATMATrace.toString());
 
                     currentIDs.add(arbitrationId);
-                    Log.d(TAG, "currentIDs");
-                    Log.d(TAG, currentIDs.toString());
+//                    Log.d(TAG, "currentIDs");
+//                    Log.d(TAG, currentIDs.toString());
                 }
             }
         }
 
-        Log.d(TAG, "ATMAMap");
-        Log.d(TAG, String.valueOf(ATMAMap));
+//        Log.d(TAG, "ATMAMap");
+//        Log.d(TAG, String.valueOf(ATMAMap));
     }
 
     /**
@@ -245,8 +245,6 @@ public abstract class ObdCommand {
         }
 
         ATMAString = res.toString();
-        Log.d(TAG, "readRawData -- ATMAString");
-        Log.d(TAG, ATMAString);
 
     /*
      * Imagine the following response 41 0c 00 0d.
@@ -257,8 +255,6 @@ public abstract class ObdCommand {
      * processing..
      */
         rawData = removeAll(SEARCHING_PATTERN, res.toString());
-        //Log.d(TAG, "readRawData -- rawData -- SEARCHING_PATTERN");
-        //Log.d(TAG, rawData);
 
     /*
      * Data may have echo or informative text like "INIT BUS..." or similar.
@@ -267,8 +263,6 @@ public abstract class ObdCommand {
      */
         //kills multiline.. rawData = rawData.substring(rawData.lastIndexOf(13) + 1);
         rawData = removeAll(WHITESPACE_PATTERN, rawData);//removes all [ \t\n\x0B\f\r]
-        //Log.d(TAG, "readRawData -- rawData -- WHITESPACE PATTERN");
-        //Log.d(TAG, rawData);
     }
 
     void checkForErrors() {
@@ -294,9 +288,6 @@ public abstract class ObdCommand {
      * <p>fillBuffer.</p>
      */
     protected void fillBuffer() {
-        Log.d(TAG, "fillBuffer -- rawData");
-        Log.d(TAG, rawData);
-
         rawData = removeAll(WHITESPACE_PATTERN, rawData); //removes all [ \t\n\x0B\f\r]
         rawData = removeAll(BUSINIT_PATTERN, rawData);
 
@@ -313,9 +304,6 @@ public abstract class ObdCommand {
             begin = end;
             end += 2;
         }
-
-        Log.d(TAG, "fillBuffer -- buffer");
-        Log.d(TAG, String.valueOf(buffer));
     }
 
     /**

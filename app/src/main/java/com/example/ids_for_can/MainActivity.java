@@ -258,9 +258,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             existingTV.setText(cmdResult);
         } else addTableRow(cmdID, cmdName, cmdResult);
         commandResult.put(cmdID, cmdResult);
-
-        Log.d(TAG, "cmdID: " + cmdID + ", cmdResult: " + cmdResult);
-        Log.d(TAG, "cmdID: " + cmdID + ", rawCmdResult: " + rawCmdResult);
     }
 
     @Override
@@ -611,8 +608,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 TABLE_ROW_MARGIN);
         tr.setLayoutParams(params);
 
-        Log.d(TAG, "val: " + val);
-
         TextView name = new TextView(this);
         name.setGravity(Gravity.RIGHT);
         name.setText(key + ": ");
@@ -669,7 +664,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void doBindService() {
         if (!isServiceBound) {
-            Log.d(TAG, "Binding OBD service..");
+            Log.d(TAG, "Binding OBD service...");
             if (preRequisites) {
                 btStatusTextView.setText(getString(R.string.status_bluetooth_connecting));
                 Intent serviceIntent = new Intent(this, ObdGatewayService.class);
@@ -689,7 +684,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 if (preRequisites)
                     btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
             }
-            Log.d(TAG, "Unbinding OBD service..");
+            Log.d(TAG, "Unbinding OBD service...");
             unbindService(serviceConn);
             isServiceBound = false;
             obdStatusTextView.setText(getString(R.string.status_obd_disconnected));
@@ -830,8 +825,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 }
             });
 
-            waitingOnUser = true;
-            Log.d(TAG, "waitingOnUser: " + waitingOnUser);
             builder.show();
         } else {
             try {
@@ -854,20 +847,17 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         } else {
             //all_vehicles.add("NEW");
         }
-        Log.d(TAG, "all_vehicles: " + all_vehicles);
 
         // Retrieve the string that represents the "profiles" JSON object
         String jsonString = null;
         if (vehiclePreference.contains("PROFILES")) {
             jsonString = vehiclePreference.getString("PROFILES", new String());
         }
-        Log.d(TAG, "jsonString: " + jsonString);
 
         JSONArray profiles = null;
         if (jsonString != null) {
             profiles = new JSONArray(jsonString);
         }
-        Log.d(TAG, "profiles: " + profiles);
 
         if (profiles == null) {
             profiles = new JSONArray();
@@ -911,12 +901,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
 
         newProfile.put("matrix", parentArray);
-        Log.d(TAG, "newProfile: " + newProfile);
 
         // Add the new vehicle matrix/profile to the "profiles" JSON object
         profiles.put(newProfile);
         String updatedJSONData = profiles.toString();
-        Log.d(TAG, "updatedJSONData: " + updatedJSONData);
 
         SharedPreferences.Editor editor = vehiclePreference.edit();
         //editor.clear();
@@ -924,7 +912,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         editor.putString("SELECTED_VEHICLE", selected_vehicle);
         editor.putString("PROFILES", updatedJSONData);
         boolean commitResult = editor.commit();
-        Log.d(TAG, "commitResult: " + commitResult);
 
         // START - VALIDATION CODE
         // **
@@ -938,15 +925,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "resultJSON: " + resultJSON);
 
         JSONArray storedJSON = new JSONArray(resultJSON);
-        Log.d(TAG, "storedJSON: " + storedJSON);
 
         JSONObject obj = null;
         for (int i = 0; i < storedJSON.length(); i++) {
             JSONObject temp_obj = storedJSON.getJSONObject(i);
-            Log.d(TAG, "temp_obj: " + temp_obj);
             if (temp_obj.get("profileName").equals(selected_vehicle)) {
                 obj = temp_obj;
-                Log.d(TAG, "MATCH!  obj: " + obj);
                 break;
             }
         }
@@ -1014,27 +998,23 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         } else {
             //all_vehicles.add("NEW");
         }
-        Log.d(TAG, "all_vehicles: " + all_vehicles);
 
         // Retrieve the String of the selected vehicle
         String selected_vehicle = null;
         if (vehiclePreference.contains("SELECTED_VEHICLE")) {
             selected_vehicle = vehiclePreference.getString("SELECTED_VEHICLE", new String());
         }
-        Log.d(TAG, "selected_vehicle: " + selected_vehicle);
 
         // Retrieve the string that represents the "profiles" JSON object
         String jsonString = null;
         if (vehiclePreference.contains("PROFILES")) {
             jsonString = vehiclePreference.getString("PROFILES", new String());
         }
-        Log.d(TAG, "jsonString: " + jsonString);
 
         JSONArray profiles = null;
         if (jsonString != null) {
             profiles = new JSONArray(jsonString);
         }
-        Log.d(TAG, "profiles: " + profiles);
 
         if (profiles == null) {
             // If we don't have a pre-existing matrix/profile,
@@ -1046,10 +1026,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         JSONObject profileToUpdate = null;
         for (int i = 0; i < profiles.length(); i++) {
             JSONObject temp_obj = profiles.getJSONObject(i);
-            Log.d(TAG, "temp_obj: " + temp_obj);
             if (temp_obj.get("profileName").equals(selected_vehicle)) {
                 profileToUpdate = temp_obj;
-                Log.d(TAG, "MATCH!  obj: " + profileToUpdate);
                 break;
             }
         }
@@ -1076,10 +1054,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
 
         profileToUpdate.put("matrix", parentArray);
-        Log.d(TAG, "profileToUpdate: " + profileToUpdate);
 
         String updatedJSONData = profiles.toString();
-        Log.d(TAG, "updatedJSONData: " + updatedJSONData);
 
         SharedPreferences.Editor editor = vehiclePreference.edit();
         //editor.clear();
@@ -1087,7 +1063,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         editor.putString("SELECTED_VEHICLE", selected_vehicle);
         editor.putString("PROFILES", updatedJSONData);
         boolean commitResult = editor.commit();
-        Log.d(TAG, "commitResult: " + commitResult);
 
         // START - VALIDATION CODE
         // **
@@ -1101,15 +1076,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "resultJSON: " + resultJSON);
 
         JSONArray storedJSON = new JSONArray(resultJSON);
-        Log.d(TAG, "storedJSON: " + storedJSON);
 
         JSONObject obj = null;
         for (int i = 0; i < storedJSON.length(); i++) {
             JSONObject temp_obj = storedJSON.getJSONObject(i);
-            Log.d(TAG, "temp_obj: " + temp_obj);
             if (temp_obj.get("profileName").equals(selected_vehicle)) {
                 obj = temp_obj;
-                Log.d(TAG, "MATCH!  obj: " + obj);
                 break;
             }
         }

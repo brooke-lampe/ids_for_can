@@ -62,14 +62,12 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         } else {
             //all_vehicles.add("NEW");
         }
-        Log.d(TAG, "all_vehicles: " + all_vehicles);
 
         //String selected_vehicle = "NEW";
         String selected_vehicle = null;
         if (vehiclePreference.contains("SELECTED_VEHICLE")) {
             selected_vehicle = vehiclePreference.getString("SELECTED_VEHICLE", new String());
         }
-        Log.d(TAG, "selected_vehicle: " + selected_vehicle);
 
         ListPreference vehicleListPreference = (ListPreference) getPreferenceScreen()
                 .findPreference(VEHICLE_LIST_KEY);
@@ -155,9 +153,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         listBtDevices.setEntryValues(new CharSequence[1]);
         listBtDevices.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
-                Log.d(TAG, "!! " + listBtDevices.getValue());
-                Log.d(TAG, "!! " + String.valueOf(listBtDevices.getEntry()));
-                Log.d(TAG, "!! " + String.valueOf(listBtDevices.getEntryValues()));
                 // see what I mean in the previous comment?
                 if (mBtAdapter == null || !mBtAdapter.isEnabled()) {
                     Toast.makeText(thisActivity,
@@ -181,9 +176,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         }
         listBtDevices.setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
         listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
-        Log.d(TAG, "?? " + listBtDevices.getValue());
-        Log.d(TAG, "?? " + String.valueOf(listBtDevices.getEntry()));
-        Log.d(TAG, "?? " + String.valueOf(listBtDevices.getEntryValues()));
     }
 
     /**
@@ -210,32 +202,24 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
 
                 HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
-                Log.d(TAG, "resultHashSet: " + resultHashSet);
 
                 String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
-                Log.d(TAG, "resultString: " + resultString);
 
                 String resultJSON = vehiclePreference.getString("PROFILES", new String());
-                Log.d(TAG, "resultJSON: " + resultJSON);
 
                 JSONArray storedJSON = new JSONArray(resultJSON);
-                Log.d(TAG, "storedJSON: " + storedJSON);
 
                 SharedPreferences.Editor editor = vehiclePreference.edit();
                 editor.putString("SELECTED_VEHICLE", newValue.toString());
                 boolean commitResult = editor.commit();
-                Log.d(TAG, "commitResult: " + commitResult);
 
                 String updatedResultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
-                Log.d(TAG, "updatedResultString: " + updatedResultString);
 
                 JSONObject obj = null;
                 for (int i = 0; i < storedJSON.length(); i++) {
                     JSONObject temp_obj = storedJSON.getJSONObject(i);
-                    Log.d(TAG, "temp_obj: " + temp_obj);
                     if (temp_obj.get("profileName").equals(newValue.toString())) {
                         obj = temp_obj;
-                        Log.d(TAG, "MATCH!  obj: " + obj);
                         break;
                     }
                 }
@@ -306,16 +290,12 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 SharedPreferences vehiclePreference = getApplicationContext().getSharedPreferences("VEHICLE_PREFERENCE", MODE_MULTI_PROCESS);
 
                 HashSet<String> resultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
-                Log.d(TAG, "resultHashSet: " + resultHashSet);
 
                 String resultString = vehiclePreference.getString("SELECTED_VEHICLE", new String());
-                Log.d(TAG, "resultString: " + resultString);
 
                 String resultJSON = vehiclePreference.getString("PROFILES", new String());
-                Log.d(TAG, "resultJSON: " + resultJSON);
 
                 JSONArray storedJSON = new JSONArray(resultJSON);
-                Log.d(TAG, "storedJSON: " + storedJSON);
 
                 SharedPreferences.Editor editor = vehiclePreference.edit();
 
@@ -331,10 +311,8 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 JSONObject obj = null;
                 for (int i = 0; i < storedJSON.length(); i++) {
                     JSONObject temp_obj = storedJSON.getJSONObject(i);
-                    Log.d(TAG, "temp_obj: " + temp_obj);
                     if (temp_obj.get("profileName").equals(newValue.toString())) {
                         obj = temp_obj;
-                        Log.d(TAG, "MATCH!  obj: " + obj);
                         // Remove the old JSONObject
                         storedJSON.remove(i);
                         break;
@@ -344,7 +322,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
                 editor.putString("PROFILES", storedJSON.toString());
 
                 boolean commitResult = editor.commit();
-                Log.d(TAG, "commitResult: " + commitResult);
 
                 HashSet<String> updatedResultHashSet = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
                 Log.d(TAG, "updatedResultHashSet: " + updatedResultHashSet);
