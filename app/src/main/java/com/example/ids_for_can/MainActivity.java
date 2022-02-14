@@ -62,6 +62,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -88,6 +89,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private static final int TABLE_ROW_MARGIN = 7;
     private static final int REQUEST_ENABLE_BT = 1234;
     private static boolean bluetoothDefaultIsEnable = false;
+    private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
+    private static final int PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE = 2;
 
     // This variable runs the commands needed to train or start the IDS
     // Without this variable, the app runs the commands needed to fetch diagnostic data
@@ -103,7 +106,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     // When the trainingCounter reaches this threshold, we have sufficient data to create the matrix
     // About 10 CAN messages are captured in one 'AT MA' command,
     // so the threshold is 10x the value of this variable
-    public static int trainingThreshold = 3;
+    public static int trainingThreshold = 1000000;
 
     // The IDS is currently training/re-training
     public static boolean IDSTrainOrRetrain = false;
@@ -126,8 +129,22 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public static String[] ATMAOrder = null;
     public static boolean[][] profileMatrix = null;
 
-    private static final int PERMISSIONS_REQUEST_BLUETOOTH = 1;
-    private static final int PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE = 2;
+    public static ArrayList<String> anomalyTrace = new ArrayList<>();
+
+    public static int anomalyCounter = 0;
+    public static int anomalyThreshold = 10;
+    public static int healthyCounter = 0;
+    public static int healthyThreshold = 2000;
+    public static double anomalyCounterForPercent = 0;
+    public static double healthyCounterForPercent = 0;
+    public static double minimumHealthyPercent = 0.9;
+    public static double minimumTrafficBeforeUpdate = 2000;
+    public static int invalidIDAlertCount = 0;
+    public static int invalidSequenceAlertCount = 0;
+    public static int totalAlertCount = 0;
+
+    private static final int invalid_id_alert = 1;
+    private static final int invalid_id_sequence_alert = 2;
 
     static {
         RoboGuice.setUseAnnotationDatabases(false);
@@ -632,14 +649,18 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 }
                 service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
                 trainingCounter++;
-                Log.d(TAG, "trainingCounter: " + trainingCounter);
+
+                trainingCounter++;
+                if (trainingCounter % 10000 == 0) {
+                    Log.d(TAG, "trainingCounter: " + trainingCounter);
+                }
 
                 // We are in training mode, and we have sufficient data to create the matrix
                 if (IDSTrainOrRetrain && trainingCounter >= trainingThreshold) {
                     createMatrix();
                 }
 
-                if (IDSOn) {
+                if (IDSOn && ObdCommand.currentIDs.size() > 10) {
                     idsDetect();
                 }
             }
@@ -690,11 +711,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public void createMatrix() {
         // Create the matrix/profile for this vehicle, which enables the IDS to function
 
-        // TODO: Create and store the matrix/profile for this vehicle
-
-        // We need to associate the vehicle nickname with the matrix/profile,
-        // so that we can check if the matrix/profile exists to determine if we should allow "Start IDS" or not
-
 //        ATMAOrder = new String[2];
 //        ATMAOrder[0] = "XY1";
 //        ATMAOrder[0] = "VW2";
@@ -703,20 +719,83 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 //        profileMatrix[0][0] = true;
 //        profileMatrix[1][1] = true;
 
-        ATMAOrder = new String[3];
-        ATMAOrder[0] = "AB1";
-        ATMAOrder[1] = "CD2";
-        ATMAOrder[2] = "EF3";
+//        ATMAOrder = new String[3];
+//        ATMAOrder[0] = "AB1";
+//        ATMAOrder[1] = "CD2";
+//        ATMAOrder[2] = "EF3";
+//
+//        profileMatrix = new boolean[3][3];
+//        profileMatrix[0][0] = true;
+//        profileMatrix[2][2] = true;
 
-        profileMatrix = new boolean[3][3];
-        profileMatrix[0][0] = true;
-        profileMatrix[2][2] = true;
+        // HashSet removes duplicates
+        // then back to ArrayList
+        // then to primitive Array (for performance)
+        // then sort (for performance)
+        HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
+        ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
+        ATMAOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
+        Arrays.sort(ATMAOrder);
 
-        Log.d(TAG, "ATMAOrder: " + ATMAOrder);
-        Log.d(TAG, "profileMatrix: " + profileMatrix);
+        profileMatrix = new boolean[ATMAOrder.length][ATMAOrder.length];
 
-        Log.d(TAG, "Creating the matrix...");
-        Log.d(TAG, ObdCommand.ATMATrace.toString());
+        // This is an example of the profileMatrix
+        // "ATMAOrder" is the order for both the rows and the columns
+        // the row is the previous ID
+        // the column is any subsequent ID that can follow the previous ID in attack-free traffic
+
+        //    0  1  2  3
+        // 0  f  f  f  t
+        // 1  f  f  t  f
+        // 2  f  t  f  f
+        // 3  t  f  f  f
+
+        boolean checkNext = false;
+
+        for (int i = 0; i < ATMAOrder.length; i++) {
+            String currentId = ATMAOrder[i];
+
+            for (String id : ObdCommand.ATMATrace) {
+                if (checkNext) {
+                    // This ID was preceded by the current ID,
+                    // meaning it is a valid transition and should be changed to true
+
+                    // We know "i" is the row because we are iterating by ATMAOrder
+                    // and we can find "j" for the column using binarySearch, since we sorted the array
+                    int j = Arrays.binarySearch(ATMAOrder, id);
+                    profileMatrix[i][j] = true;
+                }
+
+                if (currentId.equals(id)) {
+                    checkNext = true;
+                } else {
+                    checkNext = false;
+                }
+            }
+        }
+
+        // BEGIN -- PRINTING FOR VALIDATION / DEBUGGING
+        // **
+        Log.d(TAG,"ATMAOrder.length -- " + ATMAOrder.length);
+        Log.d(TAG,"profileMatrix.length -- " + profileMatrix.length + ", profileMatrix.width -- " + profileMatrix[0].length);
+
+        System.out.println("in createMatrix() -- ATMAOrder");
+        System.out.printf("%-10s", "");
+        for (int i = 0; i < ATMAOrder.length; i++) {
+            System.out.printf("%-10s", ATMAOrder[i]);
+        }
+        System.out.println();
+
+        System.out.println("in createMatrix() -- profileMatrix");
+        for (int i = 0; i < ATMAOrder.length; i++) {
+            System.out.printf("%-10s", ATMAOrder[i]);
+            for (int j = 0; j < ATMAOrder.length; j++) {
+                System.out.printf("%-10s", profileMatrix[i][j]);
+            }
+            System.out.println();
+        }
+        // **
+        // END -- PRINTING FOR VALIDATION / DEBUGGING
 
         // Now that we have a matrix/profile for this vehicle, we need to save this vehicle as an option in preferences
         Log.d(TAG, "Saving the vehicle in preferences...");
@@ -1097,25 +1176,139 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         }
 
         if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
-            sendNotification();
+            sendNotification(invalid_id_alert);
             ObdCommand.ATMAMap.remove("ELM327");
         }
 
-        if (false) {
-            sendNotification();
+        // We need to check each pair of adjacent IDs in currentIDs
+        // if pair (i, i + 1) is a valid transition (true), we do nothing
+        // if pair (i, i + 1) is not a valid transition (false), we update the anomaly counter
+        // When the anomaly counter reaches the anomaly threshold, we raise an alert
+
+        for (int i = 0; i < ObdCommand.currentIDs.size() - 1; i++) {
+            String prevID = ObdCommand.currentIDs.get(i);
+            String nextID = ObdCommand.currentIDs.get(i + 1);
+
+            int row = Arrays.binarySearch(ATMAOrder, prevID);
+            int col = Arrays.binarySearch(ATMAOrder, nextID);
+            if (row < 0) {
+                Log.d(TAG, "This is an anomaly: This ID is not valid");
+                Log.d(TAG, "prevID: " + prevID);
+
+                // Given the size of our trace, we would never expect a previously unknown ECU to start transmitting
+                // As such, we expect an unknown identifier to indicate an attack
+                sendNotification(invalid_id_alert);
+            } else if (col < 0) {
+                Log.d(TAG, "This is an anomaly: This ID is not valid");
+                Log.d(TAG, "nextID: " + nextID);
+
+                // Given the size of our trace, we would never expect a previously unknown ECU to start transmitting
+                // As such, we expect an unknown identifier to indicate an attack
+                sendNotification(invalid_id_alert);
+            } else if (!profileMatrix[row][col]) {
+                Log.d(TAG, "This is an anomaly: This sequence is not valid");
+                Log.d(TAG, "prevID: " + prevID + ", nextID: " + nextID);
+                anomalyTrace.add(prevID);
+                anomalyTrace.add(nextID);
+                anomalyCounter++;
+                anomalyCounterForPercent++;
+            } else {
+                healthyCounter++;
+                healthyCounterForPercent++;
+            }
+        }
+
+        if (anomalyCounter >= anomalyThreshold) {
+            sendNotification(invalid_id_sequence_alert);
+        }
+
+        // If we have an extended period of healthy traffic,
+        // then previous suspicious traffic may have been false positives
+        // and we should update the matrix
+        // so that we do not see the same false positives
+        if (healthyCounter >= healthyThreshold) {
+            Log.d(TAG, "healthyThreshold reached, updating matrix...");
+
+            // We are going to perform the matrix update, we need to reset the healthyCounter
+            healthyCounter = 0;
+            updateMatrix();
+        }
+
+        // If we have mostly healthy traffic and very few anomalies
+        // then the anomalies may have been false positives, and we can update the matrix accordingly
+        // We don't want to update too often, so we will check when totalTraffic reaches totalTrafficThreshold
+        double totalTraffic = anomalyCounterForPercent + healthyCounterForPercent;
+        double percentHealthyTraffic = healthyCounterForPercent / totalTraffic;
+        if (totalTraffic > minimumTrafficBeforeUpdate && percentHealthyTraffic > minimumHealthyPercent) {
+            Log.d(TAG, "percentHealthyTraffic reached, updating matrix...");
+            anomalyCounterForPercent = 0;
+            healthyCounterForPercent = 0;
+            updateMatrix();
         }
     }
 
-    public void sendNotification() {
+    public static void updateMatrix() {
+        // If we see very few anomalies over a significant period,
+        // then the "anomalies" are probably false positives
+        // We should record them so that we can update the matrix if have not hit the anomaly threshold
+        // (We do not think the "anomalies" were part of an attack--we think they were false positives)
+
+        // We need to iterate by pairs, because each pair is part of the trace,
+        // but it is not associated with the next pair
+        for (int i = 0; i < anomalyTrace.size() - 1; i += 2) {
+            String prevId = anomalyTrace.get(i);
+            int row = Arrays.binarySearch(ATMAOrder, prevId);
+
+            String nextId = anomalyTrace.get(i + 1);
+            int col = Arrays.binarySearch(ATMAOrder, nextId);
+
+            profileMatrix[row][col] = true;
+        }
+
+        anomalyTrace = new ArrayList<>();
+        anomalyCounter = 0;
+    }
+
+    public void sendNotification(int alert_type) {
         Log.d(TAG, "Sending notification...");
 
-        //Get an instance of NotificationManager
+        String alert_type_content = "Suspicious traffic has been detected, indicative of a potential attack.";
+
+        switch (alert_type) {
+            case invalid_id_alert:
+                alert_type_content = "Invalid messages have been detected. This may indicate a bus error or an attack.";
+                invalidIDAlertCount++;
+                break;
+            case invalid_id_sequence_alert:
+                alert_type_content = "Unusual patterns of messages have been detected. This may be the result of unusual activity, or it may indicate an attack.";
+                invalidSequenceAlertCount++;
+                break;
+            default:
+                alert_type_content = "Unknown.";
+        }
+
+        Log.d(TAG, "invaldIDAlertCount: " + invalidIDAlertCount);
+        Log.d(TAG, "invalidSequenceAlertCount: " + invalidSequenceAlertCount);
+
+        totalAlertCount++;
+        Log.d(TAG, "totalAlertCount: " + totalAlertCount);
+
+        anomalyCounter = 0;
+
+        // We've encountered suspicious traffic, so we need to reset the healthyCounter
+        healthyCounter = 0;
+
+        // We've encountered suspicious traffic, so we need to remove the anomalies
+        // because we think they are suspicious traffic, not false positives
+        anomalyTrace = new ArrayList<>();
+
+        // Get an instance of NotificationManager
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.scribble)
                 .setContentTitle("ALERT: Potential attack detected!")
-                .setContentText("Suspicious traffic has been detected, indicative of a potential attack.")
+                .setContentText(alert_type_content)
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Suspicious traffic has been detected, indicative of a potential attack."))
+                        .bigText(alert_type_content))
                         //.bigText("Detail of the suspicious traffic and possibility of an an attack."))
                 .setPriority(NotificationCompat.PRIORITY_HIGH);
 
