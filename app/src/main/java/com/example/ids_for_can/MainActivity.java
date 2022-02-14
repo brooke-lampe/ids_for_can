@@ -1147,10 +1147,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             return;
         }
 
-        if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
-            sendNotification(invalid_id_alert);
-            ObdCommand.ATMAMap.remove("ELM327");
-        }
+//        if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
+//            sendNotification(invalid_id_alert);
+//            ObdCommand.ATMAMap.remove("ELM327");
+//        }
 
         // We need to check each pair of adjacent IDs in currentIDs
         // if pair (i, i + 1) is a valid transition (true), we do nothing

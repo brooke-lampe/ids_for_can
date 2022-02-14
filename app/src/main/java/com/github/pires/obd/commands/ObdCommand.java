@@ -54,7 +54,7 @@ public abstract class ObdCommand {
     private long start;
     private long end;
     public static String ATMAString;
-    public static HashMap<String, Set<String>> ATMAMap = new HashMap<>();
+//    public static HashMap<String, Set<String>> ATMAMap = new HashMap<>();
     public static ArrayList<String> ATMATrace = new ArrayList<>();
     public static ArrayList<String> currentIDs = new ArrayList<>();
 
@@ -194,17 +194,17 @@ public abstract class ObdCommand {
             if (!atma.equals("BUFFER FULL") && !atma.equals("NO DATA") && !atma.equals("OK")
                     && !atma.equals("STOPPED") && !atma.equals("?")) {
                 String temp[] = atma.split(" ", 2);
-                if (temp.length > 1 && !temp[0].equals("AT")) {
-                //if (temp.length > 1 && !temp[0].equals("AT") && !temp[0].equals("ELM327")) {
+                //if (temp.length > 1 && !temp[0].equals("AT")) {
+                if (temp.length > 1 && !temp[0].equals("AT") && !temp[0].equals("ELM327")) {
                     String arbitrationId = temp[0];
-                    Set<String> data;
-                    if (ATMAMap.containsKey(arbitrationId)) {
-                        data = ATMAMap.get(arbitrationId);
-                    } else {
-                        data = new HashSet<>();
-                    }
-                    data.add(temp[1]);
-                    ATMAMap.put(arbitrationId, data);
+//                    Set<String> data;
+//                    if (ATMAMap.containsKey(arbitrationId)) {
+//                        data = ATMAMap.get(arbitrationId);
+//                    } else {
+//                        data = new HashSet<>();
+//                    }
+//                    data.add(temp[1]);
+//                    ATMAMap.put(arbitrationId, data);
 
                     ATMATrace.add(arbitrationId);
 //                    Log.d(TAG, "ATMATrace");
