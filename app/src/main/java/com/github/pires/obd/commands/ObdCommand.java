@@ -213,6 +213,8 @@ public abstract class ObdCommand {
                     currentIDs.add(arbitrationId);
 //                    Log.d(TAG, "currentIDs");
 //                    Log.d(TAG, currentIDs.toString());
+
+                    MainActivity.trainingCounter++;
                 }
             }
         }

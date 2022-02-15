@@ -1,0 +1,326 @@
+2022-02-15 17:02:05.476 20615-20615/? I/libc: SetHeapTaggingLevel: tag level set to 0
+        at efz.n(:com.google.android.gms@214815044@21.48.15 (190400-414534850):31)
+        at efz.n(:com.google.android.gms@214815044@21.48.15 (190400-414534850):31)
+2022-02-15 17:02:05.478 20615-20615/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+        at efz.d(:com.google.android.gms@214815044@21.48.15 (190400-414534850):40)
+        at efz.d(:com.google.android.gms@214815044@21.48.15 (190400-414534850):40)
+        at efz.h(:com.google.android.gms@214815044@21.48.15 (190400-414534850):0)
+        at edt.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):5)
+        at edt.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):5)
+2022-02-15 17:02:05.496 20615-20615/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+        at android.os.Binder.transact(Binder.java:1064)
+        at android.os.Binder.transact(Binder.java:1064)
+        at ejk.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):2)
+        at ejk.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):2)
+        at android.os.Binder.transact(Binder.java:1064)
+        at android.os.Binder.transact(Binder.java:1064)
+        at aemd.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):17)
+        at aemd.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):17)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+2022-02-15 17:02:05.519 20615-20615/? W/re-initialized>: type=1400 audit(0.0:13798): avc: granted { execute } for path="/data/user/0/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-12" ino=303716 scontext=u:r:untrusted_app_29:s0:c122,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c122,c257,c512,c768 tclass=file app=com.example.ids_for_can
+        at android.os.Binder.execTransact(Binder.java:1143)
+        at android.os.Binder.execTransact(Binder.java:1143)
+2022-02-15 17:02:05.521 20615-20615/? V/studio.deploy: Startup agent attached to VM
+2022-02-15 17:02:05.521 20615-20615/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-02-15 17:02:05.521 20615-20615/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-02-15 17:01:19.766 2948-6063/? E/AuthPII: [GoogleAccountDataServiceImpl] getToken() -> BAD_AUTHENTICATION. Account: Account {name=c4lampe1@gmail.com, type=com.google}, App: com.google.android.gms, Service: oauth2:https://www.googleapis.com/auth/peopleapi.legacy.readwrite https://www.googleapis.com/auth/peopleapi.readonly https://www.googleapis.com/auth/peopleapi.readwrite https://www.googleapis.com/auth/plus.peopleapi.readwrite https://www.googleapis.com/auth/plus.me
+2022-02-15 17:01:19.766 2948-6063/? E/AuthPII: [GoogleAccountDataServiceImpl] getToken() -> BAD_AUTHENTICATION. Account: Account {name=c4lampe1@gmail.com, type=com.google}, App: com.google.android.gms, Service: oauth2:https://www.googleapis.com/auth/peopleapi.legacy.readwrite https://www.googleapis.com/auth/peopleapi.readonly https://www.googleapis.com/auth/peopleapi.readwrite https://www.googleapis.com/auth/plus.peopleapi.readwrite https://www.googleapis.com/auth/plus.me
+2022-02-15 17:02:05.522 20615-20615/? V/studio.deploy: Applying transforms with cached classes
+    upf: Long live credential not available.
+    upf: Long live credential not available.
+        at idq.a(:com.google.android.gms@214815044@21.48.15 (190400-414534850):8)
+        at idq.a(:com.google.android.gms@214815044@21.48.15 (190400-414534850):8)
+        at idu.h(:com.google.android.gms@214815044@21.48.15 (190400-414534850):1)
+        at idu.h(:com.google.android.gms@214815044@21.48.15 (190400-414534850):1)
+        at icd.m(:com.google.android.gms@214815044@21.48.15 (190400-414534850):110)
+        at icd.m(:com.google.android.gms@214815044@21.48.15 (190400-414534850):110)
+2022-02-15 17:02:05.528 20615-20615/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+        at efz.n(:com.google.android.gms@214815044@21.48.15 (190400-414534850):31)
+        at efz.n(:com.google.android.gms@214815044@21.48.15 (190400-414534850):31)
+        at efz.d(:com.google.android.gms@214815044@21.48.15 (190400-414534850):40)
+        at efz.d(:com.google.android.gms@214815044@21.48.15 (190400-414534850):40)
+        at efz.h(:com.google.android.gms@214815044@21.48.15 (190400-414534850):0)
+        at efz.h(:com.google.android.gms@214815044@21.48.15 (190400-414534850):0)
+2022-02-15 17:02:05.528 20615-20615/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+        at efz.ei(:com.google.android.gms@214815044@21.48.15 (190400-414534850):6)
+        at efz.ei(:com.google.android.gms@214815044@21.48.15 (190400-414534850):6)
+        at edt.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):5)
+        at edt.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):5)
+        at android.os.Binder.transact(Binder.java:1064)
+        at android.os.Binder.transact(Binder.java:1064)
+2022-02-15 17:02:05.531 20615-20615/? D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10378; state: DISABLED
+        at ejk.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):2)
+        at ejk.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):2)
+        at android.os.Binder.transact(Binder.java:1064)
+        at android.os.Binder.transact(Binder.java:1064)
+2022-02-15 17:02:05.543 20615-20615/com.example.ids_for_can D/ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+        at aemd.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):17)
+        at aemd.onTransact(:com.google.android.gms@214815044@21.48.15 (190400-414534850):17)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+        at android.os.Binder.execTransactInternal(Binder.java:1179)
+2022-02-15 17:02:05.476 20615-20615/? I/libc: SetHeapTaggingLevel: tag level set to 0
+2022-02-15 17:02:05.476 20615-20615/? I/libc: SetHeapTaggingLevel: tag level set to 0
+2022-02-15 17:02:05.478 20615-20615/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+2022-02-15 17:02:05.478 20615-20615/? I/ple.ids_for_ca: Late-enabling -Xcheck:jni
+2022-02-15 17:02:05.496 20615-20615/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-02-15 17:02:05.496 20615-20615/? D/ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-02-15 17:02:05.519 20615-20615/? W/re-initialized>: type=1400 audit(0.0:13798): avc: granted { execute } for path="/data/user/0/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-12" ino=303716 scontext=u:r:untrusted_app_29:s0:c122,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c122,c257,c512,c768 tclass=file app=com.example.ids_for_can
+2022-02-15 17:02:05.519 20615-20615/? W/re-initialized>: type=1400 audit(0.0:13798): avc: granted { execute } for path="/data/user/0/com.example.ids_for_can/code_cache/startup_agents/a67b7118-agent.so" dev="dm-12" ino=303716 scontext=u:r:untrusted_app_29:s0:c122,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c122,c257,c512,c768 tclass=file app=com.example.ids_for_can
+2022-02-15 17:02:05.521 20615-20615/? V/studio.deploy: Startup agent attached to VM
+2022-02-15 17:02:05.521 20615-20615/? V/studio.deploy: Startup agent attached to VM
+2022-02-15 17:02:05.521 20615-20615/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-02-15 17:02:05.521 20615-20615/? V/studio.deploy: No existing instrumentation found. Loading instrumentation from instruments-3e620333.jar
+2022-02-15 17:02:05.521 20615-20615/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-02-15 17:02:05.521 20615-20615/? W/ple.ids_for_ca: DexFile /data/data/com.example.ids_for_can/code_cache/.studio/instruments-3e620333.jar is in boot class path but is not in a known location
+2022-02-15 17:02:05.522 20615-20615/? V/studio.deploy: Applying transforms with cached classes
+2022-02-15 17:02:05.522 20615-20615/? V/studio.deploy: Applying transforms with cached classes
+2022-02-15 17:02:05.528 20615-20615/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+2022-02-15 17:02:05.528 20615-20615/? W/ple.ids_for_ca: Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+2022-02-15 17:02:05.528 20615-20615/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+2022-02-15 17:02:05.528 20615-20615/? W/ple.ids_for_ca: Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+2022-02-15 17:02:05.531 20615-20615/? D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10378; state: DISABLED
+2022-02-15 17:02:05.531 20615-20615/? D/CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10378; state: DISABLED
+2022-02-15 17:02:05.543 20615-20615/com.example.ids_for_can D/ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+2022-02-15 17:02:05.543 20615-20615/com.example.ids_for_can D/ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+2022-02-15 17:02:05.639 20615-20615/com.example.ids_for_can V/GraphicsEnvironment: ANGLE Developer option for 'com.example.ids_for_can' set to: 'default'
+2022-02-15 17:02:05.640 20615-20615/com.example.ids_for_can V/GraphicsEnvironment: ANGLE GameManagerService for com.example.ids_for_can: false
+2022-02-15 17:02:05.640 20615-20615/com.example.ids_for_can V/GraphicsEnvironment: Updatable production driver is not supported on the device.
+2022-02-15 17:02:05.644 20615-20615/com.example.ids_for_can D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+2022-02-15 17:02:05.644 20615-20615/com.example.ids_for_can D/NetworkSecurityConfig: No Network Security Config specified, using platform default
+2022-02-15 17:02:05.673 20615-20615/com.example.ids_for_can D/roboguice.RoboGuice: Using full reflection. Try using RoboGuice annotation processor for better performance.
+2022-02-15 17:02:05.755 20615-20615/com.example.ids_for_can D//LnImpl.java:29: main Configuring Logging, minimum log level is VERBOSE
+2022-02-15 17:02:05.792 20615-20615/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10378; state: ENABLED
+2022-02-15 17:02:05.805 20615-20615/com.example.ids_for_can D/ContentValues: /storage/emulated/0
+2022-02-15 17:02:05.805 20615-20615/com.example.ids_for_can D/ContentValues: BLUETOOTH PERMISSION GRANTED!
+2022-02-15 17:02:05.808 20615-20615/com.example.ids_for_can D/ContentValues: READ_AND_WRITE_EXTERNAL_STORAGE PERMISSION GRANTED!
+2022-02-15 17:02:05.809 20615-20615/com.example.ids_for_can D/ContentValues: Entered onStart...
+2022-02-15 17:02:05.812 20615-20615/com.example.ids_for_can D/ContentValues: Resuming...
+2022-02-15 17:02:05.842 20615-20635/com.example.ids_for_can I/AdrenoGLES-0: QUALCOMM build                   : 4783c89, I46ff5fc46f
+    Build Date                       : 11/30/20
+    OpenGL ES Shader Compiler Version: EV031.31.04.01
+    Local Branch                     : QPR2
+    Remote Branch                    : 
+    Remote Branch                    : 
+    Reconstruct Branch               : 
+2022-02-15 17:02:05.842 20615-20635/com.example.ids_for_can I/AdrenoGLES-0: Build Config                     : S P 10.0.4 AArch64
+2022-02-15 17:02:05.842 20615-20635/com.example.ids_for_can I/AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+2022-02-15 17:02:05.842 20615-20635/com.example.ids_for_can D/hw-ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-02-15 17:02:05.845 20615-20635/com.example.ids_for_can I/AdrenoGLES-0: PFP: 0x016dd093, ME: 0x00000000
+2022-02-15 17:02:05.847 20615-20635/com.example.ids_for_can E/Adreno-AppProfiles: Could not find QSPM HAL service
+2022-02-15 17:02:05.849 20615-20635/com.example.ids_for_can W/AdrenoUtils: <ReadGpuID_from_sysfs:197>: Failed to open /sys/class/kgsl/kgsl-3d0/gpu_model
+2022-02-15 17:02:05.849 20615-20635/com.example.ids_for_can W/AdrenoUtils: <ReadGpuID:221>: Failed to read chip ID from gpu_model. Fallback to use the GSL path
+2022-02-15 17:02:05.855 20615-20635/com.example.ids_for_can D/hw-ProcessState: Binder ioctl to enable oneway spam detection failed: Invalid argument
+2022-02-15 17:02:05.868 20615-20615/com.example.ids_for_can D/ContentValues: Creating menu...
+2022-02-15 17:02:06.737 20615-20615/com.example.ids_for_can V/AutofillManager: requestHideFillUi(null): anchor = null
+2022-02-15 17:02:07.541 20615-20626/com.example.ids_for_can W/System: A resource failed to call close. 
+2022-02-15 17:02:07.738 20615-20615/com.example.ids_for_can V/AutofillManager: requestHideFillUi(null): anchor = null
+2022-02-15 17:02:07.857 20615-20615/com.example.ids_for_can D/ContentValues: Train IDS
+2022-02-15 17:02:07.857 20615-20615/com.example.ids_for_can D/ContentValues: Training IDS...
+2022-02-15 17:02:07.857 20615-20615/com.example.ids_for_can D/ContentValues: Binding OBD service...
+2022-02-15 17:02:07.907 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Creating service...
+2022-02-15 17:02:07.907 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.AbstractGatewayService: Service created.
+2022-02-15 17:02:07.909 20615-20653/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Executing queue...
+2022-02-15 17:02:07.922 20615-20615/com.example.ids_for_can D/ContentValues: ComponentInfo{com.example.ids_for_can/com.example.ids_for_can.connectivity.ObdGatewayService} service is bound
+2022-02-15 17:02:07.923 20615-20615/com.example.ids_for_can D/ContentValues: CONNECT SERVICE
+2022-02-15 17:02:07.923 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting service...
+2022-02-15 17:02:07.923 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Stopping Bluetooth discovery.
+2022-02-15 17:02:07.925 20615-20615/com.example.ids_for_can D/CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10378; state: DISABLED
+2022-02-15 17:02:07.930 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Starting OBD connection...
+2022-02-15 17:02:07.930 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.BluetoothManager: Starting Bluetooth connection...
+2022-02-15 17:02:08.074 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Queueing jobs for connection configuration...
+2022-02-15 17:02:08.578 20615-20615/com.example.ids_for_can D/com.example.ids_for_can.connectivity.ObdGatewayService: Initialization jobs queued.
+2022-02-15 17:02:08.581 20615-20615/com.example.ids_for_can I/Choreographer: Skipped 59 frames!  The application may be doing too much work on its main thread.
+2022-02-15 17:02:08.587 20615-20635/com.example.ids_for_can D/OpenGLRenderer: endAllActiveAnimators on 0x7d298fd4c0 (MenuPopupWindow$MenuDropDownListView) with handle 0x7c399284a0
+2022-02-15 17:02:11.920 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 0
+2022-02-15 17:02:15.926 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 11
+2022-02-15 17:02:19.933 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 22
+2022-02-15 17:02:23.940 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 32
+2022-02-15 17:02:27.944 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 42
+2022-02-15 17:02:31.951 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 52
+2022-02-15 17:02:35.958 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 62
+2022-02-15 17:02:39.964 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 72
+2022-02-15 17:02:43.970 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 82
+2022-02-15 17:02:47.977 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 82
+2022-02-15 17:02:55.983 20615-20615/com.example.ids_for_can D/ContentValues: trainingCounter: 92
+2022-02-15 17:03:04.015 20615-20615/com.example.ids_for_can D/ContentValues: ATMAOrder.length -- 34
+2022-02-15 17:03:04.015 20615-20615/com.example.ids_for_can D/ContentValues: profileMatrix.length -- 34, profileMatrix.width -- 34
+2022-02-15 17:03:04.015 20615-20615/com.example.ids_for_can I/System.out: in createMatrix() -- ATMAOrder
+2022-02-15 17:03:04.020 20615-20615/com.example.ids_for_can I/System.out:           0C1       0C5       0C7       0C9       0F1       0F9       17D       17F       184       189       191       199       19D       1A1       1AF       1C3       1CB       1CD       1E1       1E5       1E9       1EB       1ED       1EF       1F5       2D1       2F9       334       348       34A       3ED       4D9       500       52A       
+2022-02-15 17:03:04.020 20615-20615/com.example.ids_for_can I/System.out: in createMatrix() -- profileMatrix
+2022-02-15 17:03:04.024 20615-20615/com.example.ids_for_can I/System.out: 0C1       false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.030 20615-20615/com.example.ids_for_can I/System.out: 0C5       false     false     false     true      false     false     false     false     true      false     true      false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.034 20615-20615/com.example.ids_for_can I/System.out: 0C7       false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.038 20615-20615/com.example.ids_for_can I/System.out: 0C9       true      false     false     false     false     false     false     false     false     true      true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.041 20615-20615/com.example.ids_for_can I/System.out: 0F1       true      true      false     true      false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.043 20615-20615/com.example.ids_for_can I/System.out: 0F9       false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.046 20615-20615/com.example.ids_for_can I/System.out: 17D       false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.048 20615-20615/com.example.ids_for_can I/System.out: 17F       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     
+2022-02-15 17:03:04.050 20615-20615/com.example.ids_for_can I/System.out: 184       false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.054 20615-20615/com.example.ids_for_can I/System.out: 189       false     false     false     true      false     false     false     false     false     false     true      true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.055 20615-20615/com.example.ids_for_can I/System.out: 191       false     false     true      false     false     false     false     false     false     false     false     true      false     true      true      false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.057 20615-20615/com.example.ids_for_can I/System.out: 199       false     false     false     true      true      false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     true      false     false     true      
+2022-02-15 17:03:04.058 20615-20615/com.example.ids_for_can I/System.out: 19D       false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.060 20615-20615/com.example.ids_for_can I/System.out: 1A1       false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      true      false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.062 20615-20615/com.example.ids_for_can I/System.out: 1AF       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.063 20615-20615/com.example.ids_for_can I/System.out: 1C3       false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     true      false     true      false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.065 20615-20615/com.example.ids_for_can I/System.out: 1CB       false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.066 20615-20615/com.example.ids_for_can I/System.out: 1CD       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.067 20615-20615/com.example.ids_for_can I/System.out: 1E1       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     true      false     false     false     false     false     false     
+2022-02-15 17:03:04.068 20615-20615/com.example.ids_for_can I/System.out: 1E5       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      true      false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.068 20615-20615/com.example.ids_for_can I/System.out: 1E9       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     
+2022-02-15 17:03:04.069 20615-20615/com.example.ids_for_can I/System.out: 1EB       false     true      true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      true      false     false     false     false     false     false     false     true      false     false     
+2022-02-15 17:03:04.070 20615-20615/com.example.ids_for_can I/System.out: 1ED       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     true      false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.071 20615-20615/com.example.ids_for_can I/System.out: 1EF       true      false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     true      false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.072 20615-20615/com.example.ids_for_can I/System.out: 1F5       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     
+2022-02-15 17:03:04.072 20615-20615/com.example.ids_for_can I/System.out: 2D1       false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.073 20615-20615/com.example.ids_for_can I/System.out: 2F9       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     
+2022-02-15 17:03:04.074 20615-20615/com.example.ids_for_can I/System.out: 334       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.074 20615-20615/com.example.ids_for_can I/System.out: 348       false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.075 20615-20615/com.example.ids_for_can I/System.out: 34A       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     
+2022-02-15 17:03:04.075 20615-20615/com.example.ids_for_can I/System.out: 3ED       false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.076 20615-20615/com.example.ids_for_can I/System.out: 4D9       false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     true      false     false     false     
+2022-02-15 17:03:04.077 20615-20615/com.example.ids_for_can I/System.out: 500       false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.077 20615-20615/com.example.ids_for_can I/System.out: 52A       false     false     false     false     true      false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     false     
+2022-02-15 17:03:04.077 20615-20615/com.example.ids_for_can D/ContentValues: Saving the vehicle in preferences...
+2022-02-15 17:03:04.090 20615-20615/com.example.ids_for_can V/TextView: notifyAutoFillManagerAfterTextChanged
+2022-02-15 17:03:04.090 20615-20615/com.example.ids_for_can V/AutofillManager: notifyValueChanged(1073741824): ignoring on state UNKNOWN
+2022-02-15 17:03:04.091 20615-20615/com.example.ids_for_can V/TextView: notifyAutoFillManagerAfterTextChanged
+2022-02-15 17:03:04.091 20615-20615/com.example.ids_for_can V/AutofillManager: notifyValueChanged(1073741824): ignoring on state UNKNOWN
+2022-02-15 17:03:04.092 20615-20615/com.example.ids_for_can V/TextView: notifyAutoFillManagerAfterTextChanged
+2022-02-15 17:03:04.092 20615-20615/com.example.ids_for_can V/AutofillManager: notifyValueChanged(1073741824): ignoring on state UNKNOWN
+2022-02-15 17:04:09.223 20615-20615/com.example.ids_for_can V/AutofillManager: requestHideFillUi(null): anchor = null
+2022-02-15 17:04:09.292 20615-20615/com.example.ids_for_can D/ContentValues: Appending to SharedPreferences...
+2022-02-15 17:04:09.349 20615-20615/com.example.ids_for_can D/ContentValues: resultHashSet: [Silverado, SUV, Pontiac, Traverse (2), My Vehicle, Traverse (1), Traverst, Traverse]
+2022-02-15 17:04:09.349 20615-20615/com.example.ids_for_can D/ContentValues: resultString: My Vehicle
+2022-02-15 17:04:09.349 20615-20615/com.example.ids_for_can D/ContentValues: resultJSON: [{"profileName":"Silverado","order":["AB1","CD2","EF3"],"matrix":[[true,false,false],[false,false,false],[false,false,true]]},{"profileName":"Traverse","order":["AB1","CD2","EF3"],"matrix":[[true,false,false],[false,false,false],[false,false,true]]},{"profileName":"Pontiac","order":["AB1","CD2","EF3"],"matrix":[[true,false,false],[false,false,false],[false,false,true]]},{"profileName":"Traverse (1)","order":["0C1","0C5","0C7","0C9","0F9","189","191","199","1A1","1C3","1E5","1ED","1EF","2C3","3C1","3D1"],"matrix":[[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false],[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false],[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false],[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false],[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,true,false,false,false,false,false,false,false,false,false,true,false,false],[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false],[false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false],[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]]},{"profileName":"Traverse (2)","order":["0C1","0C5","0C7","0C9","0F1","0F9","184","189","191","199","19D","1AF","1C7","1CB","1E1","1E5","1EB","1ED","1EF","1F5","2D1"],"matrix":[[false,true,true,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false],[false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,true,false,false,false,false,false],[false,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,true,false,false,false,true,false,false,false,false,false,false],[false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,true,false,true,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false],[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false],[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false],[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],[true,false,false,fals
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: Printing recoveredOrder...
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [0C1, 0C5, 0C7, 0C9, 0F1, 0F9, 17D, 17F, 184, 189, 191, 199, 19D, 1A1, 1AF, 1C3, 1CB, 1CD, 1E1, 1E5, 1E9, 1EB, 1ED, 1EF, 1F5, 2D1, 2F9, 334, 348, 34A, 3ED, 4D9, 500, 52A]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: Printing recoveredMatrix...
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, true, false, false, false, false, true, false, true, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [true, false, false, false, false, false, false, false, false, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [true, true, false, true, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.353 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, true, false, false, false, false, false, false, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, true, false, false, false, false, false, false, false, false, true, false, true, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, true, true, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, true]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, false, true, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, true, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, false, false, false, false, false, false, false, true, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, true, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [true, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.354 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.355 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false]
+2022-02-15 17:04:09.355 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.355 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false]
+2022-02-15 17:04:09.355 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.355 20615-20615/com.example.ids_for_can D/ContentValues: [false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+2022-02-15 17:04:09.355 20615-20615/com.example.ids_for_can D/ContentValues: Training complete, starting IDS...
+2022-02-15 17:04:09.361 20615-20635/com.example.ids_for_can D/OpenGLRenderer: endAllActiveAnimators on 0x7d2992cc60 (RippleDrawable) with handle 0x7c398f0ac0
+2022-02-15 17:04:12.237 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:12.237 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1C7
+2022-02-15 17:04:12.237 20615-20615/com.example.ids_for_can D/ContentValues: Sending notification...
+2022-02-15 17:04:12.237 20615-20615/com.example.ids_for_can D/ContentValues: invaldIDAlertCount: 1
+2022-02-15 17:04:12.238 20615-20615/com.example.ids_for_can D/ContentValues: invalidSequenceAlertCount: 0
+2022-02-15 17:04:12.238 20615-20615/com.example.ids_for_can D/ContentValues: totalAlertCount: 1
+2022-02-15 17:04:12.242 20615-20615/com.example.ids_for_can D/ContentValues: Creating notification channel...
+2022-02-15 17:04:12.251 20615-20615/com.example.ids_for_can D/ContentValues: Notification sent...
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1E9, nextID: 0C9
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 191, nextID: 1ED
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1EF, nextID: 1EB
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: healthyCounter: 6
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: totalTraffic: 9.0
+2022-02-15 17:04:12.252 20615-20615/com.example.ids_for_can D/ContentValues: percentHealthyTraffic: 0.6666666666666666
+2022-02-15 17:04:16.258 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:16.259 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1C3, nextID: 1CB
+2022-02-15 17:04:16.259 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:16.259 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1CB, nextID: 1ED
+2022-02-15 17:04:16.259 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:16.259 20615-20615/com.example.ids_for_can D/ContentValues: nextID: 1F3
+2022-02-15 17:04:16.260 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:16.260 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:16.260 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1F3
+2022-02-15 17:04:16.260 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:16.260 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:16.260 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1EB, nextID: 0C1
+2022-02-15 17:04:16.261 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:16.261 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 184, nextID: 19D
+2022-02-15 17:04:16.261 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:16.261 20615-20615/com.example.ids_for_can D/ContentValues: nextID: 1C7
+2022-02-15 17:04:16.261 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:16.262 20615-20615/com.example.ids_for_can D/ContentValues: healthyCounter: 10
+2022-02-15 17:04:16.262 20615-20615/com.example.ids_for_can D/ContentValues: totalTraffic: 17.0
+2022-02-15 17:04:16.263 20615-20615/com.example.ids_for_can D/ContentValues: percentHealthyTraffic: 0.5882352941176471
+2022-02-15 17:04:24.269 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:24.270 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 0F1, nextID: 2D1
+2022-02-15 17:04:24.270 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:24.270 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 19D, nextID: 1AF
+2022-02-15 17:04:24.270 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:24.270 20615-20615/com.example.ids_for_can D/ContentValues: nextID: 12A
+2022-02-15 17:04:24.270 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 12A
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1F5, nextID: 1EB
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1EB, nextID: 0C9
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:24.271 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 191, nextID: 1ED
+2022-02-15 17:04:24.272 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:24.272 20615-20615/com.example.ids_for_can D/ContentValues: healthyCounter: 13
+2022-02-15 17:04:24.272 20615-20615/com.example.ids_for_can D/ContentValues: totalTraffic: 25.0
+2022-02-15 17:04:24.272 20615-20615/com.example.ids_for_can D/ContentValues: percentHealthyTraffic: 0.52
+2022-02-15 17:04:48.304 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:48.304 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1EB, nextID: 0C1
+2022-02-15 17:04:48.304 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:48.304 20615-20615/com.example.ids_for_can D/ContentValues: nextID: 1C7
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1C7
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1E9, nextID: 0F1
+2022-02-15 17:04:48.305 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:48.306 20615-20615/com.example.ids_for_can D/ContentValues: healthyCounter: 19
+2022-02-15 17:04:48.306 20615-20615/com.example.ids_for_can D/ContentValues: totalTraffic: 33.0
+2022-02-15 17:04:48.307 20615-20615/com.example.ids_for_can D/ContentValues: percentHealthyTraffic: 0.5757575757575758
+2022-02-15 17:04:52.312 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This ID is not valid
+2022-02-15 17:04:52.312 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1F3
+2022-02-15 17:04:52.312 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:52.313 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:52.313 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 0C5, nextID: 1E5
+2022-02-15 17:04:52.313 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:52.313 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1E5, nextID: 334
+2022-02-15 17:04:52.313 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:52.313 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 334, nextID: 0C7
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 199, nextID: 1EB
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 1EB, nextID: 0C9
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: This is an anomaly: This sequence is not valid
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: prevID: 0C9, nextID: 0F1
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: User has been notified; no new notification will be sent.
+2022-02-15 17:04:52.314 20615-20615/com.example.ids_for_can D/ContentValues: healthyCounter: 23
+2022-02-15 17:04:52.315 20615-20615/com.example.ids_for_can D/ContentValues: totalTraffic: 43.0
+2022-02-15 17:04:52.315 20615-20615/com.example.ids_for_can D/ContentValues: percentHealthyTraffic: 0.5348837209302325
+

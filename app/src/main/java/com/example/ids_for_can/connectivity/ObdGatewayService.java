@@ -118,7 +118,7 @@ public class ObdGatewayService extends AbstractGatewayService {
         }
 
         // Let's configure the connection.
-        Log.d(TAG, "Queueing jobs for connection configuration...");
+//        Log.d(TAG, "Queueing jobs for connection configuration...");
         queueJob(new ObdCommandJob(new ObdResetCommand()));
         
         //Below is to give the adapter enough time to reset before sending the commands, otherwise the first startup commands could be ignored.
@@ -141,7 +141,7 @@ public class ObdGatewayService extends AbstractGatewayService {
         //queueJob(new ObdCommandJob(new AmbientAirTemperatureCommand()));
 
         queueCounter = 0L;
-        Log.d(TAG, "Initialization jobs queued.");
+//        Log.d(TAG, "Initialization jobs queued.");
     }
 
     /**
@@ -170,10 +170,10 @@ public class ObdGatewayService extends AbstractGatewayService {
                 job = jobsQueue.take();
 
                 // log job
-                Log.d(TAG, "Taking job[" + job.getId() + "] from queue...");
+//                Log.d(TAG, "Taking job[" + job.getId() + "] from queue...");
 
                 if (job.getState().equals(ObdCommandJobState.NEW)) {
-                    Log.d(TAG, "Job state is NEW. Run it...");
+//                    Log.d(TAG, "Job state is NEW. Run it...");
                     job.setState(ObdCommandJobState.RUNNING);
                     if (sock.isConnected()) {
                         job.getCommand().run(sock.getInputStream(), sock.getOutputStream());

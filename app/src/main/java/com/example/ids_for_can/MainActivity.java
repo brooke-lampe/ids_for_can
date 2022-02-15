@@ -134,17 +134,19 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public static int anomalyCounter = 0;
     public static int anomalyThreshold = 10;
     public static int healthyCounter = 0;
-    public static int healthyThreshold = 2000;
+    public static int healthyThreshold = 100;
     public static double anomalyCounterForPercent = 0;
     public static double healthyCounterForPercent = 0;
     public static double minimumHealthyPercent = 0.9;
-    public static double minimumTrafficBeforeUpdate = 2000;
+    public static double minimumTrafficBeforeUpdate = 100;
     public static int invalidIDAlertCount = 0;
     public static int invalidSequenceAlertCount = 0;
     public static int totalAlertCount = 0;
 
     private static final int invalid_id_alert = 1;
     private static final int invalid_id_sequence_alert = 2;
+
+    public static boolean USER_ALERTED = false;
 
     static {
         RoboGuice.setUseAnnotationDatabases(false);
@@ -375,11 +377,22 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         super.onDestroy();
 
         Log.d(TAG, "Entered onDestroy...");
+
         IDSOn = false;
         IDSTrainOrRetrain = false;
         trainingComplete = false;
         trainingCounter = 0;
         loggingOn = false;
+
+        USER_ALERTED = false;
+
+        anomalyCounter = 0;
+        healthyCounter = 0;
+        anomalyCounterForPercent = 0;
+        healthyCounterForPercent = 0;
+        invalidIDAlertCount = 0;
+        invalidSequenceAlertCount = 0;
+        totalAlertCount = 0;
 
         if (isServiceBound) {
             //we don't want to unbind the service
@@ -513,6 +526,16 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         IDSTrainOrRetrain = false;
         trainingCounter = 0;
 
+        USER_ALERTED = false;
+
+        anomalyCounter = 0;
+        healthyCounter = 0;
+        anomalyCounterForPercent = 0;
+        healthyCounterForPercent = 0;
+        invalidIDAlertCount = 0;
+        invalidSequenceAlertCount = 0;
+        totalAlertCount = 0;
+
         doUnbindService();
     }
 
@@ -620,9 +643,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         tl.addView(tr, params);
     }
 
-    /**
-     *
-     */
     private void queueCommands() {
         if (isServiceBound) {
             // Live Data Mode
@@ -643,12 +663,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                     initIDSDone = true;
                 }
                 service.queueJob(new ObdCommandJob(new MonitorAllCommand()));
-                trainingCounter++;
 
-                trainingCounter++;
-                if (trainingCounter % 10000 == 0) {
+                //if (trainingCounter < 100 || trainingCounter % 10000 == 0) {
                     Log.d(TAG, "trainingCounter: " + trainingCounter);
-                }
+                //}
 
                 // We are in training mode, and we have sufficient data to create the matrix
                 if (IDSTrainOrRetrain && trainingCounter >= trainingThreshold) {
@@ -826,6 +844,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             });
 
             builder.show();
+            waitingOnUser = true;
         } else {
             try {
                 updateSharedPreferences();
@@ -1164,22 +1183,22 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             int row = Arrays.binarySearch(ATMAOrder, prevID);
             int col = Arrays.binarySearch(ATMAOrder, nextID);
             if (row < 0) {
-                Log.d(TAG, "This is an anomaly: This ID is not valid");
-                Log.d(TAG, "prevID: " + prevID);
+//                Log.d(TAG, "This is an anomaly: This ID is not valid");
+//                Log.d(TAG, "prevID: " + prevID);
 
                 // Given the size of our trace, we would never expect a previously unknown ECU to start transmitting
                 // As such, we expect an unknown identifier to indicate an attack
                 sendNotification(invalid_id_alert);
             } else if (col < 0) {
-                Log.d(TAG, "This is an anomaly: This ID is not valid");
-                Log.d(TAG, "nextID: " + nextID);
+//                Log.d(TAG, "This is an anomaly: This ID is not valid");
+//                Log.d(TAG, "nextID: " + nextID);
 
                 // Given the size of our trace, we would never expect a previously unknown ECU to start transmitting
                 // As such, we expect an unknown identifier to indicate an attack
                 sendNotification(invalid_id_alert);
             } else if (!profileMatrix[row][col]) {
-                Log.d(TAG, "This is an anomaly: This sequence is not valid");
-                Log.d(TAG, "prevID: " + prevID + ", nextID: " + nextID);
+//                Log.d(TAG, "This is an anomaly: This sequence is not valid");
+//                Log.d(TAG, "prevID: " + prevID + ", nextID: " + nextID);
                 anomalyTrace.add(prevID);
                 anomalyTrace.add(nextID);
                 anomalyCounter++;
@@ -1198,6 +1217,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // then previous suspicious traffic may have been false positives
         // and we should update the matrix
         // so that we do not see the same false positives
+        Log.d(TAG, "healthyCounter: " + healthyCounter);
         if (healthyCounter >= healthyThreshold) {
             Log.d(TAG, "healthyThreshold reached, updating matrix...");
 
@@ -1211,6 +1231,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // We don't want to update too often, so we will check when totalTraffic reaches totalTrafficThreshold
         double totalTraffic = anomalyCounterForPercent + healthyCounterForPercent;
         double percentHealthyTraffic = healthyCounterForPercent / totalTraffic;
+        Log.d(TAG, "totalTraffic: " + totalTraffic);
+        Log.d(TAG, "percentHealthyTraffic: " + percentHealthyTraffic);
         if (totalTraffic > minimumTrafficBeforeUpdate && percentHealthyTraffic > minimumHealthyPercent) {
             Log.d(TAG, "percentHealthyTraffic reached, updating matrix...");
             anomalyCounterForPercent = 0;
@@ -1265,6 +1287,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         totalAlertCount++;
         Log.d(TAG, "totalAlertCount: " + totalAlertCount);
 
+        if (USER_ALERTED) {
+            Log.d(TAG, "User has been notified; no new notification will be sent.");
+            return;
+        }
+
         anomalyCounter = 0;
 
         // We've encountered suspicious traffic, so we need to reset the healthyCounter
@@ -1310,5 +1337,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         mNotificationManager.notify(001, mBuilder.build());
         Log.d(TAG, "Notification sent...");
+
+        USER_ALERTED = true;
     }
 }

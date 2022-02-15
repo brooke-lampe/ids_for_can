@@ -31,7 +31,7 @@ public class MockObdGatewayService extends AbstractGatewayService {
         Log.d(TAG, "Starting " + this.getClass().getName() + " service..");
 
         // Let's configure the connection.
-        Log.d(TAG, "Queueing jobs for connection configuration..");
+//        Log.d(TAG, "Queueing jobs for connection configuration..");
         queueJob(new ObdCommandJob(new ObdResetCommand()));
         queueJob(new ObdCommandJob(new EchoOffCommand()));
 
@@ -49,7 +49,7 @@ public class MockObdGatewayService extends AbstractGatewayService {
         queueJob(new ObdCommandJob(new AmbientAirTemperatureCommand()));
 
         queueCounter = 0L;
-        Log.d(TAG, "Initialization jobs queued.");
+//        Log.d(TAG, "Initialization jobs queued.");
 
         isRunning = true;
     }
@@ -65,10 +65,10 @@ public class MockObdGatewayService extends AbstractGatewayService {
             try {
                 job = jobsQueue.take();
 
-                Log.d(TAG, "Taking job[" + job.getId() + "] from queue..");
+//                Log.d(TAG, "Taking job[" + job.getId() + "] from queue..");
 
                 if (job.getState().equals(ObdCommandJobState.NEW)) {
-                    Log.d(TAG, "Job state is NEW. Run it..");
+//                    Log.d(TAG, "Job state is NEW. Run it..");
                     job.setState(ObdCommandJobState.RUNNING);
                     Log.d(TAG, job.getCommand().getName());
                     job.getCommand().run(new ByteArrayInputStream("41 00 00 00>41 00 00 00>41 00 00 00>".getBytes()), new ByteArrayOutputStream());

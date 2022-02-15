@@ -29,8 +29,7 @@ public class MonitorAllCommand extends ObdCommand {
 
     @Override
     public String getFormattedResult() {
-        Log.d(TAG, "rawData: " + rawData);
-        Log.d(TAG, "buffer: " + buffer);
+//        Log.d(TAG, "rawData: " + rawData);
         if (ObdCommand.ATMATrace.size() > 0) {
             return ObdCommand.ATMATrace.get(ATMATrace.size() - 1);
         }
@@ -39,8 +38,7 @@ public class MonitorAllCommand extends ObdCommand {
 
     @Override
     public String getCalculatedResult() {
-        Log.d(TAG, "!! rawData: " + rawData);
-        Log.d(TAG, "!! buffer: " + buffer);
+//        Log.d(TAG, "rawData: " + rawData);
         if (ObdCommand.ATMATrace.size() > 0) {
             return ObdCommand.ATMATrace.get(ATMATrace.size() - 1);
         }
