@@ -64,6 +64,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -135,13 +136,13 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public static ArrayList<String> anomalyTrace = new ArrayList<>();
 
     public static int anomalyCounter = 0;
-    public static int anomalyThreshold = 10;
+    public static int anomalyThreshold = 20;
     public static int healthyCounter = 0;
-    public static int healthyThreshold = 100;
+    public static int healthyThreshold = 1000;
     public static double anomalyCounterForPercent = 0;
     public static double healthyCounterForPercent = 0;
     public static double minimumHealthyPercent = 0.9;
-    public static double minimumTrafficBeforeUpdate = 100;
+    public static double minimumTrafficBeforeUpdate = 1000;
     public static int invalidIDAlertCount = 0;
     public static int invalidSequenceAlertCount = 0;
     public static int totalAlertCount = 0;
@@ -739,34 +740,26 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public void createMatrix() {
         // Create the matrix/profile for this vehicle, which enables the IDS to function
 
-//        ATMAOrder = new String[2];
-//        ATMAOrder[0] = "XY1";
-//        ATMAOrder[0] = "VW2";
-//
-//        profileMatrix = new boolean[2][2];
-//        profileMatrix[0][0] = true;
-//        profileMatrix[1][1] = true;
-
-//        ATMAOrder = new String[3];
-//        ATMAOrder[0] = "AB1";
-//        ATMAOrder[1] = "CD2";
-//        ATMAOrder[2] = "EF3";
-//
-//        profileMatrix = new boolean[3][3];
-//        profileMatrix[0][0] = true;
-//        profileMatrix[2][2] = true;
-
         // HashSet removes duplicates
         // then back to ArrayList
         // then to primitive Array (for performance)
         // then sort (for performance)
 
+        HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
+
+        // Add the previous ATMAOrder (if it exists) to the set, so that we can check equivalence later
+        // If there is previous ATMAOrder, then nothing will be added
+        if (ATMAOrder != null) {
+            Collections.addAll(ATMASet, ATMAOrder);
+        }
+        ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
+        String[] tempOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
+        Arrays.sort(tempOrder);
+
         // If we are re-training the IDS (adding more training data)
         // then we do not want to destroy the old matrix
         if (!IDSRetrain) {
             Log.d(TAG, "Create the ATMAOrder and profileMatrix from scratch.");
-            HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
-            ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
             ATMAOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
             Arrays.sort(ATMAOrder);
 
@@ -783,6 +776,19 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // 1  f  f  t  f
         // 2  f  t  f  f
         // 3  t  f  f  f
+
+        // TODO: resizeMatrix()
+
+        // if ATMAOrder.length is not equal to tempOrder.length,
+        // then we know that tempOrder must contain IDs that are not in ATMAOrder or the profileMatrix
+        // because we added ATMAOrder to tempOrder (so if there was nothing new, they would match)
+        // We need to call a function to build an updated matrix, which will be larger than the original
+        if (ATMAOrder != null && ATMAOrder.length != tempOrder.length) {
+            Log.d(TAG, "ATMAOrder / tempOrder");
+            Log.d(TAG, String.valueOf(ATMAOrder.length));
+            Log.d(TAG, String.valueOf(tempOrder.length));
+            resizeMatrix();
+        }
 
         boolean checkNext = false;
 
@@ -811,6 +817,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 }
             }
         }
+
+        ObdCommand.ATMATrace = new ArrayList<>();
 
         // BEGIN -- PRINTING FOR VALIDATION / DEBUGGING
         // **
@@ -1197,11 +1205,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             return;
         }
 
-//        if (ObdCommand.ATMAMap.containsKey("ELM327") && ObdCommand.ATMAMap.get("ELM327").contains("v1.5")) {
-//            sendNotification(invalid_id_alert);
-//            ObdCommand.ATMAMap.remove("ELM327");
-//        }
-
         // We need to check each pair of adjacent IDs in currentIDs
         // if pair (i, i + 1) is a valid transition (true), we do nothing
         // if pair (i, i + 1) is not a valid transition (false), we update the anomaly counter
@@ -1221,15 +1224,15 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 // As such, we expect an unknown identifier to indicate an attack
                 sendNotification(invalid_id_alert);
             } else if (col < 0) {
-//                Log.d(TAG, "This is an anomaly: This ID is not valid");
-//                Log.d(TAG, "nextID: " + nextID);
+                Log.d(TAG, "This is an anomaly: This ID is not valid");
+                Log.d(TAG, "nextID: " + nextID);
 
                 // Given the size of our trace, we would never expect a previously unknown ECU to start transmitting
                 // As such, we expect an unknown identifier to indicate an attack
                 sendNotification(invalid_id_alert);
             } else if (!profileMatrix[row][col]) {
-//                Log.d(TAG, "This is an anomaly: This sequence is not valid");
-//                Log.d(TAG, "prevID: " + prevID + ", nextID: " + nextID);
+                Log.d(TAG, "This is an anomaly: This sequence is not valid");
+                Log.d(TAG, "prevID: " + prevID + ", nextID: " + nextID);
                 anomalyTrace.add(prevID);
                 anomalyTrace.add(nextID);
                 anomalyCounter++;
@@ -1270,9 +1273,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             healthyCounterForPercent = 0;
             updateMatrix();
         }
+
+        ObdCommand.currentIDs = new ArrayList<>();
     }
 
-    public static void updateMatrix() {
+    public void updateMatrix() {
         // If we see very few anomalies over a significant period,
         // then the "anomalies" are probably false positives
         // We should record them so that we can update the matrix if have not hit the anomaly threshold
@@ -1287,11 +1292,99 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             String nextId = anomalyTrace.get(i + 1);
             int col = Arrays.binarySearch(ATMAOrder, nextId);
 
-            profileMatrix[row][col] = true;
+            if (row >= 0 && col >= 0) {
+                profileMatrix[row][col] = true;
+            } else {
+                resizeMatrix();
+            }
         }
 
         anomalyTrace = new ArrayList<>();
         anomalyCounter = 0;
+
+        try {
+            updateSharedPreferences();
+        } catch (JSONException jsonException) {
+            jsonException.printStackTrace();
+        }
+    }
+
+    public void resizeMatrix() {
+        // Create newATMAOrder containing the new elements
+        HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
+        // Include the previous ATMAOrder
+        Collections.addAll(ATMASet, ATMAOrder);
+        ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
+        String[] newATMAOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
+        Arrays.sort(newATMAOrder);
+
+        // create newProfileMatrix sized to fit the new elements
+        boolean[][] newProfileMatrix = new boolean[newATMAOrder.length][newATMAOrder.length];
+
+        // Iterate over the old ATMAOrder (rows of the profileMatrix), then by the columns of the profileMatrix
+        // Find the index of the old ATMAOrder's row in the new ATMAOrder
+        // If profileMatrix[i][j] is false, then we ignore it (it is initialized to false anyway)
+        // If profileMatrix[i][j] is true, then we need to find the old ATMAOrder's column in the new ATMAOrder
+        for (int i = 0; i < ATMAOrder.length; i++) {
+            int newRow = Arrays.binarySearch(newATMAOrder, ATMAOrder[i]);
+
+            for (int j = 0; j < ATMAOrder.length; j++) {
+                if (profileMatrix[i][j]) {
+                    int newCol = Arrays.binarySearch(newATMAOrder, ATMAOrder[j]);
+                    newProfileMatrix[newRow][newCol] = true;
+                }
+            }
+        }
+
+        ATMAOrder = newATMAOrder;
+        profileMatrix = newProfileMatrix;
+
+        for (int i = 0; i < ObdCommand.ATMATrace.size() - 1; i += 2) {
+            String prevId = ObdCommand.ATMATrace.get(i);
+            int row = Arrays.binarySearch(ATMAOrder, prevId);
+
+            String nextId = ObdCommand.ATMATrace.get(i + 1);
+            int col = Arrays.binarySearch(ATMAOrder, nextId);
+
+            if (row >= 0 && col >= 0) {
+                profileMatrix[row][col] = true;
+            } else {
+                System.out.println("Error resizing matrix. The 'row' is " + row + ", and the 'col' is " + col);
+            }
+        }
+
+        // BEGIN -- PRINTING FOR VALIDATION / DEBUGGING
+        // **
+        System.out.println("RESIZE MATRIX");
+        System.out.println("ATMAOrder.length -- " + ATMAOrder.length);
+        System.out.println("profileMatrix.length -- " + profileMatrix.length + ", profileMatrix.width -- " + profileMatrix[0].length);
+
+        System.out.println("in createMatrix() -- ATMAOrder");
+        System.out.printf("%-10s", "");
+        for (int i = 0; i < ATMAOrder.length; i++) {
+            System.out.printf("%-10s", ATMAOrder[i]);
+        }
+        System.out.println();
+
+        System.out.println("in createMatrix() -- profileMatrix");
+        for (int i = 0; i < ATMAOrder.length; i++) {
+            System.out.printf("%-10s", ATMAOrder[i]);
+            for (int j = 0; j < ATMAOrder.length; j++) {
+                System.out.printf("%-10s", profileMatrix[i][j]);
+            }
+            System.out.println();
+        }
+        // **
+        // END -- PRINTING FOR VALIDATION / DEBUGGING
+
+        // Clear ATMATrace, so that we can use it for resizeMatrix() again
+        ObdCommand.ATMATrace = new ArrayList<>();
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void sendNotification(int alert_type) {

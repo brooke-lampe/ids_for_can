@@ -178,8 +178,6 @@ public abstract class ObdCommand {
     protected void processAndSave() {
         String ATMAArray[] = ATMAString.split("\\r?\\n");
 
-        currentIDs = new ArrayList<>();
-
 //        Log.d(TAG, "ATMAArray");
         for (String atma : ATMAArray) {
             atma = atma.trim();
@@ -187,7 +185,6 @@ public abstract class ObdCommand {
             if (!atma.equals("BUFFER FULL") && !atma.equals("NO DATA") && !atma.equals("OK")
                     && !atma.equals("STOPPED") && !atma.equals("?")) {
                 String temp[] = atma.split(" ", 2);
-                //if (temp.length > 1 && !temp[0].equals("AT")) {
                 if (temp.length > 1 && !temp[0].equals("AT") && !temp[0].equals("ELM327")) {
                     String arbitrationId = temp[0];
 //                    Set<String> data;
