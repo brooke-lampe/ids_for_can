@@ -504,11 +504,13 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "Training IDS...");
         if (IDSTrain) {
             IDSTrain = true;
+            trainingComplete = false;
         } else if (IDSRetrain) {
             IDSRetrain = true;
         }
-        trainingComplete = false;
+
         trainingCounter = 0;
+        retrainingCounter = 0;
 
         tl.removeAllViews(); //start fresh
         doBindService();
@@ -679,6 +681,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                     Log.d(TAG, "trainingCounter: " + trainingCounter);
                 //}
 
+                Log.d(TAG, "retrainingCounter: " + retrainingCounter);
+
                 // We are in training mode, and we have sufficient data to create the matrix
                 if ((IDSTrain && trainingCounter >= trainingThreshold) || (IDSRetrain && retrainingCounter >= retrainingThreshold)) {
                     createMatrix();
@@ -760,6 +764,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // If we are re-training the IDS (adding more training data)
         // then we do not want to destroy the old matrix
         if (!IDSRetrain) {
+            Log.d(TAG, "Create the ATMAOrder and profileMatrix from scratch.");
             HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
             ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
             ATMAOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
@@ -792,7 +797,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                     // We know "i" is the row because we are iterating by ATMAOrder
                     // and we can find "j" for the column using binarySearch, since we sorted the array
                     int j = Arrays.binarySearch(ATMAOrder, id);
-                    profileMatrix[i][j] = true;
+                    if (j >= 0) {
+                        profileMatrix[i][j] = true;
+                    } else {
+                        Log.d(TAG, "This id is not found in the ATMAOrder: " + id);
+                    }
                 }
 
                 if (currentId.equals(id)) {
@@ -1174,6 +1183,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         // Restart the retraining counter, so that we aren't saving and updating too often
         retrainingCounter = 0;
+        trainingComplete = true;
         waitingOnUser = false;
     }
 
@@ -1204,8 +1214,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             int row = Arrays.binarySearch(ATMAOrder, prevID);
             int col = Arrays.binarySearch(ATMAOrder, nextID);
             if (row < 0) {
-//                Log.d(TAG, "This is an anomaly: This ID is not valid");
-//                Log.d(TAG, "prevID: " + prevID);
+                Log.d(TAG, "This is an anomaly: This ID is not valid");
+                Log.d(TAG, "prevID: " + prevID);
 
                 // Given the size of our trace, we would never expect a previously unknown ECU to start transmitting
                 // As such, we expect an unknown identifier to indicate an attack

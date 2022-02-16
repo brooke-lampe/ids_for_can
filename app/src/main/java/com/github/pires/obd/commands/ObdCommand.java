@@ -208,6 +208,7 @@ public abstract class ObdCommand {
 //                    Log.d(TAG, currentIDs.toString());
 
                     MainActivity.trainingCounter++;
+                    MainActivity.retrainingCounter++;
                 }
             }
         }
