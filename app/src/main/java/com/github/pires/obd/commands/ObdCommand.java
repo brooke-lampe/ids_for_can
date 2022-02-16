@@ -12,10 +12,6 @@
  */
 package com.github.pires.obd.commands;
 
-import static android.content.ContentValues.TAG;
-
-import com.example.ids_for_can.Log;
-
 import com.example.ids_for_can.MainActivity;
 import com.github.pires.obd.exceptions.*;
 
@@ -23,9 +19,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
@@ -150,7 +143,7 @@ public abstract class ObdCommand {
      */
     protected void readResult(InputStream in) throws IOException {
         readRawData(in);
-        if (MainActivity.IDSTrainOrRetrain || MainActivity.IDSOn) {
+        if (MainActivity.IDSTrain || MainActivity.IDSRetrain || MainActivity.IDSOn) {
             processAndSave();
         } else {
             checkForErrors();

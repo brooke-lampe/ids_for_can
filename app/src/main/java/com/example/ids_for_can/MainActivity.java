@@ -104,15 +104,18 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     // This variable is a threshold for the training data
     // When the trainingCounter reaches this threshold, we have sufficient data to create the matrix
-    // About 10 CAN messages are captured in one 'AT MA' command,
-    // so the threshold is 10x the value of this variable
-    public static int trainingThreshold = 1000000;
+    public static int trainingThreshold = 1000;
+
+    // This variable is a counter for the retraining data
+    public static int retrainingCounter = 0;
+
+    // This variable is a threshold for the retraining data
+    // When the retrainingCounter reaches this threshold, we want to save and update the matrix
+    public static int retrainingThreshold = 500;
 
     // The IDS is currently training/re-training
-    public static boolean IDSTrainOrRetrain = false;
-
-    // The IDS is explicitly re-training (update the old matrix/profile)
-    public static boolean retrainONLY = false;
+    public static boolean IDSTrain = false;
+    public static boolean IDSRetrain = false;
 
     // The IDS is currently running
     public static boolean IDSOn = false;
@@ -235,7 +238,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 obdStatusTextView.setText(cmdResult.toLowerCase());
             } else {
                 cmdResult = job.getCommand().getFormattedResult();
-                if (IDSTrainOrRetrain) {
+                if (IDSTrain || IDSRetrain) {
                     obdStatusTextView.setText(getString(R.string.ids_training));
                 } else if (IDSOn) {
                     obdStatusTextView.setText(getString(R.string.ids_active));
@@ -379,9 +382,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "Entered onDestroy...");
 
         IDSOn = false;
-        IDSTrainOrRetrain = false;
+        IDSTrain = false;
+        IDSRetrain = false;
         trainingComplete = false;
         trainingCounter = 0;
+        retrainingCounter = 0;
         loggingOn = false;
 
         USER_ALERTED = false;
@@ -439,7 +444,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
         menu.add(0, TRAIN_IDS, 0, getString(R.string.train_ids));
-        menu.add(0, RETRAIN_IDS, 0, getString(R.string.re_train_ids));
+        menu.add(0, RETRAIN_IDS, 0, getString(R.string.train_more));
         menu.add(0, START_IDS, 0, getString(R.string.start_ids));
         menu.add(0, STOP_LIVE_DATA_OR_IDS, 0, getString(R.string.stop_live_data_ids));
         menu.add(0, START_LOGGING, 0, getString(R.string.start_logging));
@@ -457,12 +462,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 return true;
             case TRAIN_IDS:
                 Log.d(TAG, "Train IDS");
-                retrainONLY = false;
+                IDSTrain = true;
                 trainIDS();
                 return true;
             case RETRAIN_IDS:
                 Log.d(TAG, "Re-train IDS");
-                retrainONLY = true;
+                IDSRetrain = true;
                 trainIDS();
                 return true;
             case START_IDS:
@@ -497,7 +502,11 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     private void trainIDS() {
         Log.d(TAG, "Training IDS...");
-        IDSTrainOrRetrain = true;
+        if (IDSTrain) {
+            IDSTrain = true;
+        } else if (IDSRetrain) {
+            IDSRetrain = true;
+        }
         trainingComplete = false;
         trainingCounter = 0;
 
@@ -523,8 +532,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         Log.d(TAG, "Stopping live data...");
         initIDSDone = false;
         IDSOn = false;
-        IDSTrainOrRetrain = false;
+        IDSTrain = false;
+        IDSRetrain = false;
         trainingCounter = 0;
+        retrainingCounter = 0;
 
         USER_ALERTED = false;
 
@@ -646,7 +657,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private void queueCommands() {
         if (isServiceBound) {
             // Live Data Mode
-            if (!IDSTrainOrRetrain && !IDSOn) {
+            if (!IDSTrain && !IDSRetrain && !IDSOn) {
                 for (ObdCommand Command : ObdConfig.getCommands()) {
                     if (prefs.getBoolean(Command.getName(), true))
                         service.queueJob(new ObdCommandJob(Command));
@@ -669,7 +680,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                 //}
 
                 // We are in training mode, and we have sufficient data to create the matrix
-                if (IDSTrainOrRetrain && trainingCounter >= trainingThreshold) {
+                if ((IDSTrain && trainingCounter >= trainingThreshold) || (IDSRetrain && retrainingCounter >= retrainingThreshold)) {
                     createMatrix();
                 }
 
@@ -745,12 +756,17 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // then back to ArrayList
         // then to primitive Array (for performance)
         // then sort (for performance)
-        HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
-        ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
-        ATMAOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
-        Arrays.sort(ATMAOrder);
 
-        profileMatrix = new boolean[ATMAOrder.length][ATMAOrder.length];
+        // If we are re-training the IDS (adding more training data)
+        // then we do not want to destroy the old matrix
+        if (!IDSRetrain) {
+            HashSet<String> ATMASet = new HashSet<>(ObdCommand.ATMATrace);
+            ArrayList<String> uniqueATMA = new ArrayList(ATMASet);
+            ATMAOrder = uniqueATMA.toArray(new String[uniqueATMA.size()]);
+            Arrays.sort(ATMAOrder);
+
+            profileMatrix = new boolean[ATMAOrder.length][ATMAOrder.length];
+        }
 
         // This is an example of the profileMatrix
         // "ATMAOrder" is the order for both the rows and the columns
@@ -813,7 +829,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         // Now that we have a matrix/profile for this vehicle, we need to save this vehicle as an option in preferences
         Log.d(TAG, "Saving the vehicle in preferences...");
 
-        if (!retrainONLY) {
+        if (!IDSRetrain) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Enter a nickname for this vehicle: ");
             EditText input = new EditText(this);
@@ -999,8 +1015,10 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "Training complete, starting IDS...");
 
+        // If we are training / appending, then we started with a new matrix, not a re-train matrix
         trainingComplete = true;
-        IDSTrainOrRetrain = false;
+        IDSTrain = false;
+        IDSRetrain = false;
         IDSOn = true;
         waitingOnUser = false;
     }
@@ -1150,9 +1168,16 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "Training complete, starting IDS...");
 
-        trainingComplete = true;
-        IDSTrainOrRetrain = false;
-        IDSOn = true;
+        // If we are re-training / updating, then we want to continue the re-training process
+        // without switching over to IDS mode
+        // We want the user to be able to re-train as long as needed to reduce false positives
+        // The user can manually turn off live data when done, then switch to IDS mode
+        if (!IDSRetrain) {
+            trainingComplete = true;
+            IDSTrain = false;
+            IDSRetrain = false;
+            IDSOn = true;
+        }
         waitingOnUser = false;
     }
 

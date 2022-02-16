@@ -120,4 +120,5 @@
     <string name="re_train_ids">Re-train IDS</string>
     <string name="delete_trained_vehicle">Delete a previously \'trained\' vehicle.</string>
     <string name="delete_vehicle">Delete Vehicle</string>
+    <string name="train_more">Train More</string>
 </resources>
