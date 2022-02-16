@@ -105,14 +105,14 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
     // This variable is a threshold for the training data
     // When the trainingCounter reaches this threshold, we have sufficient data to create the matrix
-    public static int trainingThreshold = 5000;
+    public static int trainingThreshold = 75;
 
     // This variable is a counter for the retraining data
     public static int retrainingCounter = 0;
 
     // This variable is a threshold for the retraining data
     // When the retrainingCounter reaches this threshold, we want to save and update the matrix
-    public static int retrainingThreshold = 500;
+    public static int retrainingThreshold = 50;
 
     // The IDS is currently training/re-training
     public static boolean IDSTrain = false;
