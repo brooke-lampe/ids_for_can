@@ -18,7 +18,7 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/vehicle_selection_title">
-        <ListPreference
+        <com.example.ids_for_can.myPreferenceList
             android:key="vehicle_list_preference"
             android:summary="@string/trained_vehicles_summary"
             android:title="@string/vehicles" />
