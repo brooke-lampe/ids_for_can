@@ -271,6 +271,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.main);
 
+        // Check all required permissions
         if (ContextCompat.checkSelfPermission(
                 this, Manifest.permission.BLUETOOTH) ==
                 PackageManager.PERMISSION_GRANTED
@@ -300,6 +301,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
             Log.d(TAG, "BLUETOOTH PERMISSION REQUESTED!");
         }
 
+        // Check all required permissions
         if (ContextCompat.checkSelfPermission(
                 this, Manifest.permission.BLUETOOTH) ==
                 PackageManager.PERMISSION_GRANTED
@@ -347,6 +349,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
+            // Check all of the following Bluetooth permissions
             case PERMISSIONS_REQUEST_BLUETOOTH:
                 if (grantResults.length > 4 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                         && grantResults[1] == PackageManager.PERMISSION_GRANTED
@@ -358,6 +361,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                     Log.d(TAG, "BLUETOOTH DENIED");
                 }
                 break;
+            // Check the following storage permissions
+            // The logging functionality cannot be enabled without these permissions
             case PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE:
                 if (grantResults.length > 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                         && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
@@ -382,6 +387,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
 
         Log.d(TAG, "Entered onDestroy...");
 
+        // Reset pertinent variables to initial state
         IDSOn = false;
         IDSTrain = false;
         IDSRetrain = false;
@@ -456,7 +462,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        //sendNotification();
         switch (item.getItemId()) {
             case START_LIVE_DATA:
                 startLiveData();
@@ -494,7 +499,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
     private void startLiveData() {
         Log.d(TAG, "Starting live data...");
 
-        tl.removeAllViews(); //start fresh
+        tl.removeAllViews(); // start fresh
         doBindService();
 
         // start command execution
@@ -689,6 +694,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
                     createMatrix();
                 }
 
+                // We are in monitoring mode, and we have sufficient data to compare against the matrix
                 if (IDSOn && ObdCommand.currentIDs.size() > 10) {
                     idsDetect();
                 }
@@ -896,8 +902,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         HashSet<String> all_vehicles = new HashSet<>();
         if (vehiclePreference.contains("ALL_VEHICLES")) {
             all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
-        } else {
-            //all_vehicles.add("NEW");
         }
 
         // Retrieve the string that represents the "profiles" JSON object
@@ -1049,8 +1053,6 @@ public class MainActivity extends RoboActivity implements ObdProgressListener {
         HashSet<String> all_vehicles = new HashSet<>();
         if (vehiclePreference.contains("ALL_VEHICLES")) {
             all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
-        } else {
-            //all_vehicles.add("NEW");
         }
 
         // Retrieve the String of the selected vehicle

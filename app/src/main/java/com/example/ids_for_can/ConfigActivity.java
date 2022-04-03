@@ -59,11 +59,8 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         HashSet<String> all_vehicles = new HashSet<>();
         if (vehiclePreference.contains("ALL_VEHICLES")) {
             all_vehicles = new HashSet<>(vehiclePreference.getStringSet("ALL_VEHICLES", new HashSet<>()));
-        } else {
-            //all_vehicles.add("NEW");
         }
 
-        //String selected_vehicle = "NEW";
         String selected_vehicle = null;
         if (vehiclePreference.contains("SELECTED_VEHICLE")) {
             selected_vehicle = vehiclePreference.getString("SELECTED_VEHICLE", new String());
@@ -83,7 +80,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
 
         /*
          * Available OBD protocols
-         *
          */
         ArrayList<CharSequence> protocolStrings = new ArrayList<>();
         ListPreference listProtocols = (ListPreference) getPreferenceScreen()
@@ -97,7 +93,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
 
         /*
          * OBD update period (in seconds)
-         *
          */
         String[] prefKeys = new String[]{OBD_UPDATE_PERIOD_KEY};
         for (String prefKey : prefKeys) {
@@ -108,8 +103,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
 
         /*
          * Available OBD commands
-         *
-         *
          */
         ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
         PreferenceScreen cmdScr = (PreferenceScreen) getPreferenceScreen()
@@ -136,7 +129,7 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
             listBtDevices.setEntries(pairedDeviceStrings.toArray(new CharSequence[0]));
             listBtDevices.setEntryValues(vals.toArray(new CharSequence[0]));
 
-            // we shouldn't get here, still warn user
+            // Should not occur
             Toast.makeText(this, "This device does not support Bluetooth.",
                     Toast.LENGTH_LONG).show();
 
@@ -145,8 +138,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
 
         /*
          * Listen for preferences click.
-         *
-         *
          */
         final Activity thisActivity = this;
         listBtDevices.setEntries(new CharSequence[1]);
@@ -364,10 +355,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         return false;
     }
 
-    /**
-     * @param prefs
-     * @return
-     */
     public static int getObdUpdatePeriod(SharedPreferences prefs) {
         String periodString = prefs.
                 getString(ConfigActivity.OBD_UPDATE_PERIOD_KEY, "4"); // 4 as in seconds
@@ -385,10 +372,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         return period;
     }
 
-    /**
-     * @param prefs
-     * @return
-     */
     public static ArrayList<ObdCommand> getObdCommands(SharedPreferences prefs) {
         ArrayList<ObdCommand> cmds = ObdConfig.getCommands();
         ArrayList<ObdCommand> ucmds = new ArrayList<>();
@@ -401,10 +384,6 @@ public class ConfigActivity extends PreferenceActivity implements OnPreferenceCh
         return ucmds;
     }
 
-    /**
-     * @param prefs
-     * @return
-     */
     public static String[] getReaderConfigCommands(SharedPreferences prefs) {
         String cmdsStr = prefs.getString(CONFIG_READER_KEY, "atsp0\natz");
         String[] cmds = cmdsStr.split("\n");
